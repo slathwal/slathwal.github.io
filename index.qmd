@@ -1,5 +1,5 @@
 ---
-title: "About Me:"
+title: "About Me"
 ---
 
 I am creating this website with the help of quarto. This website will be a blog and a portfolio, containing interesting projects I am working on and my thoughts on various subjects I am reading and musing about.
