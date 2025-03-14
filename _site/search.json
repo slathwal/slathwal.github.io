@@ -1,0 +1,23 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "About Me:",
+    "section": "",
+    "text": "I am creating this website with the help of quarto. This website will be a blog and a portfolio, containing interesting projects I am working on and my thoughts on various subjects I am reading and musing about."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "background.html",
+    "href": "background.html",
+    "title": "Background",
+    "section": "",
+    "text": "I am a MIT-trained Ph.D. with interest in statistics, data science, biology, data visualizations, education, watercolour, sketching, and many more things."
+  }
+]

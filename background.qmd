@@ -1,0 +1,6 @@
+---
+title: "Background"
+---
+
+I am a MIT-trained Ph.D. with interest in statistics, data science, biology, data visualizations, education, watercolour, sketching, and many more things.
+
