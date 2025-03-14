@@ -5,7 +5,7 @@ project:
 website:
   title: "Shefali Lathwal"
   navbar:
-    left:
+    right:
       - href: index.qmd
         text: Home
       - background.qmd
