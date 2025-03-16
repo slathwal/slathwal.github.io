@@ -1,19 +1,26 @@
 project:
   type: website
   output-dir: docs
-
-website:
   title: "Shefali Lathwal"
+
+website: 
   navbar:
-    right:
-      - href: index.qmd
-        text: Home
-      - background.qmd
+    search: true
+    left:
+      - text: "About"
+        href: index.qmd
+      - text: "Blog"
+      - text: "Projects"
+    tools:
+      - icon: linkedin
+        href: "https://www.linkedin.com/in/shefali-lathwal-90bb4b44/"
+      - icon: github
+        href: "https://github.com/slathwal"
 
 format:
   html:
     theme:
-      - cosmo
+      - simplex
       - brand
     css: styles.css
     toc: true

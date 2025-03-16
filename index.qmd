@@ -1,6 +1,16 @@
 ---
-title: "About Me"
+title: "Shefali Lathwal"
+toc: false
+about: 
+    template: jolla
+    image: profile.jpg
+    links:
+        - icon: linkedin
+          text: LinkedIn
+          href: "https://www.linkedin.com/in/shefali-lathwal-90bb4b44/"
+        - icon: github
+          text: Github 
+          href: "https://github.com/slathwal"
 ---
-
-I am creating this website with the help of quarto. This website will be a blog and a portfolio, containing interesting projects I am working on and my thoughts on various subjects I am reading and musing about.
-
+I am a scientist.
+I love coding.
