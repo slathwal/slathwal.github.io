@@ -3,7 +3,7 @@ title: "Shefali Lathwal"
 toc: false
 about: 
     template: jolla
-    image: profile.jpg
+    image: images/profile.jpg
     links:
         - icon: linkedin
           text: LinkedIn
@@ -12,5 +12,6 @@ about:
           text: Github 
           href: "https://github.com/slathwal"
 ---
-I am a scientist.
-I love coding.
+I am bioinformatician and computational biologist. I love applying statistical and machine learning methods to high-dimensional biological data in drug discovery. 
+
+I am a problem solver and thrive in cross-functional teams. 

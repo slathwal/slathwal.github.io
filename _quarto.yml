@@ -6,8 +6,8 @@ project:
 website: 
   navbar:
     search: true
-    left:
-      - text: "About"
+    right:
+      - text: Home
         href: index.qmd
       - text: "Blog"
       - text: "Projects"
