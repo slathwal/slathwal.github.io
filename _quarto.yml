@@ -9,8 +9,10 @@ website:
     left:
       - text: Home
         href: index.qmd
-      - text: "Projects"
+      - text: Projects
         href: projects.qmd
+      - text: Blogs
+        href: blogs.qmd
     tools:
       - icon: linkedin
         href: "https://www.linkedin.com/in/shefali-lathwal-90bb4b44/"

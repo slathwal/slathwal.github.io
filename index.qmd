@@ -16,7 +16,7 @@ about:
           text: Contact Me
           href: mailto:slathwal@alum.mit.edu
 ---
-I am a Chemical Engineer turned Bioinformatician and Computational Biologist. I love mathematics, statistics, data analysis, and visualizations. I enjoy building relationships, working in cross-functional teams, and translating complex data into actionable insights.
+I am a Chemical Engineer turned Bioinformatician and Computational Biologist. I love mathematics, statistics, data analysis, and visualizations. I enjoy building relationships with people, working in cross-functional teams, and translating complex data into actionable insights.
 
 ## Experience
 **Elucidata Corporation** | Director, data-centric AI  

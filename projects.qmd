@@ -1,11 +1,20 @@
----
-title: "Projects"
-listing:
-    contents: projects
-    sort: "date desc"
-    type: default
-    categories: true
-    sort-ui: false
-    filter-ui: false
-page-layout: full
----
+## Dashboard for Clinical Data for Pancreatic Cancer from The Cancer Genome Atlas (TCGA)
+
+:::: columns
+
+::: {.column width="55%"}
+The PDAC-app is an interactive application that allows users to explore the pancreatic cancer data available from TCGA. 
+
+You can look at the overall demographic distribution of the patients, Kaplan Meier survival plots broken by clinical characteristics, and an analysis of tumor purity and molecular clusters in the data based on the article [Integrated Genomics Characterization of Pancreatic Ductal Adenocarcinoma](https://www.cell.com/cancer-cell/fulltext/S1535-6108(17)30299-4?).
+
+You can interact with the data in the [shiny app here](https://slathwal.shinyapps.io/pdac-app/). 
+:::
+
+::: {.column width ="5%"}
+:::
+
+::: {.column width ="40%"}
+![](images/PDAC-app.png)
+:::
+
+::::

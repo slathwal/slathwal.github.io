@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Shefali Lathwal",
     "section": "",
-    "text": "I am a Chemical Engineer turned Bioinformatician and Computational Biologist. I love mathematics, statistics, data analysis, and visualizations. I enjoy building relationships, working in cross-functional teams, and translating complex data into actionable insights."
+    "text": "I am a Chemical Engineer turned Bioinformatician and Computational Biologist. I love mathematics, statistics, data analysis, and visualizations. I enjoy building relationships with people, working in cross-functional teams, and translating complex data into actionable insights."
   },
   {
     "objectID": "background.html",
@@ -23,9 +23,9 @@
   {
     "objectID": "projects.html",
     "href": "projects.html",
-    "title": "Projects",
+    "title": "Shefali Lathwal",
     "section": "",
-    "text": "Example post\n\n\n\n\n\n\ncode\n\n\npython\n\n\n\n\n\n\n\n\n\nMar 24, 2025\n\n\nShefali Lathwal\n\n\n\n\n\n\n\n\n\n\n\n\nThis is a second example post\n\n\n\n\n\n\n\n\n\n\n\nMar 24, 2025\n\n\nShefali Lathwal\n\n\n\n\n\n\nNo matching items"
+    "text": "The PDAC-app is an interactive application that allows users to explore the pancreatic cancer data available from TCGA.\nYou can look at the overall demographic distribution of the patients, Kaplan Meier survival plots broken by clinical characteristics, and an analysis of tumor purity and molecular clusters in the data based on the article Integrated Genomics Characterization of Pancreatic Ductal Adenocarcinoma.\nYou can interact with the data in the shiny app here."
   },
   {
     "objectID": "projects/example_post2/index.html",
@@ -47,5 +47,19 @@
     "title": "Shefali Lathwal",
     "section": "Experience",
     "text": "Experience\nElucidata Corporation | Director, data-centric AI\nJan 2022 - Oct 2022\nElucidata Corporation | Lead Scientist\nDec 2016 - Dec 2021"
+  },
+  {
+    "objectID": "projects.html#dashboard-for-clinical-data-for-pancreatic-cancer-from-the-cancer-genome-atlas-tcga",
+    "href": "projects.html#dashboard-for-clinical-data-for-pancreatic-cancer-from-the-cancer-genome-atlas-tcga",
+    "title": "Shefali Lathwal",
+    "section": "",
+    "text": "The PDAC-app is an interactive application that allows users to explore the pancreatic cancer data available from TCGA.\nYou can look at the overall demographic distribution of the patients, Kaplan Meier survival plots broken by clinical characteristics, and an analysis of tumor purity and molecular clusters in the data based on the article Integrated Genomics Characterization of Pancreatic Ductal Adenocarcinoma.\nYou can interact with the data in the shiny app here."
+  },
+  {
+    "objectID": "blogs.html",
+    "href": "blogs.html",
+    "title": "Blogs",
+    "section": "",
+    "text": "Example post\n\n\n\n\n\n\ncode\n\n\npython\n\n\n\n\n\n\n\n\n\nMar 24, 2025\n\n\nShefali Lathwal\n\n\n\n\n\n\n\n\n\n\n\n\nThis is a second example post\n\n\n\n\n\n\n\n\n\n\n\nMar 24, 2025\n\n\nShefali Lathwal\n\n\n\n\n\n\nNo matching items"
   }
 ]
