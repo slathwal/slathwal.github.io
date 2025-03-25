@@ -11,6 +11,7 @@ website:
         href: index.qmd
       - text: "Blog"
       - text: "Projects"
+        href: projects.qmd
     tools:
       - icon: linkedin
         href: "https://www.linkedin.com/in/shefali-lathwal-90bb4b44/"

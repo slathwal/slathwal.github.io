@@ -1,0 +1,14 @@
+---
+title: "Example post"
+author: "Shefali Lathwal"
+date: "2025-03-24"
+categories: [code, python]
+image: "cat-image.jpg"
+---
+
+This is an example post that contains some code in python
+
+```{python}
+a = 1+1
+a
+```

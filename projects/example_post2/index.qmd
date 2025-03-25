@@ -1,0 +1,8 @@
+---
+title: "This is a second example post"
+author: "Shefali Lathwal"
+date: "2025-03-24"
+date-modified: last-modified
+image: "cat-image2.jpg"
+---
+This is a second example post.

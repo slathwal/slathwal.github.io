@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Shefali Lathwal",
     "section": "",
-    "text": "I am bioinformatician and computational biologist. I love applying statistical and machine learning methods to high-dimensional biological data in drug discovery.\nI am a problem solver and thrive in cross-functional teams."
+    "text": "I am a Chemical Engineer turned Bioinformatician and Computational Biologist. I am a data and technology nerd. I"
   },
   {
     "objectID": "background.html",
@@ -12,5 +12,26 @@
     "title": "Background",
     "section": "",
     "text": "I am a MIT-trained Ph.D. with interest in statistics, data science, biology, data visualizations, education, watercolour, sketching, and many more things."
+  },
+  {
+    "objectID": "projects/example_post/index.html",
+    "href": "projects/example_post/index.html",
+    "title": "Example post",
+    "section": "",
+    "text": "This is an example post that contains some code in python\n\na = 1+1\na\n\n2"
+  },
+  {
+    "objectID": "projects.html",
+    "href": "projects.html",
+    "title": "Projects",
+    "section": "",
+    "text": "Example post\n\n\n\n\n\n\ncode\n\n\npython\n\n\n\n\n\n\n\n\n\nMar 24, 2025\n\n\nShefali Lathwal\n\n\n\n\n\n\n\n\n\n\n\n\nThis is a second example post\n\n\n\n\n\n\n\n\n\n\n\nMar 24, 2025\n\n\nShefali Lathwal\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "projects/example_post2/index.html",
+    "href": "projects/example_post2/index.html",
+    "title": "This is a second example post",
+    "section": "",
+    "text": "This is a second example post."
   }
 ]
