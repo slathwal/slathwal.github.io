@@ -4,6 +4,17 @@ project:
   title: "Shefali Lathwal"
 
 website: 
+  back-to-top-navigation: true
+  favicon: "images/profile.jpg"
+  page-footer: 
+    left: 
+      - icon: envelope
+        text: Contact Me
+        href: "mailto:slathwal@alum.mit.edu"
+    right:
+      - icon: github
+        text: Github for this website
+        href: "https://github.com/slathwal/slathwal.github.io"
   navbar:
     search: true
     left:
@@ -11,8 +22,10 @@ website:
         href: index.qmd
       - text: Projects
         href: projects.qmd
-      - text: Blogs
-        href: blogs.qmd
+      #- talks: Talks
+      #  href: talks.qmd
+      #- text: Blogs
+      #  href: blogs.qmd
     tools:
       - icon: linkedin
         href: "https://www.linkedin.com/in/shefali-lathwal-90bb4b44/"
@@ -21,6 +34,10 @@ website:
 
 format:
   html:
+    grid: 
+      body-width: 1000px
+      sidebar-width: 200px
+      margin-width: 200px
     theme:
       - simplex
       - brand

@@ -1,4 +1,8 @@
-## Dashboard for Clinical Data for Pancreatic Cancer from The Cancer Genome Atlas (TCGA)
+---
+toc: true
+---
+
+## Analysis of clinical and molecular data for pancreatic cancer from The Cancer Genome Atlas (TCGA)
 
 :::: columns
 
@@ -15,6 +19,29 @@ You can interact with the data in the [shiny app here](https://slathwal.shinyapp
 
 ::: {.column width ="40%"}
 ![](images/PDAC-app.png)
+:::
+
+::::
+
+## Analysis of political donations through electoral bonds in India
+
+:::: columns
+
+::: {.column width="40%"}
+{{< video https://youtu.be/CECasG7M3r8 title="Political Donations in India" >}}
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="55%"}
+This web application was created as the final project for Harvard's course, CS50: Introduction to Computer Science.
+The following tools were used:
+
+- Python for extracting the data from pdf to csv format
+- R for data exploration and cleaning
+- RShiny for data analysis and visualization.
+- Bootstrap library for R (bslib) to design a multi-page Shiny app
 :::
 
 ::::
