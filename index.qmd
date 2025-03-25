@@ -2,8 +2,9 @@
 title: "Shefali Lathwal"
 toc: false
 about: 
-    template: jolla
+    template: trestles
     image: images/profile.jpg
+    image-shape: round
     links:
         - icon: linkedin
           text: LinkedIn
@@ -11,6 +12,26 @@ about:
         - icon: github
           text: Github 
           href: "https://github.com/slathwal"
+        - icon: envelope
+          text: Contact Me
+          href: mailto:slathwal@alum.mit.edu
 ---
-I am a Chemical Engineer turned Bioinformatician and Computational Biologist.
-I am a data and technology nerd.
+I am a Chemical Engineer turned Bioinformatician and Computational Biologist. I love mathematics, statistics, data analysis, and visualizations. I enjoy building relationships, working in cross-functional teams, and translating complex data into actionable insights.
+
+## Experience
+**Elucidata Corporation** | Director, data-centric AI  
+Jan 2022 - Oct 2022
+
+**Elucidata Corporation** | Lead Scientist  
+Dec 2016 - Dec 2021
+
+## Education
+**Massachusetts Institute of Technology**  
+Cambridge, MA, USA  
+Ph.D. in Chemical Engineering  
+M.S. in Chemical Engineering Practice
+
+**Indian Institute of Technology, Delhi**  
+New Delhi, India  
+M.S. in Process Engineering and Design  
+B.Tech. In Chemical Engineering

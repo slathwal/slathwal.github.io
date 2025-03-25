@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Shefali Lathwal",
     "section": "",
-    "text": "I am a Chemical Engineer turned Bioinformatician and Computational Biologist. I am a data and technology nerd."
+    "text": "I am a Chemical Engineer turned Bioinformatician and Computational Biologist. I love mathematics, statistics, data analysis, and visualizations. I enjoy building relationships, working in cross-functional teams, and translating complex data into actionable insights."
   },
   {
     "objectID": "background.html",
@@ -33,5 +33,19 @@
     "title": "This is a second example post",
     "section": "",
     "text": "This is a second example post."
+  },
+  {
+    "objectID": "index.html#education",
+    "href": "index.html#education",
+    "title": "Shefali Lathwal",
+    "section": "Education",
+    "text": "Education\nMassachusetts Institute of Technology\nCambridge, MA, USA\nPh.D. in Chemical Engineering\nM.S. in Chemical Engineering Practice\nIndian Institute of Technology, Delhi\nNew Delhi, India\nM.S. in Process Engineering and Design\nB.Tech. In Chemical Engineering"
+  },
+  {
+    "objectID": "index.html#experience",
+    "href": "index.html#experience",
+    "title": "Shefali Lathwal",
+    "section": "Experience",
+    "text": "Experience\nElucidata Corporation | Director, data-centric AI\nJan 2022 - Oct 2022\nElucidata Corporation | Lead Scientist\nDec 2016 - Dec 2021"
   }
 ]

@@ -6,10 +6,9 @@ project:
 website: 
   navbar:
     search: true
-    right:
+    left:
       - text: Home
         href: index.qmd
-      - text: "Blog"
       - text: "Projects"
         href: projects.qmd
     tools:
