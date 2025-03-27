@@ -60,7 +60,7 @@
     "href": "blogs.html",
     "title": "Blogs",
     "section": "",
-    "text": "Example post\n\n\n\n\n\n\ncode\n\n\npython\n\n\nstatistics\n\n\n\n\n\n\n\n\n\nMar 27, 2025\n\n\nShefali Lathwal\n\n\n\n\n\n\n\n\n\n\n\n\nThis is a second example post\n\n\n\n\n\n\n\n\n\n\n\nMar 24, 2025\n\n\nShefali Lathwal\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "This is a second example post\n\n\n\n\n\n\n\n\n\n\n\nMar 24, 2025\n\n\nShefali Lathwal\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "blogs/example_post2/index.html",
@@ -68,13 +68,6 @@
     "title": "This is a second example post",
     "section": "",
     "text": "This is a second example post."
-  },
-  {
-    "objectID": "blogs/example_post/index.html",
-    "href": "blogs/example_post/index.html",
-    "title": "Example post",
-    "section": "",
-    "text": "This is an example post that contains some code in python\n\na = 1+1\na\n\n2\n\n\n\n\n\n Back to top"
   },
   {
     "objectID": "projects.html#application-for-clinical-data-for-pancreatic-cancer-from-the-cancer-genome-atlas-tcga",
