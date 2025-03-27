@@ -6,14 +6,14 @@ project:
 website: 
   back-to-top-navigation: true
   favicon: "images/profile.jpg"
-  page-footer: 
-    left: 
-      - icon: envelope
-        text: Contact Me
-        href: "mailto:slathwal@alum.mit.edu"
+  page-footer:
+    #background: light
+    border: false
+    left: Made with [![](https://quarto.org/quarto.png){width=70px}](https://quarto.org)
     right:
-      - icon: github
-        text: Github for this website
+      - text: "{{< fa envelope >}} Contact me"
+        href: mailto:slathwal@alum.mit.edu
+      - text: "{{< fa brands github >}} Source code" 
         href: "https://github.com/slathwal/slathwal.github.io"
   navbar:
     search: true
@@ -36,11 +36,10 @@ format:
   html:
     grid: 
       body-width: 1000px
-      sidebar-width: 200px
-      margin-width: 200px
+      sidebar-width: 250px
+      margin-width: 250px
     theme:
-      - simplex
-      - brand
+      - yeti
     css: styles.css
     toc: true
 

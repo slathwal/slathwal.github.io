@@ -1,8 +1,8 @@
 ---
 title: "Example post"
 author: "Shefali Lathwal"
-date: "2025-03-24"
-categories: [code, python]
+date: "2025-03-27"
+categories: [code, python, statistics]
 image: "cat-image.jpg"
 ---
 

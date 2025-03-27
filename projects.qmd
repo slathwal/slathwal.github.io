@@ -28,7 +28,7 @@ You can interact with the data in the [shiny app here](https://slathwal.shinyapp
 :::: columns
 
 ::: {.column width="40%"}
-{{< video https://youtu.be/CECasG7M3r8 title="Political Donations in India" >}}
+{{< video https://youtu.be/CECasG7M3r8 title="Political Donations in India" aspect-ratio="16x9" >}}
 :::
 
 ::: {.column width="5%"}
