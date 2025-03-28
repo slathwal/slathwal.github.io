@@ -24,8 +24,8 @@ website:
         href: projects.qmd
       #- talks: Talks
       #  href: talks.qmd
-      #- text: Blogs
-      #  href: blogs.qmd
+      - text: Blogs
+        href: blogs.qmd
     tools:
       - icon: linkedin
         href: "https://www.linkedin.com/in/shefali-lathwal-90bb4b44/"

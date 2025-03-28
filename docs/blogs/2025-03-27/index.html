@@ -108,7 +108,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
 
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
-<meta name="quarto:status" content="draft">
 
 
 <link rel="stylesheet" href="../../styles.css">
@@ -117,7 +116,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><div id="quarto-draft-alert" class="alert alert-warning"><i class="bi bi-pencil-square"></i>Draft</div>
+  <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -138,6 +137,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li class="nav-item">
     <a class="nav-link" href="../../projects.html"> 
 <span class="menu-text">Projects</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../blogs.html"> 
+<span class="menu-text">Blogs</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -184,7 +187,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="quarto-title">
 <h1 class="title">Permutation test in statistics</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">code</div>
     <div class="quarto-category">python</div>
     <div class="quarto-category">statistics</div>
   </div>
@@ -208,6 +210,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </div>
   </div>
   
+    <div>
+    <div class="quarto-title-meta-heading">Modified</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">March 27, 2025</p>
+    </div>
+  </div>
     
   </div>
   
@@ -224,7 +232,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1>Get the data</h1>
 <p>In this example, we are going to use an <strong>Age Dataset</strong><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. This dataset contains the details of work, life and death of historical individuals. The data is avialable publicly on github.</p>
 <p>For the following analysis, I will use just one part of the dataset from the <a href="https://github.com/Moradnejad/AgeDataset">AgeDataset github repository</a>.</p>
-<div id="a96841bf" class="cell" data-execution_count="1">
+<div id="51f44098" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -236,7 +244,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Download the csv file from the github repository</span></span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>age1 <span class="op">=</span> pd.read_csv(<span class="st">"https://raw.githubusercontent.com/Moradnejad/AgeDataset/refs/heads/main/AgeDataset-V1-Part1.csv"</span>, header <span class="op">=</span> <span class="dv">0</span>, delimiter <span class="op">=</span> <span class="st">","</span>)</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>age1.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="1">
+<div class="cell-output cell-output-display" data-execution_count="27">
 <div>
 
 
@@ -333,9 +341,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="explore-the-data" class="level1">
 <h1>Explore the data</h1>
 <p>Let’s look at the values available in the <code>Gender</code> column.</p>
-<div id="bef45bb9" class="cell" data-execution_count="2">
+<div id="03d9af39" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>age1[<span class="st">"Gender"</span>].value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="2">
+<div class="cell-output cell-output-display" data-execution_count="28">
 <pre><code>Gender
 Male                                              217216
 Female                                             21054
@@ -384,21 +392,26 @@ Figure&nbsp;1: Distribution of Age of death for males and females in the whole d
 </div>
 <p>We see from <a href="#fig-gender-distribution-all-data" class="quarto-xref">Figure&nbsp;1</a> that in the full dataset, there is not much difference in the <code>Age of death</code> between the genders. We can also see that there are significantly less <code>Females</code> in the data than <code>Males</code>.</p>
 <p>With the above observations, let’s look at the distribution of birth years in the data.</p>
-<div id="a235ad22" class="cell" data-execution_count="4">
+<div id="cell-fig-birth-year-distribution" class="cell" data-fig-caption="Count of number of individuals in the data born in each year." data-execution_count="4">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>sns.histplot(age1[<span class="st">"Birth year"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="index_files/figure-html/cell-5-output-1.png" width="605" height="435" class="figure-img"></p>
+<div id="fig-birth-year-distribution" class="quarto-float quarto-figure quarto-figure-center anchored" height="435" width="605">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-birth-year-distribution-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="index_files/figure-html/fig-birth-year-distribution-output-1.png" id="fig-birth-year-distribution" width="605" height="435" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-birth-year-distribution-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>The above plot shows that a majority of the data are for people born after the year 1000. We can take a look at the <code>Age of death</code> of both genders across centuries and ask if there is any difference across centuries.</p>
+<p><a href="#fig-birth-year-distribution" class="quarto-xref">Figure&nbsp;2</a> shows that a majority of the data are for people born after the year 1000. We can take a look at the <code>Age of death</code> of both genders across centuries and ask if there is any difference across centuries.</p>
 <p>In order to do the above, we need to create a new column called <code>century</code>, which will include all people born in each century after the year 1000.</p>
 <section id="look-at-the-number-of-people-born-in-each-century-after-the-year-1000" class="level2">
 <h2 class="anchored" data-anchor-id="look-at-the-number-of-people-born-in-each-century-after-the-year-1000">Look at the number of people born in each century after the year 1000</h2>
-<div id="d7a4dc9b" class="cell" data-execution_count="5">
+<div id="29c824e0" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a new column called Century</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>centuries <span class="op">=</span> np.arange(<span class="dv">1000</span>, <span class="dv">2100</span>, <span class="dv">100</span>)</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> age1.copy()</span>
@@ -409,7 +422,7 @@ Figure&nbsp;1: Distribution of Age of death for males and females in the whole d
 <span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>        label <span class="op">=</span> <span class="ss">f"</span><span class="sc">{</span><span class="bu">int</span>(century<span class="op">/</span><span class="dv">100</span>) <span class="op">+</span> <span class="dv">1</span><span class="sc">}</span><span class="ss">th century"</span></span>
 <span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    df.loc[(df[<span class="st">"Birth year"</span>] <span class="op">&gt;=</span> century) <span class="op">&amp;</span> (df[<span class="st">"Birth year"</span>] <span class="op">&lt;</span> century<span class="op">+</span><span class="dv">100</span>), <span class="st">"century"</span>] <span class="op">=</span> label</span>
 <span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"century"</span>].value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="5">
+<div class="cell-output cell-output-display" data-execution_count="31">
 <pre><code>century
 20th century    93651
 19th century    90686
@@ -429,9 +442,9 @@ Name: count, dtype: int64</code></pre>
 </section>
 <section id="look-at-the-median-difference-between-genders-across-centuries" class="level2">
 <h2 class="anchored" data-anchor-id="look-at-the-median-difference-between-genders-across-centuries">Look at the median difference between genders across centuries</h2>
-<div id="671a1591" class="cell" data-execution_count="6">
+<div id="f0992232" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">"Gender"</span>, <span class="st">"century"</span>, <span class="st">"Age of death"</span>]].groupby([<span class="st">"century"</span>, <span class="st">"Gender"</span>])[<span class="st">"Age of death"</span>].median()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="6">
+<div class="cell-output cell-output-display" data-execution_count="32">
 <pre><code>century       Gender
 11th century  Female    51.0
               Male      56.0
@@ -462,9 +475,9 @@ Name: Age of death, dtype: float64</code></pre>
 </section>
 <section id="look-at-the-total-individuals-in-the-data-split-by-gender-across-centuries" class="level2">
 <h2 class="anchored" data-anchor-id="look-at-the-total-individuals-in-the-data-split-by-gender-across-centuries">Look at the total individuals in the data split by gender across centuries</h2>
-<div id="8a923f2d" class="cell" data-execution_count="7">
+<div id="11011a18" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">"Gender"</span>, <span class="st">"century"</span>, <span class="st">"Age of death"</span>]].groupby([<span class="st">"century"</span>])[<span class="st">"Gender"</span>].value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="7">
+<div class="cell-output cell-output-display" data-execution_count="33">
 <pre><code>century       Gender
 11th century  Male        864
               Female      119
@@ -496,14 +509,14 @@ Name: count, dtype: int64</code></pre>
 </section>
 <section id="select-a-subset-of-the-data-for-individuals-born-in-the-13th-century" class="level1">
 <h1>Select a subset of the data for individuals born in the 13th century</h1>
-<div id="e6cc1d95" class="cell" data-execution_count="8">
+<div id="590c6613" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get the dataframe for the thirteenth century</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>df_thirteen <span class="op">=</span> df[df[<span class="st">"century"</span>] <span class="op">==</span> <span class="st">"13th century"</span>][[<span class="st">"century"</span>, <span class="st">"Gender"</span>, <span class="st">"Age of death"</span>]].copy().reset_index(drop <span class="op">=</span> <span class="va">True</span>)</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Drop the century column after checking that we have the right dataframe</span></span>
 <span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>df_thirteen.drop(columns<span class="op">=</span>[<span class="st">"century"</span>], inplace <span class="op">=</span> <span class="va">True</span>)</span>
 <span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>df_thirteen.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="8">
+<div class="cell-output cell-output-display" data-execution_count="34">
 <div>
 
 
@@ -553,7 +566,7 @@ Name: count, dtype: int64</code></pre>
 <p>Now that we have our dataset, we will: - calculate the observed difference in median value of <code>Age of death</code> between the genders. - shuffle the values of <code>Age of death</code> to create new datasets. Each new dataset will simulate that the gender labels could have been completely by chance and there is no effect of gender. - Create a distribution for difference in median of <code>Age of death</code> between genders for all iterations of the shuffled datasets. - Calculate how many times a value more extreme than the observed value of <code>Age of death</code> occurs in the distribution.</p>
 <section id="calculate-the-difference-between-median-age-of-death-of-genders-in-the-data" class="level2">
 <h2 class="anchored" data-anchor-id="calculate-the-difference-between-median-age-of-death-of-genders-in-the-data">Calculate the difference between median <code>Age of death</code> of genders in the data</h2>
-<div id="c7375e98" class="cell" data-execution_count="9">
+<div id="46249d2c" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define a function to calculate the statistic of interest</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calculate_median_diff_genders(df):</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    median_diff_genders <span class="op">=</span> (df[df[<span class="st">"Gender"</span>]<span class="op">==</span> <span class="st">"Male"</span>][<span class="st">"Age of death"</span>].median()) <span class="op">-</span> (df[df[<span class="st">"Gender"</span>]<span class="op">==</span> <span class="st">"Female"</span>][<span class="st">"Age of death"</span>].median())</span>
@@ -561,14 +574,14 @@ Name: count, dtype: int64</code></pre>
 <span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>observed_median_diff_genders <span class="op">=</span> calculate_median_diff_genders(df_thirteen)</span>
 <span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>observed_median_diff_genders</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="9">
+<div class="cell-output cell-output-display" data-execution_count="35">
 <pre><code>np.float64(9.0)</code></pre>
 </div>
 </div>
 </section>
 <section id="shuffle-the-data-1000-times-and-create-a-distribution-of-difference-between-median-age-of-death-of-genders" class="level2">
 <h2 class="anchored" data-anchor-id="shuffle-the-data-1000-times-and-create-a-distribution-of-difference-between-median-age-of-death-of-genders">Shuffle the data 1000 times and create a distribution of difference between median <code>Age of death</code> of genders</h2>
-<div id="c3ddd178" class="cell" data-execution_count="10">
+<div id="db2b608f" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">1000</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>median_diff_genders_distribution <span class="op">=</span> np.zeros(n)</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(n):</span>
@@ -579,53 +592,73 @@ Name: count, dtype: int64</code></pre>
 </section>
 <section id="calculate-95-confidence-intervals-for-observing-the-effect-of-gender-of-difference-in-median-value-of-age-of-death." class="level2">
 <h2 class="anchored" data-anchor-id="calculate-95-confidence-intervals-for-observing-the-effect-of-gender-of-difference-in-median-value-of-age-of-death.">Calculate 95% confidence intervals for observing the effect of gender of difference in median value of <code>Age of death</code>.</h2>
-<div id="65695be0" class="cell" data-execution_count="11">
+<div id="edfaa76c" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calcualte 95% confidence interval</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>median_diff_genders_distribution.sort()</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>left_value <span class="op">=</span> median_diff_genders_distribution[<span class="bu">int</span>(<span class="fl">2.5</span><span class="op">/</span><span class="dv">100</span><span class="op">*</span>n)]</span>
 <span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>right_value <span class="op">=</span> median_diff_genders_distribution[<span class="bu">int</span>(<span class="fl">97.5</span><span class="op">/</span><span class="dv">100</span><span class="op">*</span>n)]</span>
 <span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>left_value, right_value</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="11">
-<pre><code>(np.float64(-3.0), np.float64(4.0))</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="37">
+<pre><code>(np.float64(-4.0), np.float64(4.0))</code></pre>
 </div>
 </div>
 </section>
 <section id="calculate-the-p-value-for-the-observed-difference-in-median-of-age-of-death-between-genders" class="level2">
 <h2 class="anchored" data-anchor-id="calculate-the-p-value-for-the-observed-difference-in-median-of-age-of-death-between-genders">Calculate the p-value for the observed difference in median of <code>Age of death</code> between genders</h2>
-<div id="1c6ccf84" class="cell" data-execution_count="12">
+<div id="57360e1d" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>p_value <span class="op">=</span> np.<span class="bu">sum</span>((median_diff_genders_distribution <span class="op">&lt;</span> <span class="op">-</span><span class="bu">abs</span>(observed_median_diff_genders)) <span class="op">|</span> (median_diff_genders_distribution <span class="op">&gt;</span> <span class="bu">abs</span>(observed_median_diff_genders)))<span class="op">/</span>n<span class="op">*</span><span class="dv">100</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>p_value</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="12">
+<div class="cell-output cell-output-display" data-execution_count="38">
 <pre><code>np.float64(0.0)</code></pre>
 </div>
 </div>
 </section>
 <section id="plot-the-observed-statistic-with-the-obtained-distribution-and-95-confidence-intervals" class="level2">
 <h2 class="anchored" data-anchor-id="plot-the-observed-statistic-with-the-obtained-distribution-and-95-confidence-intervals">Plot the observed statistic with the obtained distribution and 95% confidence intervals</h2>
-<div id="cell-fig-permutation" class="cell" data-execution_count="13">
+<div class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>sns.histplot(median_diff_genders_distribution, discrete <span class="op">=</span> <span class="va">True</span>)</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>plt.axvline(x <span class="op">=</span> left_value, c <span class="op">=</span> <span class="st">"red"</span>, ls <span class="op">=</span> <span class="st">"--"</span>, label <span class="op">=</span> <span class="st">"95</span><span class="sc">% c</span><span class="st">onfidence interval"</span>)</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>plt.axvline(x <span class="op">=</span> right_value, c <span class="op">=</span> <span class="st">"red"</span>, ls <span class="op">=</span> <span class="st">"--"</span>)</span>
 <span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>plt. axvline(x <span class="op">=</span> observed_median_diff_genders, c <span class="op">=</span> <span class="st">"blue"</span>, lw <span class="op">=</span> <span class="dv">2</span>, label <span class="op">=</span> <span class="st">"observed value in the data"</span>)</span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>plt.legend(loc <span class="op">=</span> <span class="st">"upper left"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div id="fig-permutation" class="quarto-float quarto-figure quarto-figure-center anchored">
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>plt.legend(loc <span class="op">=</span> <span class="st">"upper left"</span>)</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Median age of death (Male) - Median age of death (Female)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="fig-permutation" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="13">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-permutation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="index_files/figure-html/fig-permutation-output-1.png" width="597" height="415" class="figure-img">
+<div id="fig-permutation-1" class="cell-output cell-output-display quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="39">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-permutation-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<pre id="fig-permutation-1" class="cell-output cell-output-display" data-execution_count="39"><code>Text(0.5, 0, 'Median age of death (Male) - Median age of death (Female)')</code></pre>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-permutation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: Comparison of observed statistic with distribution generated under null hypothesis. The left and right limits for 95% confidence interval are marked as dashed red lines. The actual value of the statistic (difference in median value of Age of death between males and females is marked by the solid black line.)
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-permutation-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Comparison of observed statistic with distribution generated under null hypothesis. The left and right limits for 95% confidence interval are marked as dashed red lines. The actual value of the statistic (difference in median value of Age of death between males and females is marked by the solid black line.)
 </figcaption>
 </figure>
 </div>
+<div class="cell-output cell-output-display">
+<div id="fig-permutation-2" class="quarto-float quarto-figure quarto-figure-center anchored" height="435" width="597">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-permutation-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="index_files/figure-html/fig-permutation-output-2.png" id="fig-permutation-2" data-ref-parent="fig-permutation" width="597" height="435" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-permutation-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b)
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-permutation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3
+</figcaption>
+</figure>
 </div>
 </div>
 </section>
 </section>
 <section id="conclusion" class="level1">
 <h1>Conclusion</h1>
-<p>We can see from <a href="#fig-permutation" class="quarto-xref">Figure&nbsp;2</a> that under null hypothesis, i.e., assuming that there is no impact of gender on <code>Age of death</code> of an individual in the thirteenth century, we do not observe any value as extreme as the value obtained for the data we have. Therefore, we can reject the null hypothesis and conclude that there is a statistically significant effect of gender on the <code>Age of death</code> of an individual in the thirteenth century.</p>
+<p>We can see from <a href="#fig-permutation" class="quarto-xref">Figure&nbsp;3</a> that under null hypothesis, i.e., assuming that there is no impact of gender on <code>Age of death</code> of an individual in the thirteenth century, we do not observe any value as extreme as the value obtained for the data we have. Therefore, we can reject the null hypothesis and conclude that there is a statistically significant effect of gender on the <code>Age of death</code> of an individual in the thirteenth century.</p>
 <p>The permuation algorithm is generic and can be used for any measurement. The idea is to compare an effect observed in the training data with a distribution generated by assuming that there is no effect in the data and calculate a p-value to determine the statistical significance of the effect. The permutation test does not involve making any assumptions about the distribution, and can therefore be used for quantities such as median and mode, for which no standard statistical tests exist.</p>
 
 
