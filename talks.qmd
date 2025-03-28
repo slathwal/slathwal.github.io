@@ -3,44 +3,55 @@ toc: true
 toc-depth: 4
 ---
 
+## Panel discussion: Implementing ML in biopharma R&D{.text-center}
+
 :::: {.columns}
-
-:::{.column width="45%"}
-
-## Panel discussion: Implementing ML in biopharma R&D
+:::{.column width="15%"}
+:::
+::: {.column width="60%"}
 {{< video https://www.youtube.com/watch?v=s0qyxYvuMa0>}}
-
 A discussion with Cyclica, Altis Labs, Elucidata, and Atomwise on how to run successful machine learning projects in biotech and pharma R&D.
 :::
-
-:::{.column width="5%"}
+:::{.column width="15%"}
 :::
+::::
 
-::: {.column width = "45%"}
+## Framework for quality of high-dimensional biological data{.text-center}
 
-## Framework for quality of high-dimensional biological data
-
+:::: {.columns}
+:::{.column width="15%"}
+:::
+:::{.column width="60%"}
 {{< video https://www.youtube.com/watch?v=QYXLI58w9zQ>}}
-
 Presentation at Elucidata's User Group Meeting on how our team evaluates and measures data quality while making high-dimensional biological data Findable, Accessible, Interoperable, and Reusable (FAIR).
 :::
+:::{.column width="15%"}
+:::
+::::
 
-:::{.column width="45%"}
-## Role of data-curation with ontologies in biopharma R&D
+## Role of data-curation with ontologies in biopharma R&D{.text-center}
+
+:::: {.columns}
+:::{.column width="15%"}
+:::
+:::{.column width="60%"}
 {{< video https://www.youtube.com/watch?v=TSgNfaz2ZS0>}}
-
 Talk with [Pistoia Alliance](https://www.pistoiaalliance.org/), a non-profit alliance working to increase pre-competitive collaboration in life sciences industry. The talk highlights the role of data curation through ontologies to make data FAIR and to accelerate research.
 :::
-
-:::{.column width="5%"}
+:::{.column width="15%"}
 :::
-
-:::{.column width=45%}
-## Product release: Curated multi-omics data atlas
-
-{{< video https://www.youtube.com/watch?v=jobtBNCjmMo&t=964s>}}
-
-Product release for Elucidata’s Liver OmixAtlas, the largest repository of ML-ready liver tissue-derived biological datasets. The goal is to provide a curated data source of scRNA-seq, RNA-seq, proteomics, and metabolomics data to accelerate drug discovery.
-:::
-
 ::::
+
+## Product release: Curated multi-omics data atlas {.text-center}
+
+:::: {.columns}
+:::{.column width="15%"}
+:::
+:::{.column width="60%"}
+{{< video https://www.youtube.com/watch?v=jobtBNCjmMo&t=964s>}}
+Product release for Elucidata’s Liver OmixAtlas, the largest repository of ML-ready liver tissue-derived biological datasets. The goal is to provide a curated data source of scRNA-seq, RNA-seq, proteomics, and metabolomics data to accelerate drug discovery.=
+:::
+:::{.column width="15%"}
+:::
+::::
+

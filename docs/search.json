@@ -1,24 +1,10 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Shefali Lathwal",
+    "objectID": "blogs.html",
+    "href": "blogs.html",
+    "title": "Posts",
     "section": "",
-    "text": "I am a Chemical Engineer turned Bioinformatician and Computational Biologist. I love mathematics, statistics, data analysis, and visualizations. I enjoy building relationships with people, working in cross-functional teams, and translating complex data into actionable insights."
-  },
-  {
-    "objectID": "background.html",
-    "href": "background.html",
-    "title": "Background",
-    "section": "",
-    "text": "I am a MIT-trained Ph.D. with interest in statistics, data science, biology, data visualizations, education, watercolour, sketching, and many more things."
-  },
-  {
-    "objectID": "projects/example_post/index.html",
-    "href": "projects/example_post/index.html",
-    "title": "Example post",
-    "section": "",
-    "text": "This is an example post that contains some code in python\n\na = 1+1\na\n\n2"
+    "text": "Permutation test in statistics\n\n\n\n\n\nIf you want to compare median value of two different groups in a training dataset, which statistical test will you use? If you do not know the answer, permutation test will come in handy.\n\n\n\n\n\nMar 27, 2025\n\n\nShefali Lathwal\n\n\n8 min\n\n\n1,420 words\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "projects.html",
@@ -28,74 +14,11 @@
     "text": "The PDAC-app is an interactive application that allows users to explore the pancreatic cancer data available from TCGA.\nYou can look at the overall demographic distribution of the patients, Kaplan Meier survival plots broken by clinical characteristics, and an analysis of tumor purity and molecular clusters in the data based on the article Integrated Genomics Characterization of Pancreatic Ductal Adenocarcinoma.\nYou can interact with the data in the shiny app here."
   },
   {
-    "objectID": "projects/example_post2/index.html",
-    "href": "projects/example_post2/index.html",
-    "title": "This is a second example post",
-    "section": "",
-    "text": "This is a second example post."
-  },
-  {
-    "objectID": "index.html#education",
-    "href": "index.html#education",
-    "title": "Shefali Lathwal",
-    "section": "Education",
-    "text": "Education\nMassachusetts Institute of Technology\nCambridge, MA, USA\nPh.D. in Chemical Engineering\nM.S. in Chemical Engineering Practice\nIndian Institute of Technology, Delhi\nNew Delhi, India\nM.S. in Process Engineering and Design\nB.Tech. In Chemical Engineering"
-  },
-  {
-    "objectID": "index.html#experience",
-    "href": "index.html#experience",
-    "title": "Shefali Lathwal",
-    "section": "Experience",
-    "text": "Experience\nElucidata Corporation | Director, data-centric AI\nJan 2022 - Oct 2022\nElucidata Corporation | Lead Scientist\nDec 2016 - Dec 2021"
-  },
-  {
-    "objectID": "projects.html#dashboard-for-clinical-data-for-pancreatic-cancer-from-the-cancer-genome-atlas-tcga",
-    "href": "projects.html#dashboard-for-clinical-data-for-pancreatic-cancer-from-the-cancer-genome-atlas-tcga",
-    "title": "Shefali Lathwal",
-    "section": "",
-    "text": "The PDAC-app is an interactive application that allows users to explore the pancreatic cancer data available from TCGA.\nYou can look at the overall demographic distribution of the patients, Kaplan Meier survival plots broken by clinical characteristics, and an analysis of tumor purity and molecular clusters in the data based on the article Integrated Genomics Characterization of Pancreatic Ductal Adenocarcinoma.\nYou can interact with the data in the shiny app here."
-  },
-  {
-    "objectID": "blogs.html",
-    "href": "blogs.html",
-    "title": "Posts",
-    "section": "",
-    "text": "Permutation test in statistics\n\n\n\n\n\n\n\n\n\n\n\nMar 27, 2025\n\n\nShefali Lathwal\n\n\n8 min\n\n\n1,452 words\n\n\n\n\n\n\nNo matching items\n\n Back to top"
-  },
-  {
-    "objectID": "blogs/example_post2/index.html",
-    "href": "blogs/example_post2/index.html",
-    "title": "This is a second example post",
-    "section": "",
-    "text": "This is a second example post."
-  },
-  {
-    "objectID": "projects.html#application-for-clinical-data-for-pancreatic-cancer-from-the-cancer-genome-atlas-tcga",
-    "href": "projects.html#application-for-clinical-data-for-pancreatic-cancer-from-the-cancer-genome-atlas-tcga",
-    "title": "Shefali Lathwal",
-    "section": "",
-    "text": "The PDAC-app is an interactive application that allows users to explore the pancreatic cancer data available from TCGA.\nYou can look at the overall demographic distribution of the patients, Kaplan Meier survival plots broken by clinical characteristics, and an analysis of tumor purity and molecular clusters in the data based on the article Integrated Genomics Characterization of Pancreatic Ductal Adenocarcinoma.\nYou can interact with the data in the shiny app here."
-  },
-  {
-    "objectID": "projects.html#application-for-analysis-of-political-donations-through-electoral-bonds-in-india",
-    "href": "projects.html#application-for-analysis-of-political-donations-through-electoral-bonds-in-india",
-    "title": "Shefali Lathwal",
-    "section": "Application for analysis of political donations through electoral bonds in India",
-    "text": "Application for analysis of political donations through electoral bonds in India\n\n\n\n\n\n\nThis web application was created as the final project for Harvard’s course, CS50: Introduction to Computer Science.\nIn this project, real-world data were extracted, cleaned, structured and imported into a shiny app for analysis and visualization. The following tools were used:\n\nPython for extracting the data from pdf to csv format\nR for data exploration and cleaning\nRShiny for data analysis and visualization.\nBootstrap library for R (bslib) to design a multi-page Shiny app"
-  },
-  {
     "objectID": "projects.html#analysis-of-clinical-and-molecular-data-for-pancreatic-cancer-from-the-cancer-genome-atlas-tcga",
     "href": "projects.html#analysis-of-clinical-and-molecular-data-for-pancreatic-cancer-from-the-cancer-genome-atlas-tcga",
     "title": "Shefali Lathwal",
     "section": "",
     "text": "The PDAC-app is an interactive application that allows users to explore the pancreatic cancer data available from TCGA.\nYou can look at the overall demographic distribution of the patients, Kaplan Meier survival plots broken by clinical characteristics, and an analysis of tumor purity and molecular clusters in the data based on the article Integrated Genomics Characterization of Pancreatic Ductal Adenocarcinoma.\nYou can interact with the data in the shiny app here."
-  },
-  {
-    "objectID": "projects.html#aanalysis-of-political-donations-through-electoral-bonds-in-india",
-    "href": "projects.html#aanalysis-of-political-donations-through-electoral-bonds-in-india",
-    "title": "Shefali Lathwal",
-    "section": "AAnalysis of political donations through electoral bonds in India",
-    "text": "AAnalysis of political donations through electoral bonds in India\n\n\n\n\n\n\nThis web application was created as the final project for Harvard’s course, CS50: Introduction to Computer Science.\nIn this project, real-world data were extracted, cleaned, structured and imported into a shiny app for analysis and visualization. The following tools were used:\n\nPython for extracting the data from pdf to csv format\nR for data exploration and cleaning\nRShiny for data analysis and visualization.\nBootstrap library for R (bslib) to design a multi-page Shiny app"
   },
   {
     "objectID": "projects.html#analysis-of-political-donations-through-electoral-bonds-in-india",
@@ -105,81 +28,25 @@
     "text": "Analysis of political donations through electoral bonds in India\n\n\n\n\n\n\nThis web application was created as the final project for Harvard’s course, CS50: Introduction to Computer Science. The following tools were used:\n\nPython for extracting the data from pdf to csv format\nR for data exploration and cleaning\nRShiny for data analysis and visualization.\nBootstrap library for R (bslib) to design a multi-page Shiny app"
   },
   {
-    "objectID": "blogs/example_post/index.html",
-    "href": "blogs/example_post/index.html",
-    "title": "Permutation test in statistics",
-    "section": "",
-    "text": "If you want to compare median value of two different groups in a training dataset, which statistical test will you use? If you do not know the answer, permutation test will come in handy.\nPermutation is a technique in statistics that allows you to perform hypothesis testing using any measurement of interest. The steps are as follows: 1. Calculate the statistic of interest on the given training data. 2. Assume that there is no difference between two groups in your training data and shuffle the data. 3. Re-calculate the statistic of interest on the shuffled data. 4. Repeat steps 2 and 3 many times. 5. Calculate how often the statistic of interest in the distribution has a value more extreme than the value calculated on the original training data. This fraction gives the p-value of the statistic of interest and allows you to draw a conclusion whether the difference observed in the two groups is statistically significant or not.\nThe permuation algorithm is generic and can be used for any measurement. The idea is to compare an effect observed in the training data with a distribution generated by assuming that there is no effect in the data and calculate a p-value to determine the statistical significance of the effect. The permutation test does not involve making any assumptions about the distribution, and can therefore be used for quantities such as median and mode, for which no standard statistical tests exist.\nLet’s look at an example of how to perform permutation test."
+    "objectID": "talks.html#framework-for-quality-of-high-dimensional-biological-data",
+    "href": "talks.html#framework-for-quality-of-high-dimensional-biological-data",
+    "title": "Shefali Lathwal",
+    "section": "Framework for quality of high-dimensional biological data",
+    "text": "Framework for quality of high-dimensional biological data\n\n\n\n\n Presentation at Elucidata’s User Group Meeting on how our team evaluates and measures data quality while making high-dimensional biological data Findable, Accessible, Interoperable, and Reusable (FAIR)."
   },
   {
-    "objectID": "blogs/example_post/index.html#look-at-the-number-of-people-born-in-each-century-after-the-year-1000",
-    "href": "blogs/example_post/index.html#look-at-the-number-of-people-born-in-each-century-after-the-year-1000",
-    "title": "Permutation test in statistics",
-    "section": "Look at the number of people born in each century after the year 1000",
-    "text": "Look at the number of people born in each century after the year 1000\n\n# Create a new column called Century\ncenturies = np.arange(1000, 2100, 100)\ndf = age1.copy()\nfor century in centuries:\n    if century &gt;= 2000:\n        label = f\"{int(century/100) + 1}st century\"\n    else:\n        label = f\"{int(century/100) + 1}th century\"\n    df.loc[(df[\"Birth year\"] &gt;= century) & (df[\"Birth year\"] &lt; century+100), \"century\"] = label\ndf[\"century\"].value_counts()\n\ncentury\n20th century    93651\n19th century    90686\n18th century    22699\n17th century     9894\n16th century     7491\n15th century     4135\n14th century     2129\n13th century     1843\n12th century     1488\n11th century      983\n21st century       37\nName: count, dtype: int64\n\n\nWe can now look to see if there is a difference in Age of death between genders across different centuries."
-  },
-  {
-    "objectID": "blogs/example_post/index.html#look-at-the-median-difference-between-genders-across-centuries",
-    "href": "blogs/example_post/index.html#look-at-the-median-difference-between-genders-across-centuries",
-    "title": "Permutation test in statistics",
-    "section": "Look at the median difference between genders across centuries",
-    "text": "Look at the median difference between genders across centuries\n\ndf[[\"Gender\", \"century\", \"Age of death\"]].groupby([\"century\", \"Gender\"])[\"Age of death\"].median()\n\ncentury       Gender\n11th century  Female    51.0\n              Male      56.0\n12th century  Female    50.5\n              Male      56.0\n13th century  Female    47.0\n              Male      56.0\n14th century  Female    46.0\n              Male      57.0\n15th century  Female    51.0\n              Male      60.0\n16th century  Female    55.0\n              Male      60.0\n17th century  Female    59.0\n              Male      64.0\n18th century  Female    64.0\n              Male      69.0\n19th century  Female    76.0\n              Male      72.0\n20th century  Female    78.0\n              Male      76.0\n21st century  Female    18.0\n              Male      17.0\nName: Age of death, dtype: float64\n\n\nWe can see that there are differences in median value of Age of death between the genders across centuries."
-  },
-  {
-    "objectID": "blogs/example_post/index.html#look-at-the-total-individuals-in-the-data-split-by-gender-across-centuries",
-    "href": "blogs/example_post/index.html#look-at-the-total-individuals-in-the-data-split-by-gender-across-centuries",
-    "title": "Permutation test in statistics",
-    "section": "Look at the total individuals in the data split by gender across centuries",
-    "text": "Look at the total individuals in the data split by gender across centuries\n\ndf[[\"Gender\", \"century\", \"Age of death\"]].groupby([\"century\"])[\"Gender\"].value_counts()\n\ncentury       Gender\n11th century  Male        864\n              Female      119\n12th century  Male       1300\n              Female      188\n13th century  Male       1566\n              Female      277\n14th century  Male       1828\n              Female      301\n15th century  Male       3743\n              Female      392\n16th century  Male       6912\n              Female      579\n17th century  Male       9186\n              Female      708\n18th century  Male      21406\n              Female     1293\n19th century  Male      84258\n              Female     6428\n20th century  Male      83259\n              Female    10392\n21st century  Male         28\n              Female        9\nName: count, dtype: int64\n\n\nFor the permutation test, we will pick a century and test if the median difference in Age of Death between genders is statistically significant or not. We can pick data from any century, but for the following analysis, we will focus on the 13th century."
-  },
-  {
-    "objectID": "blogs/example_post/index.html#calculate-the-difference-between-median-age-of-death-of-genders-in-the-data",
-    "href": "blogs/example_post/index.html#calculate-the-difference-between-median-age-of-death-of-genders-in-the-data",
-    "title": "Permutation test in statistics",
-    "section": "Calculate the difference between median Age of death of genders in the data",
-    "text": "Calculate the difference between median Age of death of genders in the data\n\n# Define a function to calculate the statistic of interest\ndef calculate_median_diff_genders(df):\n    median_diff_genders = (df[df[\"Gender\"]== \"Male\"][\"Age of death\"].median()) - (df[df[\"Gender\"]== \"Female\"][\"Age of death\"].median())\n    return median_diff_genders\n\nobserved_median_diff_genders = calculate_median_diff_genders(df_thirteen)\nobserved_median_diff_genders\n\nnp.float64(9.0)"
-  },
-  {
-    "objectID": "blogs/example_post/index.html#shuffle-the-data-1000-times-and-create-a-distribution-of-difference-between-median-age-of-death-of-genders",
-    "href": "blogs/example_post/index.html#shuffle-the-data-1000-times-and-create-a-distribution-of-difference-between-median-age-of-death-of-genders",
-    "title": "Permutation test in statistics",
-    "section": "Shuffle the data 1000 times and create a distribution of difference between median Age of death of genders",
-    "text": "Shuffle the data 1000 times and create a distribution of difference between median Age of death of genders\n\nn = 1000\nmedian_diff_genders_distribution = np.zeros(n)\nfor i in range(n):\n    shuffled_age = df_thirteen[\"Age of death\"].sample(df_thirteen.shape[0], replace = False).reset_index(drop = True)\n    df_shuffled = pd.DataFrame({\"Gender\": df_thirteen[\"Gender\"], \"Age of death\": shuffled_age})\n    median_diff_genders_distribution[i] = calculate_median_diff_genders(df_shuffled)"
-  },
-  {
-    "objectID": "blogs/example_post/index.html#calculate-95-confidence-intervals-for-observing-the-effect-of-gender-of-difference-in-median-value-of-age-of-death.",
-    "href": "blogs/example_post/index.html#calculate-95-confidence-intervals-for-observing-the-effect-of-gender-of-difference-in-median-value-of-age-of-death.",
-    "title": "Permutation test in statistics",
-    "section": "Calculate 95% confidence intervals for observing the effect of gender of difference in median value of Age of death.",
-    "text": "Calculate 95% confidence intervals for observing the effect of gender of difference in median value of Age of death.\n\n# Calcualte 95% confidence interval\nmedian_diff_genders_distribution.sort()\nleft_value = median_diff_genders_distribution[int(2.5/100*n)]\nright_value = median_diff_genders_distribution[int(97.5/100*n)]\nleft_value, right_value\n\n(np.float64(-3.0), np.float64(4.0))"
-  },
-  {
-    "objectID": "blogs/example_post/index.html#calculate-the-p-value-for-the-observed-difference-in-median-of-age-of-death-between-genders",
-    "href": "blogs/example_post/index.html#calculate-the-p-value-for-the-observed-difference-in-median-of-age-of-death-between-genders",
-    "title": "Permutation test in statistics",
-    "section": "Calculate the p-value for the observed difference in median of Age of death between genders",
-    "text": "Calculate the p-value for the observed difference in median of Age of death between genders\n\np_value = np.sum((median_diff_genders_distribution &lt; -abs(observed_median_diff_genders)) | (median_diff_genders_distribution &gt; abs(observed_median_diff_genders)))/n*100\np_value\n\nnp.float64(0.0)"
-  },
-  {
-    "objectID": "blogs/example_post/index.html#plot-the-observed-statistic-with-the-obtained-distribution-and-95-confidence-intervals",
-    "href": "blogs/example_post/index.html#plot-the-observed-statistic-with-the-obtained-distribution-and-95-confidence-intervals",
-    "title": "Permutation test in statistics",
-    "section": "Plot the observed statistic with the obtained distribution and 95% confidence intervals",
-    "text": "Plot the observed statistic with the obtained distribution and 95% confidence intervals\n\nsns.histplot(median_diff_genders_distribution, discrete = True)\nplt.axvline(x = left_value, c = \"red\", ls = \"--\", label = \"95% confidence interval\")\nplt.axvline(x = right_value, c = \"red\", ls = \"--\")\nplt. axvline(x = observed_median_diff_genders, c = \"blue\", lw = 2, label = \"observed value in the data\")\nplt.legend(loc = \"upper left\")\n\n\n\n\n\n\n\nFigure 2: Comparison of observed statistic with distribution generated under null hypothesis. The left and right limits for 95% confidence interval are marked as dashed red lines. The actual value of the statistic (difference in median value of Age of death between males and females is marked by the solid black line.)"
-  },
-  {
-    "objectID": "blogs/example_post/index.html#footnotes",
-    "href": "blogs/example_post/index.html#footnotes",
-    "title": "Permutation test in statistics",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\n Amoradnejad, Issa; Amoradnejad, Rahimberdi; et al. (2022). “Age dataset: A structured general-purpose dataset on life, work, and death of 1.22 million distinguished people”. Workshop Proceedings of the 16th International AAAI Conference on Web and Social Media (ICWSM). 3. ICWSM: 1–4. doi:10.36190/2022.82.↩︎"
+    "objectID": "talks.html#product-release-curated-multi-omics-data-atlas",
+    "href": "talks.html#product-release-curated-multi-omics-data-atlas",
+    "title": "Shefali Lathwal",
+    "section": "Product release: Curated multi-omics data atlas",
+    "text": "Product release: Curated multi-omics data atlas\n\n\n\n\n Product release for Elucidata’s Liver OmixAtlas, the largest repository of ML-ready liver tissue-derived biological datasets. The goal is to provide a curated data source of scRNA-seq, RNA-seq, proteomics, and metabolomics data to accelerate drug discovery.="
   },
   {
     "objectID": "blogs/2025-03-27/index.html",
     "href": "blogs/2025-03-27/index.html",
     "title": "Permutation test in statistics",
     "section": "",
-    "text": "If you want to compare median value of two different groups in a training dataset, which statistical test will you use? If you do not know the answer, permutation test will come in handy.\nPermutation is a technique in statistics that allows you to perform hypothesis testing using any measurement of interest. The steps are as follows:\nThe permuation algorithm is generic and can be used for any measurement. The idea is to compare an effect observed in the training data with a distribution generated by assuming that there is no effect in the data and calculate a p-value to determine the statistical significance of the effect. The permutation test does not involve making any assumptions about the distribution, and can therefore be used for quantities such as median and mode, for which no standard statistical tests exist.\nLet’s look at an example of how to perform permutation test."
+    "text": "Permutation is a technique in statistics that allows you to perform hypothesis testing using any measurement of interest. The steps are as follows:\nThe permuation algorithm is generic and can be used for any measurement. The idea is to compare an effect observed in the training data with a distribution generated by assuming that there is no effect in the data and calculate a p-value to determine the statistical significance of the effect. The permutation test does not involve making any assumptions about the distribution, and can therefore be used for quantities such as median and mode, for which no standard statistical tests exist.\nLet’s look at an example of how to perform permutation test."
   },
   {
     "objectID": "blogs/2025-03-27/index.html#look-at-the-number-of-people-born-in-each-century-after-the-year-1000",
@@ -207,7 +74,7 @@
     "href": "blogs/2025-03-27/index.html#calculate-the-difference-between-median-age-of-death-of-genders-in-the-data",
     "title": "Permutation test in statistics",
     "section": "Calculate the difference between median Age of death of genders in the data",
-    "text": "Calculate the difference between median Age of death of genders in the data\n\n# Define a function to calculate the statistic of interest\ndef calculate_median_diff_genders(df):\n    median_diff_genders = (df[df[\"Gender\"]== \"Male\"][\"Age of death\"].median()) - (df[df[\"Gender\"]== \"Female\"][\"Age of death\"].median())\n    return median_diff_genders\n\nobserved_median_diff_genders = calculate_median_diff_genders(df_thirteen)\nobserved_median_diff_genders\n\nnp.float64(9.0)"
+    "text": "Calculate the difference between median Age of death of genders in the data\n\n# Define a function to calculate the statistic of interest\ndef calculate_median_diff_genders(df):\n    median_diff_genders = (df[df[\"Gender\"]== \"Male\"][\"Age of death\"].median()) - (df[df[\"Gender\"]== \"Female\"][\"Age of death\"].median())\n    return median_diff_genders\n\nobserved_median_diff_genders = calculate_median_diff_genders(df_thirteen)\nobserved_median_diff_genders\n\n9.0"
   },
   {
     "objectID": "blogs/2025-03-27/index.html#shuffle-the-data-1000-times-and-create-a-distribution-of-difference-between-median-age-of-death-of-genders",
@@ -221,14 +88,14 @@
     "href": "blogs/2025-03-27/index.html#calculate-95-confidence-intervals-for-observing-the-effect-of-gender-of-difference-in-median-value-of-age-of-death.",
     "title": "Permutation test in statistics",
     "section": "Calculate 95% confidence intervals for observing the effect of gender of difference in median value of Age of death.",
-    "text": "Calculate 95% confidence intervals for observing the effect of gender of difference in median value of Age of death.\n\n# Calcualte 95% confidence interval\nmedian_diff_genders_distribution.sort()\nleft_value = median_diff_genders_distribution[int(2.5/100*n)]\nright_value = median_diff_genders_distribution[int(97.5/100*n)]\nleft_value, right_value\n\n(np.float64(-3.0), np.float64(4.0))"
+    "text": "Calculate 95% confidence intervals for observing the effect of gender of difference in median value of Age of death.\n\n# Calcualte 95% confidence interval\nmedian_diff_genders_distribution.sort()\nleft_value = median_diff_genders_distribution[int(2.5/100*n)]\nright_value = median_diff_genders_distribution[int(97.5/100*n)]\nleft_value, right_value\n\n(-4.0, 4.0)"
   },
   {
     "objectID": "blogs/2025-03-27/index.html#calculate-the-p-value-for-the-observed-difference-in-median-of-age-of-death-between-genders",
     "href": "blogs/2025-03-27/index.html#calculate-the-p-value-for-the-observed-difference-in-median-of-age-of-death-between-genders",
     "title": "Permutation test in statistics",
     "section": "Calculate the p-value for the observed difference in median of Age of death between genders",
-    "text": "Calculate the p-value for the observed difference in median of Age of death between genders\n\np_value = np.sum((median_diff_genders_distribution &lt; -abs(observed_median_diff_genders)) | (median_diff_genders_distribution &gt; abs(observed_median_diff_genders)))/n*100\np_value\n\nnp.float64(0.0)"
+    "text": "Calculate the p-value for the observed difference in median of Age of death between genders\n\np_value = np.sum((median_diff_genders_distribution &lt; -abs(observed_median_diff_genders)) | (median_diff_genders_distribution &gt; abs(observed_median_diff_genders)))/n*100\np_value\n\n0.0"
   },
   {
     "objectID": "blogs/2025-03-27/index.html#plot-the-observed-statistic-with-the-obtained-distribution-and-95-confidence-intervals",
@@ -245,39 +112,74 @@
     "text": "Footnotes\n\n\n Amoradnejad, Issa; Amoradnejad, Rahimberdi; et al. (2022). “Age dataset: A structured general-purpose dataset on life, work, and death of 1.22 million distinguished people”. Workshop Proceedings of the 16th International AAAI Conference on Web and Social Media (ICWSM). 3. ICWSM: 1–4. doi:10.36190/2022.82.↩︎"
   },
   {
+    "objectID": "background.html",
+    "href": "background.html",
+    "title": "Background",
+    "section": "",
+    "text": "I am a MIT-trained Ph.D. with interest in statistics, data science, biology, data visualizations, education, watercolour, sketching, and many more things.\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "talks1.html",
+    "href": "talks1.html",
+    "title": "Shefali Lathwal",
+    "section": "",
+    "text": "A discussion with Cyclica, Altis Labs, Elucidata, and Atomwise on how to run successful machine learning projects in biotech and pharma R&D.\n\n\n\n\n\n\n\nPresentation at Elucidata’s User Group Meeting on how our team evaluates and measures data quality while making high-dimensional biological data Findable, Accessible, Interoperable, and Reusable (FAIR).\n\n\n\n\n\nTalk with Pistoia Alliance, a non-profit alliance working to increase pre-competitive collaboration in life sciences industry. The talk highlights the role of data curation through ontologies to make data FAIR and to accelerate research.\n\n\n\n\n\n\n\nProduct release for Elucidata’s Liver OmixAtlas, the largest repository of ML-ready liver tissue-derived biological datasets. The goal is to provide a curated data source of scRNA-seq, RNA-seq, proteomics, and metabolomics data to accelerate drug discovery."
+  },
+  {
+    "objectID": "talks1.html#panel-discussion-implementing-ml-in-biopharma-rd",
+    "href": "talks1.html#panel-discussion-implementing-ml-in-biopharma-rd",
+    "title": "Shefali Lathwal",
+    "section": "",
+    "text": "A discussion with Cyclica, Altis Labs, Elucidata, and Atomwise on how to run successful machine learning projects in biotech and pharma R&D."
+  },
+  {
+    "objectID": "talks1.html#framework-for-quality-of-high-dimensional-biological-data",
+    "href": "talks1.html#framework-for-quality-of-high-dimensional-biological-data",
+    "title": "Shefali Lathwal",
+    "section": "",
+    "text": "Presentation at Elucidata’s User Group Meeting on how our team evaluates and measures data quality while making high-dimensional biological data Findable, Accessible, Interoperable, and Reusable (FAIR)."
+  },
+  {
+    "objectID": "talks1.html#role-of-data-curation-with-ontologies-in-biopharma-rd",
+    "href": "talks1.html#role-of-data-curation-with-ontologies-in-biopharma-rd",
+    "title": "Shefali Lathwal",
+    "section": "",
+    "text": "Talk with Pistoia Alliance, a non-profit alliance working to increase pre-competitive collaboration in life sciences industry. The talk highlights the role of data curation through ontologies to make data FAIR and to accelerate research."
+  },
+  {
+    "objectID": "talks1.html#product-release-curated-multi-omics-data-atlas",
+    "href": "talks1.html#product-release-curated-multi-omics-data-atlas",
+    "title": "Shefali Lathwal",
+    "section": "",
+    "text": "Product release for Elucidata’s Liver OmixAtlas, the largest repository of ML-ready liver tissue-derived biological datasets. The goal is to provide a curated data source of scRNA-seq, RNA-seq, proteomics, and metabolomics data to accelerate drug discovery."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Shefali Lathwal",
+    "section": "",
+    "text": "I am a Chemical Engineer turned Bioinformatician and Computational Biologist. I love mathematics, statistics, data analysis, and visualizations. I enjoy building relationships with people, working in cross-functional teams, and translating complex data into actionable insights."
+  },
+  {
+    "objectID": "index.html#experience",
+    "href": "index.html#experience",
+    "title": "Shefali Lathwal",
+    "section": "Experience",
+    "text": "Experience\nElucidata Corporation | Director, data-centric AI\nJan 2022 - Oct 2022\nElucidata Corporation | Lead Scientist\nDec 2016 - Dec 2021"
+  },
+  {
+    "objectID": "index.html#education",
+    "href": "index.html#education",
+    "title": "Shefali Lathwal",
+    "section": "Education",
+    "text": "Education\nMassachusetts Institute of Technology\nCambridge, MA, USA\nPh.D. in Chemical Engineering\nM.S. in Chemical Engineering Practice\nIndian Institute of Technology, Delhi\nNew Delhi, India\nM.S. in Process Engineering and Design\nB.Tech. In Chemical Engineering"
+  },
+  {
     "objectID": "talks.html",
     "href": "talks.html",
     "title": "Shefali Lathwal",
     "section": "",
-    "text": "A discussion with Cyclica, Altis Labs, Elucidata, and Atomwise on how to run successful machine learning projects in biotech and pharma R&D.\n\n\n\n\n\n\n\nPresentation at Elucidata’s User Group Meeting on how our team evaluates and measures data quality while making high-dimensional biological data Findable, Accessible, Interoperable, and Reusable (FAIR).\n\n\n\n\n\nTalk with Pistoia Alliance, a non-profit alliance working to increase pre-competitive collaboration in life sciences industry. The talk highlights the role of data curation through ontologies to make data FAIR and to accelerate research.\n\n\n\n\n\n\n\nProduct release for Elucidata’s Liver OmixAtlas, the largest repository of ML-ready liver tissue-derived biological datasets. The goal is to provide a curated data source of scRNA-seq, RNA-seq, proteomics and metabolomics data to accelerate drug discovery."
-  },
-  {
-    "objectID": "talks.html#panel-discussion-implementing-ml-in-bio-rd",
-    "href": "talks.html#panel-discussion-implementing-ml-in-bio-rd",
-    "title": "Shefali Lathwal",
-    "section": "",
     "text": "A discussion with Cyclica, Altis Labs, Elucidata, and Atomwise on how to run successful machine learning projects in biotech and pharma R&D."
-  },
-  {
-    "objectID": "talks.html#framework-for-quality-of-high-dimensional-biological-data",
-    "href": "talks.html#framework-for-quality-of-high-dimensional-biological-data",
-    "title": "Shefali Lathwal",
-    "section": "",
-    "text": "Presentation at Elucidata’s User Group Meeting on how our team evaluates and measures data quality while making high-dimensional biological data Findable, Accessible, Interoperable, and Reusable (FAIR)."
-  },
-  {
-    "objectID": "talks.html#panel-discussion-implementing-ml-in-bio-rd-1",
-    "href": "talks.html#panel-discussion-implementing-ml-in-bio-rd-1",
-    "title": "Shefali Lathwal",
-    "section": "",
-    "text": "A discussion with Cyclica, Altis Labs, Elucidata, and Atomwise on how to run successful machine learning projects in biotech and pharma R&D."
-  },
-  {
-    "objectID": "talks.html#framework-for-quality-of-high-dimensional-biological-data-1",
-    "href": "talks.html#framework-for-quality-of-high-dimensional-biological-data-1",
-    "title": "Shefali Lathwal",
-    "section": "",
-    "text": "Presentation at Elucidata’s User Group Meeting on how our team evaluates and measures data quality while making high-dimensional biological data Findable, Accessible, Interoperable, and Reusable (FAIR)."
   },
   {
     "objectID": "talks.html#panel-discussion-implementing-ml-in-biopharma-rd",
@@ -287,17 +189,45 @@
     "text": "A discussion with Cyclica, Altis Labs, Elucidata, and Atomwise on how to run successful machine learning projects in biotech and pharma R&D."
   },
   {
+    "objectID": "talks.html#panel-discussion-implementing-ml-in-biopharma-r",
+    "href": "talks.html#panel-discussion-implementing-ml-in-biopharma-r",
+    "title": "Shefali Lathwal",
+    "section": "",
+    "text": "A discussion with Cyclica, Altis Labs, Elucidata, and Atomwise on how to run successful machine learning projects in biotech and pharma R&D."
+  },
+  {
+    "objectID": "talks.html#panel-discussion-implementing-ml-in-biopharma-rdtext",
+    "href": "talks.html#panel-discussion-implementing-ml-in-biopharma-rdtext",
+    "title": "Shefali Lathwal",
+    "section": "",
+    "text": "A discussion with Cyclica, Altis Labs, Elucidata, and Atomwise on how to run successful machine learning projects in biotech and pharma R&D."
+  },
+  {
+    "objectID": "talks.html#panel-discussion-implementing-ml-in-biopharma-rdtext-align-cetner",
+    "href": "talks.html#panel-discussion-implementing-ml-in-biopharma-rdtext-align-cetner",
+    "title": "Shefali Lathwal",
+    "section": "",
+    "text": "A discussion with Cyclica, Altis Labs, Elucidata, and Atomwise on how to run successful machine learning projects in biotech and pharma R&D."
+  },
+  {
+    "objectID": "talks.html#panel-discussion-implementing-ml-in-biopharma-rdtext-align-center",
+    "href": "talks.html#panel-discussion-implementing-ml-in-biopharma-rdtext-align-center",
+    "title": "Shefali Lathwal",
+    "section": "",
+    "text": "A discussion with Cyclica, Altis Labs, Elucidata, and Atomwise on how to run successful machine learning projects in biotech and pharma R&D."
+  },
+  {
     "objectID": "talks.html#role-of-data-curation-with-ontologies-in-biopharma-rd",
     "href": "talks.html#role-of-data-curation-with-ontologies-in-biopharma-rd",
     "title": "Shefali Lathwal",
-    "section": "",
-    "text": "Talk with Pistoia Alliance, a non-profit alliance working to increase pre-competitive collaboration in life sciences industry. The talk highlights the role of data curation through ontologies to make data FAIR and to accelerate research."
+    "section": "Role of data-curation with ontologies in biopharma R&D",
+    "text": "Role of data-curation with ontologies in biopharma R&D\n\n\n\n\n Talk with Pistoia Alliance, a non-profit alliance working to increase pre-competitive collaboration in life sciences industry. The talk highlights the role of data curation through ontologies to make data FAIR and to accelerate research."
   },
   {
-    "objectID": "talks.html#product-release-curated-multi-omics-data-atlas",
-    "href": "talks.html#product-release-curated-multi-omics-data-atlas",
+    "objectID": "talks.html#panel-discussion-implementing-ml-in-biopharma-rd.text-center",
+    "href": "talks.html#panel-discussion-implementing-ml-in-biopharma-rd.text-center",
     "title": "Shefali Lathwal",
     "section": "",
-    "text": "Product release for Elucidata’s Liver OmixAtlas, the largest repository of ML-ready liver tissue-derived biological datasets. The goal is to provide a curated data source of scRNA-seq, RNA-seq, proteomics and metabolomics data to accelerate drug discovery."
+    "text": "A discussion with Cyclica, Altis Labs, Elucidata, and Atomwise on how to run successful machine learning projects in biotech and pharma R&D."
   }
 ]

@@ -1,12 +1,5 @@
 [
   {
-    "listing": "/projects.html",
-    "items": [
-      "/projects/example_post/index.html",
-      "/projects/example_post2/index.html"
-    ]
-  },
-  {
     "listing": "/blogs.html",
     "items": [
       "/blogs/2025-03-27/index.html"

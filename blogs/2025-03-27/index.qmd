@@ -1,5 +1,6 @@
 ---
 title: "Permutation test in statistics"
+description: "If you want to compare median value of two different groups in a training dataset, which statistical test will you use? If you do not know the answer, permutation test will come in handy."
 author: "Shefali Lathwal"
 date: "2025-03-27"
 date-modified: last-modified
@@ -8,10 +9,6 @@ image: "permutation-in-statistics.png"
 draft: false
 freeze: false
 ---
-
-If you want to compare median value of two different groups in a training dataset, which statistical test will you use?
-If you do not know the answer, permutation test will come in handy.
-
 Permutation is a technique in statistics that allows you to perform hypothesis testing using any measurement of interest. The steps are as follows:
 
 1. Calculate the statistic of interest on the given training data.
