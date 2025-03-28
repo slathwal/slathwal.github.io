@@ -39,7 +39,7 @@
     "href": "talks.html#product-release-curated-multi-omics-data-atlas",
     "title": "Shefali Lathwal",
     "section": "Product release: Curated multi-omics data atlas",
-    "text": "Product release: Curated multi-omics data atlas\n\n\n\n\n Product release for Elucidata’s Liver OmixAtlas, the largest repository of ML-ready liver tissue-derived biological datasets. The goal is to provide a curated data source of scRNA-seq, RNA-seq, proteomics, and metabolomics data to accelerate drug discovery.="
+    "text": "Product release: Curated multi-omics data atlas\n\n\n\n\n Product release for Elucidata’s Liver OmixAtlas, the largest repository of ML-ready liver tissue-derived biological datasets. The goal is to provide a curated data source of scRNA-seq, RNA-seq, proteomics, and metabolomics data to accelerate drug discovery."
   },
   {
     "objectID": "blogs/2025-03-27/index.html",
@@ -121,37 +121,37 @@
   {
     "objectID": "talks1.html",
     "href": "talks1.html",
-    "title": "Shefali Lathwal",
+    "title": " Heading 1 ",
     "section": "",
-    "text": "A discussion with Cyclica, Altis Labs, Elucidata, and Atomwise on how to run successful machine learning projects in biotech and pharma R&D.\n\n\n\n\n\n\n\nPresentation at Elucidata’s User Group Meeting on how our team evaluates and measures data quality while making high-dimensional biological data Findable, Accessible, Interoperable, and Reusable (FAIR).\n\n\n\n\n\nTalk with Pistoia Alliance, a non-profit alliance working to increase pre-competitive collaboration in life sciences industry. The talk highlights the role of data curation through ontologies to make data FAIR and to accelerate research.\n\n\n\n\n\n\n\nProduct release for Elucidata’s Liver OmixAtlas, the largest repository of ML-ready liver tissue-derived biological datasets. The goal is to provide a curated data source of scRNA-seq, RNA-seq, proteomics, and metabolomics data to accelerate drug discovery."
+    "text": "Heading 1"
   },
   {
     "objectID": "talks1.html#panel-discussion-implementing-ml-in-biopharma-rd",
     "href": "talks1.html#panel-discussion-implementing-ml-in-biopharma-rd",
-    "title": "Shefali Lathwal",
-    "section": "",
-    "text": "A discussion with Cyclica, Altis Labs, Elucidata, and Atomwise on how to run successful machine learning projects in biotech and pharma R&D."
+    "title": " Heading 1 ",
+    "section": "Panel discussion: Implementing ML in biopharma R&D",
+    "text": "Panel discussion: Implementing ML in biopharma R&D\n\nA discussion with Cyclica, Altis Labs, Elucidata, and Atomwise on how to run successful machine learning projects in biotech and pharma R&D."
   },
   {
     "objectID": "talks1.html#framework-for-quality-of-high-dimensional-biological-data",
     "href": "talks1.html#framework-for-quality-of-high-dimensional-biological-data",
-    "title": "Shefali Lathwal",
-    "section": "",
-    "text": "Presentation at Elucidata’s User Group Meeting on how our team evaluates and measures data quality while making high-dimensional biological data Findable, Accessible, Interoperable, and Reusable (FAIR)."
+    "title": " Heading 1 ",
+    "section": "Framework for quality of high-dimensional biological data",
+    "text": "Framework for quality of high-dimensional biological data\n\nPresentation at Elucidata’s User Group Meeting on how our team evaluates and measures data quality while making high-dimensional biological data Findable, Accessible, Interoperable, and Reusable (FAIR)."
   },
   {
     "objectID": "talks1.html#role-of-data-curation-with-ontologies-in-biopharma-rd",
     "href": "talks1.html#role-of-data-curation-with-ontologies-in-biopharma-rd",
-    "title": "Shefali Lathwal",
-    "section": "",
-    "text": "Talk with Pistoia Alliance, a non-profit alliance working to increase pre-competitive collaboration in life sciences industry. The talk highlights the role of data curation through ontologies to make data FAIR and to accelerate research."
+    "title": " Heading 1 ",
+    "section": "Role of data-curation with ontologies in biopharma R&D",
+    "text": "Role of data-curation with ontologies in biopharma R&D\n\nTalk with Pistoia Alliance, a non-profit alliance working to increase pre-competitive collaboration in life sciences industry. The talk highlights the role of data curation through ontologies to make data FAIR and to accelerate research."
   },
   {
     "objectID": "talks1.html#product-release-curated-multi-omics-data-atlas",
     "href": "talks1.html#product-release-curated-multi-omics-data-atlas",
-    "title": "Shefali Lathwal",
-    "section": "",
-    "text": "Product release for Elucidata’s Liver OmixAtlas, the largest repository of ML-ready liver tissue-derived biological datasets. The goal is to provide a curated data source of scRNA-seq, RNA-seq, proteomics, and metabolomics data to accelerate drug discovery."
+    "title": " Heading 1 ",
+    "section": "Product release: Curated multi-omics data atlas",
+    "text": "Product release: Curated multi-omics data atlas\n\nProduct release for Elucidata’s Liver OmixAtlas, the largest repository of ML-ready liver tissue-derived biological datasets. The goal is to provide a curated data source of scRNA-seq, RNA-seq, proteomics, and metabolomics data to accelerate drug discovery."
   },
   {
     "objectID": "index.html",
