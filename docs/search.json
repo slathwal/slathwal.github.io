@@ -58,7 +58,7 @@
   {
     "objectID": "blogs.html",
     "href": "blogs.html",
-    "title": "Blogs",
+    "title": "Posts",
     "section": "",
     "text": "Permutation test in statistics\n\n\n\n\n\n\n\n\n\n\n\nMar 27, 2025\n\n\nShefali Lathwal\n\n\n8 min\n\n\n1,452 words\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
@@ -221,7 +221,7 @@
     "href": "blogs/2025-03-27/index.html#calculate-95-confidence-intervals-for-observing-the-effect-of-gender-of-difference-in-median-value-of-age-of-death.",
     "title": "Permutation test in statistics",
     "section": "Calculate 95% confidence intervals for observing the effect of gender of difference in median value of Age of death.",
-    "text": "Calculate 95% confidence intervals for observing the effect of gender of difference in median value of Age of death.\n\n# Calcualte 95% confidence interval\nmedian_diff_genders_distribution.sort()\nleft_value = median_diff_genders_distribution[int(2.5/100*n)]\nright_value = median_diff_genders_distribution[int(97.5/100*n)]\nleft_value, right_value\n\n(np.float64(-4.0), np.float64(4.0))"
+    "text": "Calculate 95% confidence intervals for observing the effect of gender of difference in median value of Age of death.\n\n# Calcualte 95% confidence interval\nmedian_diff_genders_distribution.sort()\nleft_value = median_diff_genders_distribution[int(2.5/100*n)]\nright_value = median_diff_genders_distribution[int(97.5/100*n)]\nleft_value, right_value\n\n(np.float64(-3.5), np.float64(4.0))"
   },
   {
     "objectID": "blogs/2025-03-27/index.html#calculate-the-p-value-for-the-observed-difference-in-median-of-age-of-death-between-genders",

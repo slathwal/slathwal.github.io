@@ -6,6 +6,7 @@ date-modified: last-modified
 categories: [python, statistics]
 image: "permutation-in-statistics.png"
 draft: false
+freeze: true
 ---
 
 If you want to compare median value of two different groups in a training dataset, which statistical test will you use?

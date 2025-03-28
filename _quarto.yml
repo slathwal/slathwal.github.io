@@ -24,7 +24,7 @@ website:
         href: projects.qmd
       #- talks: Talks
       #  href: talks.qmd
-      - text: Blogs
+      - text: Blog
         href: blogs.qmd
     tools:
       - icon: linkedin
