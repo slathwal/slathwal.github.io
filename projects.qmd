@@ -4,7 +4,7 @@ toc: true
 
 ## Analysis of clinical and molecular data for pancreatic cancer from The Cancer Genome Atlas (TCGA)
 
-:::: columns
+:::: {.columns}
 
 ::: {.column width="55%"}
 The PDAC-app is an interactive application that allows users to explore the pancreatic cancer data available from TCGA. 

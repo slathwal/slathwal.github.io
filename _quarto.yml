@@ -22,8 +22,8 @@ website:
         href: index.qmd
       - text: Projects
         href: projects.qmd
-      #- talks: Talks
-      #  href: talks.qmd
+      - text: Talks
+        href: talks.qmd
       - text: Blog
         href: blogs.qmd
     tools:

@@ -243,5 +243,61 @@
     "title": "Permutation test in statistics",
     "section": "Footnotes",
     "text": "Footnotes\n\n\n Amoradnejad, Issa; Amoradnejad, Rahimberdi; et al. (2022). “Age dataset: A structured general-purpose dataset on life, work, and death of 1.22 million distinguished people”. Workshop Proceedings of the 16th International AAAI Conference on Web and Social Media (ICWSM). 3. ICWSM: 1–4. doi:10.36190/2022.82.↩︎"
+  },
+  {
+    "objectID": "talks.html",
+    "href": "talks.html",
+    "title": "Shefali Lathwal",
+    "section": "",
+    "text": "A discussion with Cyclica, Altis Labs, Elucidata, and Atomwise on how to run successful machine learning projects in biotech and pharma R&D.\n\n\n\n\n\n\n\nPresentation at Elucidata’s User Group Meeting on how our team evaluates and measures data quality while making high-dimensional biological data Findable, Accessible, Interoperable, and Reusable (FAIR).\n\n\n\n\n\nTalk with Pistoia Alliance, a non-profit alliance working to increase pre-competitive collaboration in life sciences industry. The talk highlights the role of data curation through ontologies to make data FAIR and to accelerate research.\n\n\n\n\n\n\n\nProduct release for Elucidata’s Liver OmixAtlas, the largest repository of ML-ready liver tissue-derived biological datasets. The goal is to provide a curated data source of scRNA-seq, RNA-seq, proteomics and metabolomics data to accelerate drug discovery."
+  },
+  {
+    "objectID": "talks.html#panel-discussion-implementing-ml-in-bio-rd",
+    "href": "talks.html#panel-discussion-implementing-ml-in-bio-rd",
+    "title": "Shefali Lathwal",
+    "section": "",
+    "text": "A discussion with Cyclica, Altis Labs, Elucidata, and Atomwise on how to run successful machine learning projects in biotech and pharma R&D."
+  },
+  {
+    "objectID": "talks.html#framework-for-quality-of-high-dimensional-biological-data",
+    "href": "talks.html#framework-for-quality-of-high-dimensional-biological-data",
+    "title": "Shefali Lathwal",
+    "section": "",
+    "text": "Presentation at Elucidata’s User Group Meeting on how our team evaluates and measures data quality while making high-dimensional biological data Findable, Accessible, Interoperable, and Reusable (FAIR)."
+  },
+  {
+    "objectID": "talks.html#panel-discussion-implementing-ml-in-bio-rd-1",
+    "href": "talks.html#panel-discussion-implementing-ml-in-bio-rd-1",
+    "title": "Shefali Lathwal",
+    "section": "",
+    "text": "A discussion with Cyclica, Altis Labs, Elucidata, and Atomwise on how to run successful machine learning projects in biotech and pharma R&D."
+  },
+  {
+    "objectID": "talks.html#framework-for-quality-of-high-dimensional-biological-data-1",
+    "href": "talks.html#framework-for-quality-of-high-dimensional-biological-data-1",
+    "title": "Shefali Lathwal",
+    "section": "",
+    "text": "Presentation at Elucidata’s User Group Meeting on how our team evaluates and measures data quality while making high-dimensional biological data Findable, Accessible, Interoperable, and Reusable (FAIR)."
+  },
+  {
+    "objectID": "talks.html#panel-discussion-implementing-ml-in-biopharma-rd",
+    "href": "talks.html#panel-discussion-implementing-ml-in-biopharma-rd",
+    "title": "Shefali Lathwal",
+    "section": "",
+    "text": "A discussion with Cyclica, Altis Labs, Elucidata, and Atomwise on how to run successful machine learning projects in biotech and pharma R&D."
+  },
+  {
+    "objectID": "talks.html#role-of-data-curation-with-ontologies-in-biopharma-rd",
+    "href": "talks.html#role-of-data-curation-with-ontologies-in-biopharma-rd",
+    "title": "Shefali Lathwal",
+    "section": "",
+    "text": "Talk with Pistoia Alliance, a non-profit alliance working to increase pre-competitive collaboration in life sciences industry. The talk highlights the role of data curation through ontologies to make data FAIR and to accelerate research."
+  },
+  {
+    "objectID": "talks.html#product-release-curated-multi-omics-data-atlas",
+    "href": "talks.html#product-release-curated-multi-omics-data-atlas",
+    "title": "Shefali Lathwal",
+    "section": "",
+    "text": "Product release for Elucidata’s Liver OmixAtlas, the largest repository of ML-ready liver tissue-derived biological datasets. The goal is to provide a curated data source of scRNA-seq, RNA-seq, proteomics and metabolomics data to accelerate drug discovery."
   }
 ]
