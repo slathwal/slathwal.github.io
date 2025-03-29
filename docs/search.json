@@ -88,7 +88,7 @@
     "href": "blogs/2025-03-27/index.html#calculate-95-confidence-intervals-for-observing-the-effect-of-gender-of-difference-in-median-value-of-age-of-death.",
     "title": "Permutation test in statistics",
     "section": "Calculate 95% confidence intervals for observing the effect of gender of difference in median value of Age of death.",
-    "text": "Calculate 95% confidence intervals for observing the effect of gender of difference in median value of Age of death.\n\n# Calcualte 95% confidence interval\nmedian_diff_genders_distribution.sort()\nleft_value = median_diff_genders_distribution[int(2.5/100*n)]\nright_value = median_diff_genders_distribution[int(97.5/100*n)]\nleft_value, right_value\n\n(-4.0, 4.0)"
+    "text": "Calculate 95% confidence intervals for observing the effect of gender of difference in median value of Age of death.\n\n# Calcualte 95% confidence interval\nmedian_diff_genders_distribution.sort()\nleft_value = median_diff_genders_distribution[int(2.5/100*n)]\nright_value = median_diff_genders_distribution[int(97.5/100*n)]\nleft_value, right_value\n\n(-3.5, 4.0)"
   },
   {
     "objectID": "blogs/2025-03-27/index.html#calculate-the-p-value-for-the-observed-difference-in-median-of-age-of-death-between-genders",
@@ -102,7 +102,7 @@
     "href": "blogs/2025-03-27/index.html#plot-the-observed-statistic-with-the-obtained-distribution-and-95-confidence-intervals",
     "title": "Permutation test in statistics",
     "section": "Plot the observed statistic with the obtained distribution and 95% confidence intervals",
-    "text": "Plot the observed statistic with the obtained distribution and 95% confidence intervals\n\nsns.histplot(median_diff_genders_distribution, discrete = True)\nplt.axvline(x = left_value, c = \"red\", ls = \"--\", label = \"95% confidence interval\")\nplt.axvline(x = right_value, c = \"red\", ls = \"--\")\nplt. axvline(x = observed_median_diff_genders, c = \"blue\", lw = 2, label = \"observed value in the data\")\nplt.legend(loc = \"upper left\")\nplt.xlabel(\"Median age of death (Male) - Median age of death (Female)\")\n\n\n\n\n\n\nText(0.5, 0, 'Median age of death (Male) - Median age of death (Female)')\n\n\n(a) Comparison of observed statistic with distribution generated under null hypothesis. The left and right limits for 95% confidence interval are marked as dashed red lines. The actual value of the statistic (difference in median value of Age of death between males and females is marked by the solid black line.)\n\n\n\n\n\n\n\n\n\n\n(b)\n\n\n\n\n\n\nFigure 3"
+    "text": "Plot the observed statistic with the obtained distribution and 95% confidence intervals\n\nsns.histplot(median_diff_genders_distribution, discrete = True)\nplt.axvline(x = left_value, c = \"red\", ls = \"--\", label = \"95% confidence interval\")\nplt.axvline(x = right_value, c = \"red\", ls = \"--\")\nplt. axvline(x = observed_median_diff_genders, c = \"blue\", lw = 2, label = \"observed value in the data\")\nplt.legend(loc = \"upper left\")\nplt.xlabel(\"Median age of death (Male) - Median age of death (Female)\");\n\n\n\n\n\n\n\nFigure 3: Comparison of observed statistic with distribution generated under null hypothesis. The left and right limits for 95% confidence interval are marked as dashed red lines. The actual value of the statistic (difference in median value of Age of death between males and females) is marked by the solid black line."
   },
   {
     "objectID": "blogs/2025-03-27/index.html#footnotes",

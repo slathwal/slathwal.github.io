@@ -76,7 +76,8 @@ With the above observations, let's look at the distribution of birth years in th
 
 ```{python}
 #| label: fig-birth-year-distribution
-#| fig-caption: Count of number of individuals in the data born in each year.
+#| fig-cap: Count of number of individuals in the data born in each year.
+
 sns.histplot(age1["Birth year"])
 ```
 @fig-birth-year-distribution shows that a majority of the data are for people born after the year 1000. We can take a look at the `Age of death` of both genders across centuries and ask if there is any difference across centuries.
@@ -129,10 +130,15 @@ df_thirteen.head()
 # Perform permuation testing to see if the observed difference in median value of `Age of death` between genders is statistically significant or not.
 
 Now that we have our dataset, we will:
+
 - calculate the observed difference in median value of `Age of death` between the genders.
+
 - shuffle the values of `Age of death` to create new datasets. Each new dataset will simulate that the gender labels could have been completely by chance and there is no effect of gender.
+
 - Create a distribution for difference in median of `Age of death` between genders for all iterations of the shuffled datasets.
+
 - Calculate how many times a value more extreme than the observed value of `Age of death` occurs in the distribution.
+
 
 ## Calculate the difference between median `Age of death` of genders in the data
 
@@ -177,14 +183,14 @@ p_value
 ## Plot the observed statistic with the obtained distribution and 95% confidence intervals
 ```{python}
 #| label: fig-permutation 
-#| fig-cap: Comparison of observed statistic with distribution generated under null hypothesis. The left and right limits for 95% confidence interval are marked as dashed red lines. The actual value of the statistic (difference in median value of Age of death between males and females is marked by the solid black line.)
+#| fig-cap: Comparison of observed statistic with distribution generated under null hypothesis. The left and right limits for 95% confidence interval are marked as dashed red lines. The actual value of the statistic (difference in median value of Age of death between males and females) is marked by the solid black line.
+
 sns.histplot(median_diff_genders_distribution, discrete = True)
 plt.axvline(x = left_value, c = "red", ls = "--", label = "95% confidence interval")
 plt.axvline(x = right_value, c = "red", ls = "--")
 plt. axvline(x = observed_median_diff_genders, c = "blue", lw = 2, label = "observed value in the data")
 plt.legend(loc = "upper left")
-plt.xlabel("Median age of death (Male) - Median age of death (Female)")
-
+plt.xlabel("Median age of death (Male) - Median age of death (Female)");
 ```
 
 # Conclusion
