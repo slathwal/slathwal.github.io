@@ -162,4 +162,4 @@ ani.save('animation_drawing.gif', writer='pillow');
 plt.close()
 HTML(ani.to_jshtml())
 ```
-
+Note: Click the forward arrow button to play the animation.
