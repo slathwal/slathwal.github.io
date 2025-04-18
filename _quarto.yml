@@ -6,6 +6,7 @@ project:
 website: 
   back-to-top-navigation: true
   favicon: "images/profile.jpg"
+  google-analytics: "G-EM9YQSDPE3"
   page-footer:
     #background: light
     border: false
