@@ -28,18 +28,18 @@
     "text": "Analysis of political donations through electoral bonds in India\n\n\n\nThis web application was created as the final project for Harvard’s course, CS50: Introduction to Computer Science. The following tools were used:\n\nPython for extracting the data from pdf to csv format\nR for data exploration and cleaning\nRShiny for data analysis and visualization.\nBootstrap library for R (bslib) to design a multi-page Shiny app"
   },
   {
-    "objectID": "talks.html#framework-for-quality-of-high-dimensional-biological-data",
-    "href": "talks.html#framework-for-quality-of-high-dimensional-biological-data",
-    "title": "Shefali Lathwal",
-    "section": "Framework for quality of high-dimensional biological data",
-    "text": "Framework for quality of high-dimensional biological data\n\n\n\n\n Presentation at Elucidata’s User Group Meeting on how our team evaluates and measures data quality while making high-dimensional biological data Findable, Accessible, Interoperable, and Reusable (FAIR)."
+    "objectID": "background.html",
+    "href": "background.html",
+    "title": "Background",
+    "section": "",
+    "text": "I am a MIT-trained Ph.D. with interest in statistics, data science, biology, data visualizations, education, watercolour, sketching, and many more things.\n\n\n\n Back to top"
   },
   {
-    "objectID": "talks.html#product-release-curated-multi-omics-data-atlas",
-    "href": "talks.html#product-release-curated-multi-omics-data-atlas",
-    "title": "Shefali Lathwal",
-    "section": "Product release: Curated multi-omics data atlas",
-    "text": "Product release: Curated multi-omics data atlas\n\n\n\n\n Product release for Elucidata’s Liver OmixAtlas, the largest repository of ML-ready liver tissue-derived biological datasets. The goal is to provide a curated data source of scRNA-seq, RNA-seq, proteomics, and metabolomics data to accelerate drug discovery."
+    "objectID": "blogs/2025-04-17/index.html",
+    "href": "blogs/2025-04-17/index.html",
+    "title": "Chance, p-values, and number of samples",
+    "section": "",
+    "text": "Problem Statement\n\nTake two exactly equal Gaussian distributions.\nDraw 3, 6, 10, 25, 50, and 100 random samples from each distribution 1000 times.\nPerform a t-test to check whether the sample means are significantly different from each other, with a p-value threshold of 0.05.\nWill the % of times p-value is less than 0.05, i.e., you reject the null hypothesis that the samples come from the same distribution, change with the number of samples drawn? If yes, will it increase or decrease with increasing number of samples?\n\nMy initial instinct is to say, “The chance of concluding that the samples come from two different populations should decrease with increasing number of samples. After all, the more samples we have, the less the chance of making a mistake.”\nLet’s test our intuition.\n\nimport matplotlib.pyplot as plt\nimport pandas as pd\nimport numpy as np\nimport scipy.stats as stats\nimport matplotlib.animation as animation\nfrom IPython.display import HTML\nfrom functools import partial\n\n\n\nTake two exactly equal Gaussian distributions\n\nx = np.linspace(-10,10,100)\ny1 = stats.norm.pdf(x, loc = 0, scale = 2) # Normal distribution with mean=0, and standard deviation = 2\ny2 = stats.norm.pdf(x, loc = 0, scale = 2) # Second normal distribution with mean = 0, standard deviation = 2\n\n# Plot the two distributions\nfig, (ax1, ax2) = plt.subplots(1,2, layout = \"constrained\", sharey=True)\nax1.plot(x, y1, label = \"Population 1\", c = \"blue\")\nax1.set_xlabel(\"\")\nax1.set_ylabel(\"Probability\")\nax1. set_title(\"Population 1\")\nax2.plot(x, y2, label = \"Population 2\", c = \"red\")\nax2.set_xlabel(\"\")\n#ax2.set_ylabel(\"Probability\")\nax2. set_title(\"Population 2\");\n\n\n\n\n\n\n\n\n\n\nDraw random samples and check if sample means are significantly different\n\nn_trials = 1000\nn_samples = np.array([3,6,10,25,50,100,150, 200,350, 500, 750, 1000, 1250, 1500, 1750 ,2000])\nsignificance_threshold = 0.05\n\nrng = np.random.default_rng(seed = 42)\n\ndef test_significant_difference(sample1, sample2):\n    tstatistic, pvalue = stats.ttest_ind(sample1, sample2, equal_var = True)\n    return (tstatistic, pvalue)\n\ndef compare_two_randomly_drawn_samples(n_samples, significance_threshold):\n    sample1 = rng.normal(loc = 0, scale = 2, size = n_samples) # Draw random samples from 1st population\n    sample2 = rng.normal(loc = 0, scale = 2, size = n_samples) # Draw random samples from 2nd population\n    tstatistic, pvalue = test_significant_difference(sample1, sample2)\n    significance = False\n    if (pvalue &lt; significance_threshold):\n        significance = True\n    return (pvalue, significance, tstatistic)\n\ndef significant_results(n_samples, significance_threshold, n_trials):\n    pvalue_list = []\n    significance_list = []\n    tstatistic_list = []\n    for trial in range(n_trials):\n        pvalue, significance, tstatistic = compare_two_randomly_drawn_samples(n_samples, significance_threshold)\n        \n        pvalue_list.append(pvalue)\n        significance_list.append(significance)\n        tstatistic_list.append(tstatistic)\n\n\n    #fig, ax = plt.subplots(layout = \"constrained\")\n    #ax.hist(tstatistic_list, bins = 50, density = True)\n    #ax.axvline(x = 0.05, c= \"red\", ls = \"--\")\n    #ax.set_xlabel(\"p-value\")\n    #ax.set_xlabel(\"t-statistic\")\n    #ax.set_ylabel(\"Percentage of samples\")\n    #ax.set_title(f\"Number of samples: {n_samples}\")\n\n    return pvalue_list, significance_list\n    \n    \n    \n# Run the above for different sample sizes\n\npercentage_significant_list = []\nfor samples in n_samples:\n    #print(samples)\n    pvalue_list, significance_list = significant_results(samples,significance_threshold, n_trials)\n    percentage_significant_list.append(sum(significance_list)/len(significance_list)*100)\n    \nresults_df = pd.DataFrame({\"samples\": n_samples, \"percentage_significant\": percentage_significant_list})\nresults_df\n\n\n\n\n\n\n\n\nsamples\npercentage_significant\n\n\n\n\n0\n3\n4.3\n\n\n1\n6\n5.4\n\n\n2\n10\n5.0\n\n\n3\n25\n4.7\n\n\n4\n50\n4.5\n\n\n5\n100\n5.3\n\n\n6\n150\n4.6\n\n\n7\n200\n5.0\n\n\n8\n350\n5.4\n\n\n9\n500\n7.0\n\n\n10\n750\n4.4\n\n\n11\n1000\n6.1\n\n\n12\n1250\n4.5\n\n\n13\n1500\n4.0\n\n\n14\n1750\n5.5\n\n\n15\n2000\n5.0\n\n\n\n\n\n\n\nThe dataframe tabulates the percentage of times we conclude that the samples are drawn from different populations for different number of samples drawn from the population.\n\n\nCompare the chance of rejecting the null hypothesis with increasing number of samples\n\nfig, ax = plt.subplots()\nresults_df.plot(x = \"samples\", y = \"percentage_significant\", style = \"o\", ax = ax, ylim = (0,10))\nax.axhline(y = 5, c = \"red\", ls = \"--\")\nax.set_ylabel(\"Percentage of trials where we reject null hypothesis\");\n\n\n\n\n\n\n\n\n\n\nConclusion\nThe results show that our intuition is incorrect. As number of samples increase, the percentage of trials where we will conclude that samples come from two different populations stays constant at about 5%. This is because p-value actually defines the probability of rejecting the null hypothesis incorrectly. So, if we have a significance threshold of 0.05, there is a 5% chance that we will incorrectly reject the null hypothesis. This chance remains the same, irrespective of the number of samples drawn.\n\n\nAnimate random sampling\nLet’s visualize one of the cases with an animation.\n\nn_trials = 100\nn_samples = 10\n\n# Generate the figure\nfig, ax = plt.subplots(layout = \"constrained\")\nline1, = ax.plot(x, y1, c = \"blue\")\nax.set_ylabel(\"Probability\")\nline2, = ax.plot(x, y2+0.001, c = \"red\")\n\nscat1 = ax.scatter(rng.normal(loc = 0, scale = 2, size = n_samples), 0.05*np.ones(n_samples), c = \"blue\", s = 100, alpha = 0.6, label = \"Sample 1\")\nscat2 = ax.scatter(rng.normal(loc = 0, scale = 2, size = n_samples), 0.05*np.ones(n_samples), c = \"red\", s = 100, alpha = 0.6, label = \"Sample 2\")\nax.set_xlim((-10, 10))\ntext = ax.text(x = 0, y = 0.06, s = \"\", horizontalalignment='center', verticalalignment='center')\nax.legend()\n\ndef update(frame):\n    tempx1 = rng.normal(loc = 0, scale = 1, size = n_samples)\n    tempy1 = 0.03*np.ones(n_samples)\n    data1 = np.stack([tempx1, tempy1], axis = 1)\n    scat1.set_offsets(data1)\n    tempx2 = rng.normal(loc = 0, scale = 1, size = n_samples)\n    tempy2 = 0.02*np.ones(n_samples)\n    data2 = np.stack([tempx2, tempy2], axis = 1)\n    scat2.set_offsets(data2)\n    _, pvalue = test_significant_difference(tempx1, tempx2)\n    color = \"red\" if (pvalue &lt; significance_threshold) else \"green\"\n    significance = \"No difference\" if (pvalue &gt;= significance_threshold) else \"Significant difference\"\n    text.set_text(f\"trial:{frame+1}\\n pvalue = {pvalue:.3f}\\n Conclusion:\\n{significance}\")\n    text.set_color(color)\n    return(scat1, scat2)\n\n# Construct FuncAnimation Object\nani = animation.FuncAnimation(fig = fig, func = update, frames = 100, interval = 1000)\nani.save('animation_drawing.gif', writer='pillow');\nplt.close()\nHTML(ani.to_jshtml())\n\n\n\n\n\n\n\n\n  \n  \n    \n    \n      \n          \n      \n        \n      \n          \n      \n          \n      \n          \n      \n          \n      \n          \n      \n          \n      \n          \n    \n    \n      \n      Once\n      \n      Loop\n      \n      Reflect\n    \n  \n\n\n\n\n\n\nNote: Click the forward arrow button to play the animation.\n\n\n\n\n Back to top"
   },
   {
     "objectID": "blogs/2025-03-27/index.html",
@@ -88,7 +88,7 @@
     "href": "blogs/2025-03-27/index.html#calculate-95-confidence-intervals-for-observing-the-effect-of-gender-of-difference-in-median-value-of-age-of-death.",
     "title": "Permutation test in statistics",
     "section": "Calculate 95% confidence intervals for observing the effect of gender of difference in median value of Age of death.",
-    "text": "Calculate 95% confidence intervals for observing the effect of gender of difference in median value of Age of death.\n\n# Calcualte 95% confidence interval\nmedian_diff_genders_distribution.sort()\nleft_value = median_diff_genders_distribution[int(2.5/100*n)]\nright_value = median_diff_genders_distribution[int(97.5/100*n)]\nleft_value, right_value\n\n(-3.5, 4.0)"
+    "text": "Calculate 95% confidence intervals for observing the effect of gender of difference in median value of Age of death.\n\n# Calcualte 95% confidence interval\nmedian_diff_genders_distribution.sort()\nleft_value = median_diff_genders_distribution[int(2.5/100*n)]\nright_value = median_diff_genders_distribution[int(97.5/100*n)]\nleft_value, right_value\n\n(-4.0, 4.0)"
   },
   {
     "objectID": "blogs/2025-03-27/index.html#calculate-the-p-value-for-the-observed-difference-in-median-of-age-of-death-between-genders",
@@ -112,46 +112,39 @@
     "text": "Footnotes\n\n\n Amoradnejad, Issa; Amoradnejad, Rahimberdi; et al. (2022). “Age dataset: A structured general-purpose dataset on life, work, and death of 1.22 million distinguished people”. Workshop Proceedings of the 16th International AAAI Conference on Web and Social Media (ICWSM). 3. ICWSM: 1–4. doi:10.36190/2022.82.↩︎"
   },
   {
-    "objectID": "background.html",
-    "href": "background.html",
-    "title": "Background",
+    "objectID": "talks.html",
+    "href": "talks.html",
+    "title": "Shefali Lathwal",
     "section": "",
-    "text": "I am a MIT-trained Ph.D. with interest in statistics, data science, biology, data visualizations, education, watercolour, sketching, and many more things.\n\n\n\n Back to top"
+    "text": "A discussion with Cyclica, Altis Labs, Elucidata, and Atomwise on how to run successful machine learning projects in biotech and pharma R&D."
   },
   {
-    "objectID": "talks1.html",
-    "href": "talks1.html",
-    "title": " Heading 1 ",
+    "objectID": "talks.html#panel-discussion-implementing-ml-in-biopharma-rd",
+    "href": "talks.html#panel-discussion-implementing-ml-in-biopharma-rd",
+    "title": "Shefali Lathwal",
     "section": "",
-    "text": "Heading 1"
+    "text": "A discussion with Cyclica, Altis Labs, Elucidata, and Atomwise on how to run successful machine learning projects in biotech and pharma R&D."
   },
   {
-    "objectID": "talks1.html#panel-discussion-implementing-ml-in-biopharma-rd",
-    "href": "talks1.html#panel-discussion-implementing-ml-in-biopharma-rd",
-    "title": " Heading 1 ",
-    "section": "Panel discussion: Implementing ML in biopharma R&D",
-    "text": "Panel discussion: Implementing ML in biopharma R&D\n\nA discussion with Cyclica, Altis Labs, Elucidata, and Atomwise on how to run successful machine learning projects in biotech and pharma R&D."
-  },
-  {
-    "objectID": "talks1.html#framework-for-quality-of-high-dimensional-biological-data",
-    "href": "talks1.html#framework-for-quality-of-high-dimensional-biological-data",
-    "title": " Heading 1 ",
+    "objectID": "talks.html#framework-for-quality-of-high-dimensional-biological-data",
+    "href": "talks.html#framework-for-quality-of-high-dimensional-biological-data",
+    "title": "Shefali Lathwal",
     "section": "Framework for quality of high-dimensional biological data",
-    "text": "Framework for quality of high-dimensional biological data\n\nPresentation at Elucidata’s User Group Meeting on how our team evaluates and measures data quality while making high-dimensional biological data Findable, Accessible, Interoperable, and Reusable (FAIR)."
+    "text": "Framework for quality of high-dimensional biological data\n\n\n\n\n Presentation at Elucidata’s User Group Meeting on how our team evaluates and measures data quality while making high-dimensional biological data Findable, Accessible, Interoperable, and Reusable (FAIR)."
   },
   {
-    "objectID": "talks1.html#role-of-data-curation-with-ontologies-in-biopharma-rd",
-    "href": "talks1.html#role-of-data-curation-with-ontologies-in-biopharma-rd",
-    "title": " Heading 1 ",
+    "objectID": "talks.html#role-of-data-curation-with-ontologies-in-biopharma-rd",
+    "href": "talks.html#role-of-data-curation-with-ontologies-in-biopharma-rd",
+    "title": "Shefali Lathwal",
     "section": "Role of data-curation with ontologies in biopharma R&D",
-    "text": "Role of data-curation with ontologies in biopharma R&D\n\nTalk with Pistoia Alliance, a non-profit alliance working to increase pre-competitive collaboration in life sciences industry. The talk highlights the role of data curation through ontologies to make data FAIR and to accelerate research."
+    "text": "Role of data-curation with ontologies in biopharma R&D\n\n\n\n\n Talk with Pistoia Alliance, a non-profit alliance working to increase pre-competitive collaboration in life sciences industry. The talk highlights the role of data curation through ontologies to make data FAIR and to accelerate research."
   },
   {
-    "objectID": "talks1.html#product-release-curated-multi-omics-data-atlas",
-    "href": "talks1.html#product-release-curated-multi-omics-data-atlas",
-    "title": " Heading 1 ",
+    "objectID": "talks.html#product-release-curated-multi-omics-data-atlas",
+    "href": "talks.html#product-release-curated-multi-omics-data-atlas",
+    "title": "Shefali Lathwal",
     "section": "Product release: Curated multi-omics data atlas",
-    "text": "Product release: Curated multi-omics data atlas\n\nProduct release for Elucidata’s Liver OmixAtlas, the largest repository of ML-ready liver tissue-derived biological datasets. The goal is to provide a curated data source of scRNA-seq, RNA-seq, proteomics, and metabolomics data to accelerate drug discovery."
+    "text": "Product release: Curated multi-omics data atlas\n\n\n\n\n Product release for Elucidata’s Liver OmixAtlas, the largest repository of ML-ready liver tissue-derived biological datasets. The goal is to provide a curated data source of scRNA-seq, RNA-seq, proteomics, and metabolomics data to accelerate drug discovery."
   },
   {
     "objectID": "index.html",
@@ -173,75 +166,5 @@
     "title": "Shefali Lathwal",
     "section": "Education",
     "text": "Education\nMassachusetts Institute of Technology\nCambridge, MA, USA\nPh.D. in Chemical Engineering\nM.S. in Chemical Engineering Practice\nIndian Institute of Technology, Delhi\nNew Delhi, India\nM.S. in Process Engineering and Design\nB.Tech. In Chemical Engineering"
-  },
-  {
-    "objectID": "talks.html",
-    "href": "talks.html",
-    "title": "Shefali Lathwal",
-    "section": "",
-    "text": "A discussion with Cyclica, Altis Labs, Elucidata, and Atomwise on how to run successful machine learning projects in biotech and pharma R&D."
-  },
-  {
-    "objectID": "talks.html#panel-discussion-implementing-ml-in-biopharma-rd",
-    "href": "talks.html#panel-discussion-implementing-ml-in-biopharma-rd",
-    "title": "Shefali Lathwal",
-    "section": "",
-    "text": "A discussion with Cyclica, Altis Labs, Elucidata, and Atomwise on how to run successful machine learning projects in biotech and pharma R&D."
-  },
-  {
-    "objectID": "talks.html#panel-discussion-implementing-ml-in-biopharma-r",
-    "href": "talks.html#panel-discussion-implementing-ml-in-biopharma-r",
-    "title": "Shefali Lathwal",
-    "section": "",
-    "text": "A discussion with Cyclica, Altis Labs, Elucidata, and Atomwise on how to run successful machine learning projects in biotech and pharma R&D."
-  },
-  {
-    "objectID": "talks.html#panel-discussion-implementing-ml-in-biopharma-rdtext",
-    "href": "talks.html#panel-discussion-implementing-ml-in-biopharma-rdtext",
-    "title": "Shefali Lathwal",
-    "section": "",
-    "text": "A discussion with Cyclica, Altis Labs, Elucidata, and Atomwise on how to run successful machine learning projects in biotech and pharma R&D."
-  },
-  {
-    "objectID": "talks.html#panel-discussion-implementing-ml-in-biopharma-rdtext-align-cetner",
-    "href": "talks.html#panel-discussion-implementing-ml-in-biopharma-rdtext-align-cetner",
-    "title": "Shefali Lathwal",
-    "section": "",
-    "text": "A discussion with Cyclica, Altis Labs, Elucidata, and Atomwise on how to run successful machine learning projects in biotech and pharma R&D."
-  },
-  {
-    "objectID": "talks.html#panel-discussion-implementing-ml-in-biopharma-rdtext-align-center",
-    "href": "talks.html#panel-discussion-implementing-ml-in-biopharma-rdtext-align-center",
-    "title": "Shefali Lathwal",
-    "section": "",
-    "text": "A discussion with Cyclica, Altis Labs, Elucidata, and Atomwise on how to run successful machine learning projects in biotech and pharma R&D."
-  },
-  {
-    "objectID": "talks.html#role-of-data-curation-with-ontologies-in-biopharma-rd",
-    "href": "talks.html#role-of-data-curation-with-ontologies-in-biopharma-rd",
-    "title": "Shefali Lathwal",
-    "section": "Role of data-curation with ontologies in biopharma R&D",
-    "text": "Role of data-curation with ontologies in biopharma R&D\n\n\n\n\n Talk with Pistoia Alliance, a non-profit alliance working to increase pre-competitive collaboration in life sciences industry. The talk highlights the role of data curation through ontologies to make data FAIR and to accelerate research."
-  },
-  {
-    "objectID": "talks.html#panel-discussion-implementing-ml-in-biopharma-rd.text-center",
-    "href": "talks.html#panel-discussion-implementing-ml-in-biopharma-rd.text-center",
-    "title": "Shefali Lathwal",
-    "section": "",
-    "text": "A discussion with Cyclica, Altis Labs, Elucidata, and Atomwise on how to run successful machine learning projects in biotech and pharma R&D."
-  },
-  {
-    "objectID": "blogs/2025-04-17/index.html",
-    "href": "blogs/2025-04-17/index.html",
-    "title": "Chance, p-values, and number of samples",
-    "section": "",
-    "text": "Problem Statement\n\nTake two exactly equal Gaussian distributions.\nDraw 3, 6, 10, 25, 50, and 100 random samples from each distribution 1000 times.\nPerform a t-test to check whether the sample means are significantly different from each other, with a p-value threshold of 0.05.\nWill the % of times p-value is less than 0.05, i.e., you reject the null hypothesis that the samples come from the same distribution, change with the number of samples drawn? If yes, will it increase or decrease with increasing number of samples?\n\nMy initial instinct is to say, “The chance of concluding that the samples come from two different populations should decrease with increasing number of samples. After all, the more samples we have, the less the chance of making a mistake.”\nLet’s test our intuition.\n\nimport matplotlib.pyplot as plt\nimport pandas as pd\nimport numpy as np\nimport scipy.stats as stats\nimport matplotlib.animation as animation\nfrom IPython.display import HTML\nfrom functools import partial\n\n\n\nTake two exactly equal Gaussian distributions\n\nx = np.linspace(-10,10,100)\ny1 = stats.norm.pdf(x, loc = 0, scale = 2) # Normal distribution with mean=0, and standard deviation = 2\ny2 = stats.norm.pdf(x, loc = 0, scale = 2) # Second normal distribution with mean = 0, standard deviation = 2\n\n# Plot the two distributions\nfig, (ax1, ax2) = plt.subplots(1,2, layout = \"constrained\", sharey=True)\nax1.plot(x, y1, label = \"Population 1\", c = \"blue\")\nax1.set_xlabel(\"\")\nax1.set_ylabel(\"Probability\")\nax1. set_title(\"Population 1\")\nax2.plot(x, y2, label = \"Population 2\", c = \"red\")\nax2.set_xlabel(\"\")\n#ax2.set_ylabel(\"Probability\")\nax2. set_title(\"Population 2\");\n\n\n\n\n\n\n\n\n\n\nDraw random samples and check if sample means are significantly different\n\nn_trials = 1000\nn_samples = np.array([3,6,10,25,50,100,150, 200,350, 500, 750, 1000, 1250, 1500, 1750 ,2000])\nsignificance_threshold = 0.05\n\nrng = np.random.default_rng(seed = 42)\n\ndef test_significant_difference(sample1, sample2):\n    tstatistic, pvalue = stats.ttest_ind(sample1, sample2, equal_var = True)\n    return (tstatistic, pvalue)\n\ndef compare_two_randomly_drawn_samples(n_samples, significance_threshold):\n    sample1 = rng.normal(loc = 0, scale = 2, size = n_samples) # Draw random samples from 1st population\n    sample2 = rng.normal(loc = 0, scale = 2, size = n_samples) # Draw random samples from 2nd population\n    tstatistic, pvalue = test_significant_difference(sample1, sample2)\n    significance = False\n    if (pvalue &lt; significance_threshold):\n        significance = True\n    return (pvalue, significance, tstatistic)\n\ndef significant_results(n_samples, significance_threshold, n_trials):\n    pvalue_list = []\n    significance_list = []\n    tstatistic_list = []\n    for trial in range(n_trials):\n        pvalue, significance, tstatistic = compare_two_randomly_drawn_samples(n_samples, significance_threshold)\n        \n        pvalue_list.append(pvalue)\n        significance_list.append(significance)\n        tstatistic_list.append(tstatistic)\n\n\n    #fig, ax = plt.subplots(layout = \"constrained\")\n    #ax.hist(tstatistic_list, bins = 50, density = True)\n    #ax.axvline(x = 0.05, c= \"red\", ls = \"--\")\n    #ax.set_xlabel(\"p-value\")\n    #ax.set_xlabel(\"t-statistic\")\n    #ax.set_ylabel(\"Percentage of samples\")\n    #ax.set_title(f\"Number of samples: {n_samples}\")\n\n    return pvalue_list, significance_list\n    \n    \n    \n# Run the above for different sample sizes\n\npercentage_significant_list = []\nfor samples in n_samples:\n    #print(samples)\n    pvalue_list, significance_list = significant_results(samples,significance_threshold, n_trials)\n    percentage_significant_list.append(sum(significance_list)/len(significance_list)*100)\n    \nresults_df = pd.DataFrame({\"samples\": n_samples, \"percentage_significant\": percentage_significant_list})\nresults_df\n\n\n\n\n\n\n\n\nsamples\npercentage_significant\n\n\n\n\n0\n3\n4.3\n\n\n1\n6\n5.4\n\n\n2\n10\n5.0\n\n\n3\n25\n4.7\n\n\n4\n50\n4.5\n\n\n5\n100\n5.3\n\n\n6\n150\n4.6\n\n\n7\n200\n5.0\n\n\n8\n350\n5.4\n\n\n9\n500\n7.0\n\n\n10\n750\n4.4\n\n\n11\n1000\n6.1\n\n\n12\n1250\n4.5\n\n\n13\n1500\n4.0\n\n\n14\n1750\n5.5\n\n\n15\n2000\n5.0\n\n\n\n\n\n\n\nThe dataframe tabulates the percentage of times we conclude that the samples are drawn from different populations for different number of samples drawn from the population.\n\n\nCompare the chance of rejecting the null hypothesis with increasing number of samples\n\nfig, ax = plt.subplots()\nresults_df.plot(x = \"samples\", y = \"percentage_significant\", style = \"o\", ax = ax, ylim = (0,10))\nax.axhline(y = 5, c = \"red\", ls = \"--\")\nax.set_ylabel(\"Percentage of trials where we reject null hypothesis\");\n\n\n\n\n\n\n\n\n\n\nConclusion\nThe results show that our intuition is incorrect. As number of samples increase, the percentage of trials where we will conclude that samples come from two different populations stays constant at about 5%. This is because p-value actually defines the probability of rejecting the null hypothesis incorrectly. So, if we have a significance threshold of 0.05, there is a 5% chance that we will incorrectly reject the null hypothesis. This chance remains the same, irrespective of the number of samples drawn.\n\n\nAnimate random sampling\nLet’s visualize one of the cases with an animation.\n\nn_trials = 100\nn_samples = 10\n\n# Generate the figure\nfig, ax = plt.subplots(layout = \"constrained\")\nline1, = ax.plot(x, y1, c = \"blue\")\nax.set_ylabel(\"Probability\")\nline2, = ax.plot(x, y2+0.001, c = \"red\")\n\nscat1 = ax.scatter(rng.normal(loc = 0, scale = 2, size = n_samples), 0.05*np.ones(n_samples), c = \"blue\", s = 100, alpha = 0.6, label = \"Sample 1\")\nscat2 = ax.scatter(rng.normal(loc = 0, scale = 2, size = n_samples), 0.05*np.ones(n_samples), c = \"red\", s = 100, alpha = 0.6, label = \"Sample 2\")\nax.set_xlim((-10, 10))\ntext = ax.text(x = 0, y = 0.06, s = \"\", horizontalalignment='center', verticalalignment='center')\nax.legend()\n\ndef update(frame):\n    tempx1 = rng.normal(loc = 0, scale = 1, size = n_samples)\n    tempy1 = 0.03*np.ones(n_samples)\n    data1 = np.stack([tempx1, tempy1], axis = 1)\n    scat1.set_offsets(data1)\n    tempx2 = rng.normal(loc = 0, scale = 1, size = n_samples)\n    tempy2 = 0.02*np.ones(n_samples)\n    data2 = np.stack([tempx2, tempy2], axis = 1)\n    scat2.set_offsets(data2)\n    _, pvalue = test_significant_difference(tempx1, tempx2)\n    color = \"red\" if (pvalue &lt; significance_threshold) else \"green\"\n    significance = \"No difference\" if (pvalue &gt;= significance_threshold) else \"Significant difference\"\n    text.set_text(f\"trial:{frame+1}\\n pvalue = {pvalue:.3f}\\n Conclusion:\\n{significance}\")\n    text.set_color(color)\n    return(scat1, scat2)\n\n# Construct FuncAnimation Object\nani = animation.FuncAnimation(fig = fig, func = update, frames = 100, interval = 1000)\nani.save('animation_drawing.gif', writer='pillow');\nplt.close()\nHTML(ani.to_jshtml())\n\n\n\n\n\n\n\n\n  \n  \n    \n    \n      \n          \n      \n        \n      \n          \n      \n          \n      \n          \n      \n          \n      \n          \n      \n          \n      \n          \n    \n    \n      \n      Once\n      \n      Loop\n      \n      Reflect\n    \n  \n\n\n\n\n\n\nNote: Click the forward arrow button to play the animation.\n\n\n\n\n Back to top"
-  },
-  {
-    "objectID": "blogs/2025-04-17/index.html#animating-random-sampling",
-    "href": "blogs/2025-04-17/index.html#animating-random-sampling",
-    "title": "Chance, p-values, and number of samples",
-    "section": "Animating random sampling",
-    "text": "Animating random sampling\nLet’s visualize one of the cases with an animation.\n\nn_trials = 100\nn_samples = 10\n\n# Generate the figure\nfig, ax = plt.subplots(layout = \"constrained\")\nline1, = ax.plot(x, y1, c = \"blue\")\nax.set_ylabel(\"Probability\")\nline2, = ax.plot(x, y2+0.001, c = \"red\")\n\nscat1 = ax.scatter(rng.normal(loc = 0, scale = 2, size = n_samples), 0.05*np.ones(n_samples), c = \"blue\", s = 100, alpha = 0.6, label = \"Sample 1\")\nscat2 = ax.scatter(rng.normal(loc = 0, scale = 2, size = n_samples), 0.05*np.ones(n_samples), c = \"red\", s = 100, alpha = 0.6, label = \"Sample 2\")\nax.set_xlim((-10, 10))\ntext = ax.text(x = 0, y = 0.06, s = \"\", horizontalalignment='center', verticalalignment='center')\nax.legend()\n\ndef update(frame):\n    tempx1 = rng.normal(loc = 0, scale = 1, size = n_samples)\n    tempy1 = 0.03*np.ones(n_samples)\n    data1 = np.stack([tempx1, tempy1], axis = 1)\n    scat1.set_offsets(data1)\n    tempx2 = rng.normal(loc = 0, scale = 1, size = n_samples)\n    tempy2 = 0.02*np.ones(n_samples)\n    data2 = np.stack([tempx2, tempy2], axis = 1)\n    scat2.set_offsets(data2)\n    _, pvalue = test_significant_difference(tempx1, tempx2)\n    color = \"red\" if (pvalue &lt; significance_threshold) else \"green\"\n    significance = \"No difference\" if (pvalue &gt;= significance_threshold) else \"Significant difference\"\n    text.set_text(f\"trial:{frame+1}\\n pvalue = {pvalue:.3f}\\n Conclusion:\\n{significance}\")\n    text.set_color(color)\n    return(scat1, scat2)\n\n# Construct FuncAnimation Object\nani = animation.FuncAnimation(fig = fig, func = update, frames = 100, interval = 1000)\nani.save('animation_drawing.gif', writer='pillow');\nplt.close()\nHTML(ani.to_jshtml())\n\n\n\n\n\n\n\n\n  \n  \n    \n    \n      \n          \n      \n        \n      \n          \n      \n          \n      \n          \n      \n          \n      \n          \n      \n          \n      \n          \n    \n    \n      \n      Once\n      \n      Loop\n      \n      Reflect"
   }
 ]
