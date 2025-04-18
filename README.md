@@ -1,1 +1,1 @@
-This repository is a work in progress. It will contain my personal project portfolio and blogs.
+This repository contains my personal blog and project portfolio. It is a work in progress.
