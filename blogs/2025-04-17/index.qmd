@@ -1,0 +1,165 @@
+---
+title: "Chance, p-values, and number of samples"
+description: "Intuition is not always reliable."
+author: "Shefali Lathwal"
+date: "2025-04-17"
+date-modified: last-modified
+categories: [python, statistics, p-value, animation]
+image: "animation_drawing.gif"
+toc: true
+draft: false
+freeze: false
+---
+# Problem Statement
+
+1. Take two exactly equal Gaussian distributions.
+2. Draw 3, 6, 10, 25, 50, and 100 random samples from each distribution 1000 times.
+3. Perform a t-test to check whether the sample means are significantly different from each other, with a p-value threshold of 0.05.
+4. Will the % of times p-value is less than 0.05, i.e., you reject the null hypothesis that the samples come from the same distribution, change with the number of samples drawn? If yes, will it increase or decrease with increasing number of samples?
+
+My initial instinct is to say, "The chance of concluding that the samples come from two different populations should decrease with increasing number of samples. After all, the more samples we have, the less the chance of making a mistake."
+
+Let's test our intuition.
+
+```{python}
+import matplotlib.pyplot as plt
+import pandas as pd
+import numpy as np
+import scipy.stats as stats
+import matplotlib.animation as animation
+from IPython.display import HTML
+from functools import partial
+```
+
+# Take two exactly equal Gaussian distributions
+
+```{python}
+x = np.linspace(-10,10,100)
+y1 = stats.norm.pdf(x, loc = 0, scale = 2) # Normal distribution with mean=0, and standard deviation = 2
+y2 = stats.norm.pdf(x, loc = 0, scale = 2) # Second normal distribution with mean = 0, standard deviation = 2
+
+# Plot the two distributions
+fig, (ax1, ax2) = plt.subplots(1,2, layout = "constrained", sharey=True)
+ax1.plot(x, y1, label = "Population 1", c = "blue")
+ax1.set_xlabel("")
+ax1.set_ylabel("Probability")
+ax1. set_title("Population 1")
+ax2.plot(x, y2, label = "Population 2", c = "red")
+ax2.set_xlabel("")
+#ax2.set_ylabel("Probability")
+ax2. set_title("Population 2");
+```
+
+# Draw random samples and check if sample means are significantly different
+
+```{python}
+n_trials = 1000
+n_samples = np.array([3,6,10,25,50,100,150, 200,350, 500, 750, 1000, 1250, 1500, 1750 ,2000])
+significance_threshold = 0.05
+
+rng = np.random.default_rng(seed = 42)
+
+def test_significant_difference(sample1, sample2):
+    tstatistic, pvalue = stats.ttest_ind(sample1, sample2, equal_var = True)
+    return (tstatistic, pvalue)
+
+def compare_two_randomly_drawn_samples(n_samples, significance_threshold):
+    sample1 = rng.normal(loc = 0, scale = 2, size = n_samples) # Draw random samples from 1st population
+    sample2 = rng.normal(loc = 0, scale = 2, size = n_samples) # Draw random samples from 2nd population
+    tstatistic, pvalue = test_significant_difference(sample1, sample2)
+    significance = False
+    if (pvalue < significance_threshold):
+        significance = True
+    return (pvalue, significance, tstatistic)
+
+def significant_results(n_samples, significance_threshold, n_trials):
+    pvalue_list = []
+    significance_list = []
+    tstatistic_list = []
+    for trial in range(n_trials):
+        pvalue, significance, tstatistic = compare_two_randomly_drawn_samples(n_samples, significance_threshold)
+        
+        pvalue_list.append(pvalue)
+        significance_list.append(significance)
+        tstatistic_list.append(tstatistic)
+
+
+    #fig, ax = plt.subplots(layout = "constrained")
+    #ax.hist(tstatistic_list, bins = 50, density = True)
+    #ax.axvline(x = 0.05, c= "red", ls = "--")
+    #ax.set_xlabel("p-value")
+    #ax.set_xlabel("t-statistic")
+    #ax.set_ylabel("Percentage of samples")
+    #ax.set_title(f"Number of samples: {n_samples}")
+
+    return pvalue_list, significance_list
+    
+    
+    
+# Run the above for different sample sizes
+
+percentage_significant_list = []
+for samples in n_samples:
+    #print(samples)
+    pvalue_list, significance_list = significant_results(samples,significance_threshold, n_trials)
+    percentage_significant_list.append(sum(significance_list)/len(significance_list)*100)
+    
+results_df = pd.DataFrame({"samples": n_samples, "percentage_significant": percentage_significant_list})
+results_df
+```
+
+The dataframe tabulates the percentage of times we conclude that the samples are drawn from different populations for different number of samples drawn from the population.
+
+# Compare the chance of rejecting the null hypothesis with increasing number of samples
+```{python}
+fig, ax = plt.subplots()
+results_df.plot(x = "samples", y = "percentage_significant", style = "o", ax = ax, ylim = (0,10))
+ax.axhline(y = 5, c = "red", ls = "--")
+ax.set_ylabel("Percentage of trials where we reject null hypothesis");
+```
+
+# Conclusion
+
+The results show that our intuition is incorrect. As number of samples increase, the percentage of trials where we will conclude that samples come from two different populations stays constant at about 5%. This is because p-value actually defines the probability of rejecting the null hypothesis incorrectly. So, if we have a significance threshold of 0.05, there is a 5% chance that we will incorrectly reject the null hypothesis. This chance remains the same, irrespective of the number of samples drawn.
+
+# Animate random sampling
+Let's visualize one of the cases with an animation.
+```{python}
+n_trials = 100
+n_samples = 10
+
+# Generate the figure
+fig, ax = plt.subplots(layout = "constrained")
+line1, = ax.plot(x, y1, c = "blue")
+ax.set_ylabel("Probability")
+line2, = ax.plot(x, y2+0.001, c = "red")
+
+scat1 = ax.scatter(rng.normal(loc = 0, scale = 2, size = n_samples), 0.05*np.ones(n_samples), c = "blue", s = 100, alpha = 0.6, label = "Sample 1")
+scat2 = ax.scatter(rng.normal(loc = 0, scale = 2, size = n_samples), 0.05*np.ones(n_samples), c = "red", s = 100, alpha = 0.6, label = "Sample 2")
+ax.set_xlim((-10, 10))
+text = ax.text(x = 0, y = 0.06, s = "", horizontalalignment='center', verticalalignment='center')
+ax.legend()
+
+def update(frame):
+    tempx1 = rng.normal(loc = 0, scale = 1, size = n_samples)
+    tempy1 = 0.03*np.ones(n_samples)
+    data1 = np.stack([tempx1, tempy1], axis = 1)
+    scat1.set_offsets(data1)
+    tempx2 = rng.normal(loc = 0, scale = 1, size = n_samples)
+    tempy2 = 0.02*np.ones(n_samples)
+    data2 = np.stack([tempx2, tempy2], axis = 1)
+    scat2.set_offsets(data2)
+    _, pvalue = test_significant_difference(tempx1, tempx2)
+    color = "red" if (pvalue < significance_threshold) else "green"
+    significance = "No difference" if (pvalue >= significance_threshold) else "Significant difference"
+    text.set_text(f"trial:{frame+1}\n pvalue = {pvalue:.3f}\n Conclusion:\n{significance}")
+    text.set_color(color)
+    return(scat1, scat2)
+
+# Construct FuncAnimation Object
+ani = animation.FuncAnimation(fig = fig, func = update, frames = 100, interval = 1000)
+ani.save('animation_drawing.gif', writer='pillow');
+plt.close()
+HTML(ani.to_jshtml())
+```
+
