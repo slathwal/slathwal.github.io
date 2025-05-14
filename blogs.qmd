@@ -9,4 +9,5 @@ listing:
     filter-ui: false
     fields: [image, date, title, author, subtitle, description, word-count, reading-time]
 page-layout: full
+freeze: true
 ---

@@ -232,7 +232,7 @@ gtag('config', 'G-EM9YQSDPE3', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">March 28, 2025</p>
+      <p class="date-modified">May 13, 2025</p>
     </div>
   </div>
     
@@ -257,7 +257,7 @@ gtag('config', 'G-EM9YQSDPE3', { 'anonymize_ip': true});
 <h1>Get the data</h1>
 <p>In this example, we are going to use an <strong>Age Dataset</strong><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. This dataset contains the details of work, life and death of historical individuals. The data is avialable publicly on github.</p>
 <p>For the following analysis, I will use just one part of the dataset from the <a href="https://github.com/Moradnejad/AgeDataset">AgeDataset github repository</a>.</p>
-<div id="2ba68404" class="cell" data-execution_count="1">
+<div id="d0666255" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -366,7 +366,7 @@ gtag('config', 'G-EM9YQSDPE3', { 'anonymize_ip': true});
 <section id="explore-the-data" class="level1">
 <h1>Explore the data</h1>
 <p>Let’s look at the values available in the <code>Gender</code> column.</p>
-<div id="e8810dc9" class="cell" data-execution_count="2">
+<div id="b2eb78ec" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>age1[<span class="st">"Gender"</span>].value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
 <pre><code>Gender
@@ -436,7 +436,7 @@ Figure&nbsp;2: Count of number of individuals in the data born in each year.
 <p>In order to do the above, we need to create a new column called <code>century</code>, which will include all people born in each century after the year 1000.</p>
 <section id="look-at-the-number-of-people-born-in-each-century-after-the-year-1000" class="level2">
 <h2 class="anchored" data-anchor-id="look-at-the-number-of-people-born-in-each-century-after-the-year-1000">Look at the number of people born in each century after the year 1000</h2>
-<div id="7ad6da34" class="cell" data-execution_count="5">
+<div id="accbfbc4" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a new column called Century</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>centuries <span class="op">=</span> np.arange(<span class="dv">1000</span>, <span class="dv">2100</span>, <span class="dv">100</span>)</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> age1.copy()</span>
@@ -467,7 +467,7 @@ Name: count, dtype: int64</code></pre>
 </section>
 <section id="look-at-the-median-difference-between-genders-across-centuries" class="level2">
 <h2 class="anchored" data-anchor-id="look-at-the-median-difference-between-genders-across-centuries">Look at the median difference between genders across centuries</h2>
-<div id="e2c0aee9" class="cell" data-execution_count="6">
+<div id="3cd57cfc" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">"Gender"</span>, <span class="st">"century"</span>, <span class="st">"Age of death"</span>]].groupby([<span class="st">"century"</span>, <span class="st">"Gender"</span>])[<span class="st">"Age of death"</span>].median()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <pre><code>century       Gender
@@ -500,7 +500,7 @@ Name: Age of death, dtype: float64</code></pre>
 </section>
 <section id="look-at-the-total-individuals-in-the-data-split-by-gender-across-centuries" class="level2">
 <h2 class="anchored" data-anchor-id="look-at-the-total-individuals-in-the-data-split-by-gender-across-centuries">Look at the total individuals in the data split by gender across centuries</h2>
-<div id="5e18877f" class="cell" data-execution_count="7">
+<div id="3713c79c" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">"Gender"</span>, <span class="st">"century"</span>, <span class="st">"Age of death"</span>]].groupby([<span class="st">"century"</span>])[<span class="st">"Gender"</span>].value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
 <pre><code>century       Gender
@@ -534,7 +534,7 @@ Name: count, dtype: int64</code></pre>
 </section>
 <section id="select-a-subset-of-the-data-for-individuals-born-in-the-13th-century" class="level1">
 <h1>Select a subset of the data for individuals born in the 13th century</h1>
-<div id="6a81e195" class="cell" data-execution_count="8">
+<div id="68e460ef" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get the dataframe for the thirteenth century</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>df_thirteen <span class="op">=</span> df[df[<span class="st">"century"</span>] <span class="op">==</span> <span class="st">"13th century"</span>][[<span class="st">"century"</span>, <span class="st">"Gender"</span>, <span class="st">"Age of death"</span>]].copy().reset_index(drop <span class="op">=</span> <span class="va">True</span>)</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -597,7 +597,7 @@ Name: count, dtype: int64</code></pre>
 </ul>
 <section id="calculate-the-difference-between-median-age-of-death-of-genders-in-the-data" class="level2">
 <h2 class="anchored" data-anchor-id="calculate-the-difference-between-median-age-of-death-of-genders-in-the-data">Calculate the difference between median <code>Age of death</code> of genders in the data</h2>
-<div id="8f582cff" class="cell" data-execution_count="9">
+<div id="cf70417b" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define a function to calculate the statistic of interest</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calculate_median_diff_genders(df):</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    median_diff_genders <span class="op">=</span> (df[df[<span class="st">"Gender"</span>]<span class="op">==</span> <span class="st">"Male"</span>][<span class="st">"Age of death"</span>].median()) <span class="op">-</span> (df[df[<span class="st">"Gender"</span>]<span class="op">==</span> <span class="st">"Female"</span>][<span class="st">"Age of death"</span>].median())</span>
@@ -612,7 +612,7 @@ Name: count, dtype: int64</code></pre>
 </section>
 <section id="shuffle-the-data-1000-times-and-create-a-distribution-of-difference-between-median-age-of-death-of-genders" class="level2">
 <h2 class="anchored" data-anchor-id="shuffle-the-data-1000-times-and-create-a-distribution-of-difference-between-median-age-of-death-of-genders">Shuffle the data 1000 times and create a distribution of difference between median <code>Age of death</code> of genders</h2>
-<div id="54be374a" class="cell" data-execution_count="10">
+<div id="7dcda8db" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">1000</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>median_diff_genders_distribution <span class="op">=</span> np.zeros(n)</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(n):</span>
@@ -623,20 +623,20 @@ Name: count, dtype: int64</code></pre>
 </section>
 <section id="calculate-95-confidence-intervals-for-observing-the-effect-of-gender-of-difference-in-median-value-of-age-of-death." class="level2">
 <h2 class="anchored" data-anchor-id="calculate-95-confidence-intervals-for-observing-the-effect-of-gender-of-difference-in-median-value-of-age-of-death.">Calculate 95% confidence intervals for observing the effect of gender of difference in median value of <code>Age of death</code>.</h2>
-<div id="41607ab2" class="cell" data-execution_count="11">
+<div id="cc0e2b6a" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calcualte 95% confidence interval</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>median_diff_genders_distribution.sort()</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>left_value <span class="op">=</span> median_diff_genders_distribution[<span class="bu">int</span>(<span class="fl">2.5</span><span class="op">/</span><span class="dv">100</span><span class="op">*</span>n)]</span>
 <span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>right_value <span class="op">=</span> median_diff_genders_distribution[<span class="bu">int</span>(<span class="fl">97.5</span><span class="op">/</span><span class="dv">100</span><span class="op">*</span>n)]</span>
 <span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>left_value, right_value</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="11">
-<pre><code>(-4.0, 4.0)</code></pre>
+<pre><code>(-3.0, 4.0)</code></pre>
 </div>
 </div>
 </section>
 <section id="calculate-the-p-value-for-the-observed-difference-in-median-of-age-of-death-between-genders" class="level2">
 <h2 class="anchored" data-anchor-id="calculate-the-p-value-for-the-observed-difference-in-median-of-age-of-death-between-genders">Calculate the p-value for the observed difference in median of <code>Age of death</code> between genders</h2>
-<div id="a776b615" class="cell" data-execution_count="12">
+<div id="a7b4acd8" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>p_value <span class="op">=</span> np.<span class="bu">sum</span>((median_diff_genders_distribution <span class="op">&lt;</span> <span class="op">-</span><span class="bu">abs</span>(observed_median_diff_genders)) <span class="op">|</span> (median_diff_genders_distribution <span class="op">&gt;</span> <span class="bu">abs</span>(observed_median_diff_genders)))<span class="op">/</span>n<span class="op">*</span><span class="dv">100</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>p_value</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="12">

@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.40">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Shefali Lathwal">
+<meta name="dcterms.date" content="2025-05-13">
+<meta name="description" content="Diabetes prevalence varies significantly across provinces and territories.">
+
+<title>Diabetes prevalence in Community Health Survery Data 2019-2020 in Canada – Shefali Lathwal</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../images/profile.jpg" rel="icon" type="image/jpeg">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-cf6845bbda1dda8865d8d4e405b63468.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-EM9YQSDPE3"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-EM9YQSDPE3', { 'anonymize_ip': true});
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Shefali Lathwal</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../projects.html"> 
+<span class="menu-text">Projects</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../talks.html"> 
+<span class="menu-text">Talks</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../blogs.html"> 
+<span class="menu-text">Blog</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+    <a href="https://www.linkedin.com/in/shefali-lathwal-90bb4b44/" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-linkedin"></i></a>
+    <a href="https://github.com/slathwal" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#load-the-data" id="toc-load-the-data" class="nav-link active" data-scroll-target="#load-the-data">Load the data</a></li>
+  <li><a href="#examine-the-size-of-the-data" id="toc-examine-the-size-of-the-data" class="nav-link" data-scroll-target="#examine-the-size-of-the-data">Examine the size of the data</a></li>
+  <li><a href="#select-rows-that-have-information-abotu-diabetes" id="toc-select-rows-that-have-information-abotu-diabetes" class="nav-link" data-scroll-target="#select-rows-that-have-information-abotu-diabetes">Select rows that have information abotu diabetes</a></li>
+  <li><a href="#select-only-adult-population" id="toc-select-only-adult-population" class="nav-link" data-scroll-target="#select-only-adult-population">Select only adult population</a></li>
+  <li><a href="#plot-diabetes-prevalence-by-provinceterritory" id="toc-plot-diabetes-prevalence-by-provinceterritory" class="nav-link" data-scroll-target="#plot-diabetes-prevalence-by-provinceterritory">Plot diabetes prevalence by province/territory</a></li>
+  <li><a href="#plot-diabetes-prevalence-on-a-map" id="toc-plot-diabetes-prevalence-on-a-map" class="nav-link" data-scroll-target="#plot-diabetes-prevalence-on-a-map">Plot diabetes prevalence on a map</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Diabetes prevalence in Community Health Survery Data 2019-2020 in Canada</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">python</div>
+    <div class="quarto-category">diabetes</div>
+    <div class="quarto-category">public-health</div>
+    <div class="quarto-category">community-health</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    Diabetes prevalence varies significantly across provinces and territories.
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Shefali Lathwal </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">May 13, 2025</p>
+    </div>
+  </div>
+  
+    <div>
+    <div class="quarto-title-meta-heading">Modified</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">May 13, 2025</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Statistics Canada releases the results of a Community Health Survey for public use every 2 years. The <a href="https://www150.statcan.gc.ca/n1/en/catalogue/82M0013X">latest data</a> are available for the years 2019-2020. I downloaded these data in a csv format and analyzed them in python. The map is obtained from Government of Canada <a href="https://open.canada.ca/data/en/dataset/a883eb14-0c0e-45c4-b8c4-b54c4a819edb/resource/1b0a85fc-272b-49c7-b165-b2ba380c48fe">website</a> and is from te 2016 Census.</p>
+<p>The documentation provided by Statistics Canada is quite comprehensive and contains a data dictionary with an explanation of each field in the data. - Each row in the data is a survey respondent. - Each column is either a field directly answered by people, or grouped or derived from other fields. - The data are anonymized and de-identified. - the data for the three territories are grouped together.</p>
+<section id="load-the-data" class="level1">
+<h1>Load the data</h1>
+<div id="0eba5a9a" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"./data/pumf_cchs.csv"</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="1">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">ADM_RNO1</th>
+<th data-quarto-table-cell-role="th">VERDATE</th>
+<th data-quarto-table-cell-role="th">REFPER</th>
+<th data-quarto-table-cell-role="th">GEOGPRV</th>
+<th data-quarto-table-cell-role="th">GEODGHR4</th>
+<th data-quarto-table-cell-role="th">DHH_SEX</th>
+<th data-quarto-table-cell-role="th">DHHGMS</th>
+<th data-quarto-table-cell-role="th">DHHDGHSZ</th>
+<th data-quarto-table-cell-role="th">ADM_PRX</th>
+<th data-quarto-table-cell-role="th">DHHGAGE</th>
+<th data-quarto-table-cell-role="th">...</th>
+<th data-quarto-table-cell-role="th">FSCDVHF2</th>
+<th data-quarto-table-cell-role="th">INCG015</th>
+<th data-quarto-table-cell-role="th">INCDGHH</th>
+<th data-quarto-table-cell-role="th">INCDGRCA</th>
+<th data-quarto-table-cell-role="th">INCDGRPR</th>
+<th data-quarto-table-cell-role="th">INCDGRRS</th>
+<th data-quarto-table-cell-role="th">ADM_040</th>
+<th data-quarto-table-cell-role="th">ADM_045</th>
+<th data-quarto-table-cell-role="th">ADM_050</th>
+<th data-quarto-table-cell-role="th">WTS_M</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>1000</td>
+<td>20240531</td>
+<td>2019-2020</td>
+<td>47.0</td>
+<td>47906.0</td>
+<td>2.0</td>
+<td>1.0</td>
+<td>2.0</td>
+<td>2.0</td>
+<td>3.0</td>
+<td>...</td>
+<td>0.0</td>
+<td>1.0</td>
+<td>5.0</td>
+<td>4.0</td>
+<td>4.0</td>
+<td>4.0</td>
+<td>1.0</td>
+<td>1.0</td>
+<td>6.0</td>
+<td>762.82</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>100005</td>
+<td>20240531</td>
+<td>2019-2020</td>
+<td>47.0</td>
+<td>47906.0</td>
+<td>1.0</td>
+<td>1.0</td>
+<td>2.0</td>
+<td>2.0</td>
+<td>5.0</td>
+<td>...</td>
+<td>0.0</td>
+<td>2.0</td>
+<td>4.0</td>
+<td>2.0</td>
+<td>2.0</td>
+<td>2.0</td>
+<td>6.0</td>
+<td>1.0</td>
+<td>6.0</td>
+<td>31.78</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>100012</td>
+<td>20240531</td>
+<td>2019-2020</td>
+<td>59.0</td>
+<td>59914.0</td>
+<td>2.0</td>
+<td>2.0</td>
+<td>1.0</td>
+<td>2.0</td>
+<td>5.0</td>
+<td>...</td>
+<td>6.0</td>
+<td>2.0</td>
+<td>2.0</td>
+<td>1.0</td>
+<td>1.0</td>
+<td>1.0</td>
+<td>2.0</td>
+<td>1.0</td>
+<td>6.0</td>
+<td>59.24</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>100015</td>
+<td>20240531</td>
+<td>2019-2020</td>
+<td>13.0</td>
+<td>13904.0</td>
+<td>1.0</td>
+<td>2.0</td>
+<td>1.0</td>
+<td>2.0</td>
+<td>5.0</td>
+<td>...</td>
+<td>0.0</td>
+<td>2.0</td>
+<td>3.0</td>
+<td>3.0</td>
+<td>3.0</td>
+<td>9.0</td>
+<td>6.0</td>
+<td>1.0</td>
+<td>6.0</td>
+<td>22.83</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>100018</td>
+<td>20240531</td>
+<td>2019-2020</td>
+<td>46.0</td>
+<td>46903.0</td>
+<td>1.0</td>
+<td>2.0</td>
+<td>1.0</td>
+<td>2.0</td>
+<td>4.0</td>
+<td>...</td>
+<td>0.0</td>
+<td>2.0</td>
+<td>1.0</td>
+<td>1.0</td>
+<td>1.0</td>
+<td>9.0</td>
+<td>2.0</td>
+<td>1.0</td>
+<td>6.0</td>
+<td>39.96</td>
+</tr>
+</tbody>
+</table>
+
+<p>5 rows × 691 columns</p>
+</div>
+</div>
+</div>
+</section>
+<section id="examine-the-size-of-the-data" class="level1">
+<h1>Examine the size of the data</h1>
+<div id="4d7d0d60" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.shape)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>col_list <span class="op">=</span> df.columns.tolist()</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(col_list)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>(108252, 691)
+['ADM_RNO1', 'VERDATE', 'REFPER', 'GEOGPRV', 'GEODGHR4', 'DHH_SEX', 'DHHGMS', 'DHHDGHSZ', 'ADM_PRX', 'DHHGAGE', 'DOMAC', 'MAC_010', 'EHG2DVH3', 'DOGEN', 'GEN_005', 'GEN_010', 'GEN_015', 'GEN_020', 'GEN_025', 'GEN_030', 'GENDVHDI', 'GENDVMHI', 'GENDVSWL', 'DOHWT', 'HWT_050', 'HWTDGISW', 'HWTDGWHO', 'HWTDGBCC', 'DOCCC', 'CCC_035', 'CCC_065', 'CCC_070', 'CCC_075', 'CCC_080', 'CCC_095', 'CCC_185', 'CCC_195', 'CCC_200', 'CCCDGRSP', 'CCCDGSKL', 'CCCDGCAR', 'DOHUI', 'HUIDGHSI', 'HUIDGPAD', 'DOCIH', 'CIH_005', 'CIH_010', 'CIH_015', 'CIH_020', 'CIH_025', 'CIH_030A', 'CIH_030B', 'CIH_030C', 'CIH_030D', 'CIH_030E', 'CIH_030F', 'CIH_030G', 'CIH_030H', 'CIH_030I', 'CIH_030J', 'CIH_030K', 'CIH_035', 'CIH_040A', 'CIH_040B', 'CIH_040C', 'CIH_040D', 'CIH_040E', 'CIH_040F', 'CIH_040G', 'CIH_040H', 'CIH_040I', 'DOFVC', 'FVCDVJUI', 'FVCDVFRU', 'FVCDVGRN', 'FVCDVORA', 'FVCDVPOT', 'FVCDVVEG', 'FVCDVTOT', 'FVCDVGDT', 'DOFGU', 'FGU_005', 'FGU_010', 'FGU_015A', 'FGU_015B', 'FGU_015C', 'FGU_015D', 'FGU_015E', 'FGU_015F', 'DOSMK', 'SMK_005', 'SMK_010', 'SMK_015', 'SMK_020', 'SMK_025', 'SMK_030', 'SMKG035', 'SMK_045', 'SMK_050', 'SMK_055', 'SMK_060', 'SMK_075', 'SMK_080', 'SMKG090', 'SMK_095', 'SMK_100', 'SMKG110', 'SMKDVSTY', 'SMKDGYCS', 'SMKDGSTP', 'DOTAL', 'TAL_005', 'TAL_010', 'TAL_015', 'TAL_020', 'TAL_025', 'TAL_030', 'TAL_035', 'TALDVUSE', 'DOETS', 'ETS_005', 'ETSG010', 'ETS_015', 'ETS_020', 'ETS_025A', 'ETS_025B', 'ETS_025C', 'ETS_025D', 'ETS_030', 'ETS_035', 'ETS_040', 'DOALC', 'ALC_005', 'ALC_010', 'ALC_015', 'ALC_020', 'ALCDVTTM', 'DOALW', 'ALW_005', 'ALW_010', 'ALW_015', 'ALW_020', 'ALW_025', 'ALW_030', 'ALW_035', 'ALW_040', 'ALWDVWKY', 'ALWDVDLY', 'ALWDVLTR', 'ALWDVSTR', 'DOAMU', 'AMU_005', 'AMU_010', 'AMU_015', 'AMU_020', 'AMU_025', 'AMU_030', 'AMU_040', 'AMU_045A', 'AMU_045B', 'AMU_045C', 'AMU_045D', 'AMU_045E', 'AMU_045F', 'DOCAN', 'CAN_015', 'CAN_030', 'CAN_035A', 'CAN_035B', 'CAN_035C', 'CAN_035D', 'CAN_035E', 'CAN_035F', 'CAN_035G', 'CAN_035H', 'CAN_035I', 'CAN_035J', 'CAN_040', 'CAN_045', 'CAN_050', 'CAN_055', 'DOSDS', 'SDS_005', 'SDS_010', 'SDS_015', 'SDS_020', 'SDS_025', 'SDSDVTOT', 'DODRG', 'DRGDVYA', 'DRGDVLA', 'DOPAA', 'PAA_005', 'PAA_010A', 'PAA_010B', 'PAA_010C', 'PAA_010D', 'PAA_010E', 'PAA_010F', 'PAA_010G', 'PAA_015', 'PAA_020', 'PAA_030', 'PAA_035', 'PAA_040A', 'PAA_040B', 'PAA_040C', 'PAA_040D', 'PAA_040E', 'PAA_040F', 'PAA_040G', 'PAA_045', 'PAA_050', 'PAA_060', 'PAA_065', 'PAA_070A', 'PAA_070B', 'PAA_070C', 'PAA_070D', 'PAA_070E', 'PAA_070F', 'PAA_070G', 'PAA_075', 'PAA_080', 'PAA_095', 'PAA_100', 'PAA_105', 'PAADVTRV', 'PAADVTRA', 'PAADVREC', 'PAADVRCA', 'PAADVOTH', 'PAADVOTA', 'PAADVMVA', 'PAADVACV', 'PAADVAC2', 'PAADVVIG', 'PAADVVOL', 'PAADVWHO', 'PAADVMON', 'PAADVTUE', 'PAADVWED', 'PAADVTHU', 'PAADVFRI', 'PAADVSAT', 'PAADVSUN', 'PAADVDYS', 'PAADVWKD', 'PAADVWND', 'DOPAY', 'PAY_005A', 'PAY_005B', 'PAY_005C', 'PAY_005D', 'PAY_010', 'PAY_025', 'PAY_030', 'PAY_045', 'PAY_050', 'PAY_065', 'PAY_070', 'PAY_090', 'PAY_095A', 'PAY_095B', 'PAY_095C', 'PAY_095D', 'PAY_095E', 'PAY_095F', 'PAY_095G', 'PAY_100', 'PAY_105', 'PAYDVTTR', 'PAYDVTSC', 'PAYDVADL', 'PAYDVTOA', 'PAYDVTMN', 'PAYDVTTU', 'PAYDVTWD', 'PAYDVTTH', 'PAYDVTFR', 'PAYDVTST', 'PAYDVTSN', 'PAYDVDYS', 'PAYDVMNS', 'PAYDVAV7', 'PAYDVTWK', 'PAYDVTWN', 'PAYDVDPG', 'PAYDVPAI', 'PAYDVVIG', 'PAYDVWK1', 'PAYDVWK2', 'PAYDVWK3', 'PAYDVPAG', 'DOSBE', 'SBE_005', 'SBE_010', 'DOSXB', 'SXB_005', 'SXB_080', 'SXB_095A', 'SXB_095B', 'SXB_095C', 'SXB_095D', 'SXB_095E', 'SXB_095F', 'SXB_095G', 'SXB_095H', 'SXB_095I', 'SXB_095J', 'SXB_095K', 'SXB_095L', 'SXB_150', 'DODRV', 'DRV_005', 'DRV_010', 'DRV_015', 'DRV_020', 'DRV_025', 'DRV_030', 'DRV_035', 'DRV_070', 'DRV_075', 'DODWI', 'DWI_005', 'DWI_010', 'DWI_015', 'DWI_020', 'DWI_025', 'DWI_030', 'DOFLU', 'FLU_005', 'FLU_010', 'FLU_015', 'FLU_020', 'FLU_025A', 'FLU_025B', 'FLU_025C', 'FLU_025D', 'FLU_025E', 'FLU_025F', 'FLU_025G', 'FLU_025H', 'FLU_025I', 'FLU_025J', 'FLU_025K', 'DOBPC', 'BPC_005', 'BPC_010', 'BPC_015B', 'BPC_015C', 'BPC_015D', 'BPC_015E', 'BPCG015F', 'BPC_020', 'DOMAM', 'MAM_005', 'MAM_010', 'MAM_013A', 'MAM_013B', 'MAM_013C', 'MAM_013D', 'MAM_013E', 'MAM_013F', 'MAM_013G', 'MAM_013H', 'MAM_015A', 'MAM_015B', 'MAM_015C', 'MAM_015D', 'MAM_015E', 'MAM_015F', 'MAM_015G', 'MAM_025', 'DOCCT', 'CCT_005', 'CCT_010', 'CCT_015A', 'CCT_015B', 'CCT_015C', 'CCT_015D', 'CCT_015E', 'CCT_015F', 'CCT_015G', 'CCT_015H', 'CCT_015I', 'CCT_020', 'CCT_025', 'CCT_030A', 'CCT_030B', 'CCT_030C', 'CCT_030D', 'CCT_030E', 'CCT_030F', 'CCT_030G', 'CCT_030H', 'CCT_030I', 'CCT_035', 'CCT_040', 'CCT_045C', 'CCT_045D', 'CCT_045G', 'CCT_045H', 'CCTG045I', 'CCT_050', 'CCT_055', 'CCT_065B', 'CCT_065C', 'CCT_065D', 'CCT_065G', 'CCTG065I', 'CCT_070', 'CCT_075', 'CCT_080', 'DOCMH', 'CMH_005', 'CMHG010', 'CMH_015A', 'CMH_015B', 'CMH_015C', 'CMH_015D', 'CMH_015E', 'CMH_015F', 'DOSWL', 'SWL_005', 'SWL_010', 'SWL_015', 'SWL_020', 'SWL_025', 'SWL_030', 'SWL_035', 'SWL_040', 'SWL_045', 'DODEP', 'DEPDVPHQ', 'DEPDVSEV', 'DOSUI', 'SUI_005', 'SUI_010', 'DOSPS', 'SPS_015', 'SPS_020', 'SPS_025', 'SPS_035', 'SPS_050', 'DOPHC', 'PHC_005', 'PHC_010', 'PHC_015', 'PHC_020', 'PHC_025A', 'PHC_025B', 'PHC_025C', 'PHC_025D', 'PHC_025E', 'PHC_025F', 'PHC_030', 'PHC_035', 'PHC_045', 'PHC_050', 'PHC_055A', 'PHC_055B', 'PHC_055C', 'PHC_055D', 'PHC_055E', 'PHC_055F', 'PHC_055G', 'PHC_055H', 'PHC_055I', 'PHC_055J', 'PHC_055K', 'PHC_060', 'DOMDA', 'MDA_005', 'MDA_010', 'MDA_015', 'MDA_020', 'DOCP2', 'CP2_005', 'CP2G010', 'CP2_015', 'CP2G020', 'CP2_025', 'CP2G030', 'CP2_035', 'CP2G040', 'CP2_045', 'CP2G050', 'CP2_055', 'CP2G060', 'CP2_065', 'CP2G070', 'DOCP3', 'CP3_005', 'CP3G010', 'DOPNC', 'PNC_01A', 'PNC_01B', 'PNC_01C', 'PNC_01D', 'PNC_01E', 'PNC_02A', 'PNC_02BA', 'PNC_02BB', 'PNC_02BC', 'PNC_02BD', 'PN1_01A1', 'PN1_01B1', 'PN1_01C1', 'PN1_01D1', 'PN1_01E1', 'PN1_01F1', 'PN1_01G1', 'PN1_01H1', 'PN1_01I1', 'PN1_01K1', 'PN1G01L1', 'PN1_02A1', 'PN1_01A2', 'PN1_01B2', 'PN1_01C2', 'PN1_01D2', 'PN1_01E2', 'PN1_01F2', 'PN1_01G2', 'PN1_01H2', 'PN1_01I2', 'PN1_01K2', 'PN1G01L2', 'PN1_02A2', 'PN1_01A3', 'PN1_01B3', 'PN1_01C3', 'PN1_01D3', 'PN1_01E3', 'PN1_01F3', 'PN1_01G3', 'PN1_01H3', 'PN1_01I3', 'PN1_01K3', 'PN1G01L3', 'PN1_02A3', 'PN1_01A4', 'PN1_01B4', 'PN1_01C4', 'PN1_01D4', 'PN1_01E4', 'PN1_01F4', 'PN1_01G4', 'PN1_01H4', 'PN1_01I4', 'PN1_01K4', 'PN1G01L4', 'PN1_02A4', 'PNC_04A', 'PNC_04BA', 'PNC_04BB', 'PNC_04BC', 'PN1_01A5', 'PN1_01B5', 'PN1_01C5', 'PN1_01D5', 'PN1_01E5', 'PN1_01F5', 'PN1_01G5', 'PN1_01H5', 'PN1_01I5', 'PN1_01K5', 'PN1G01L5', 'PN1_02A5', 'PN1_01A6', 'PN1_01B6', 'PN1_01C6', 'PN1_01D6', 'PN1_01E6', 'PN1_01F6', 'PN1_01G6', 'PN1_01H6', 'PN1_01I6', 'PN1_01K6', 'PN1G01L6', 'PN1_02A6', 'PN1_01A7', 'PN1_01B7', 'PN1_01C7', 'PN1_01D7', 'PN1_01E7', 'PN1_01F7', 'PN1_01G7', 'PN1_01H7', 'PN1_01I7', 'PN1_01K7', 'PN1G01L7', 'PN1_02A7', 'PNCDVH12', 'PNCDVHCT', 'PNCDVPNI', 'PNCDVPNM', 'PNCDVPNC', 'PNCDVPNO', 'PNCDVNED', 'DOPSC', 'PSC_005', 'PSCG010', 'PSCG015', 'PSC_065', 'PSCG070', 'PSC_075', 'DOPEX', 'PEX_005', 'PEX_010', 'PEX_015', 'PEX_020', 'PEX_025', 'PEX_030', 'PEX_035', 'PEX_040', 'PEX_045', 'PEX_050', 'PEX_055', 'PEX_060', 'PEX_065', 'PEX_070', 'PEX_075', 'PEX_080', 'PEX_085', 'PEX_090', 'DOUCN', 'UCN_005', 'UCN_010A', 'UCN_010B', 'UCN_010C', 'UCN_010D', 'UCN_010E', 'UCN_010F', 'UCN_010G', 'UCN_010H', 'UCN_010I', 'UCN_010J', 'UCN_010K', 'UCN_015A', 'UCN_015B', 'UCN_015C', 'UCN_015D', 'UCN_015E', 'UCN_015F', 'UCN_015G', 'UCN_015H', 'UCN_015I', 'UCN_015J', 'UCN_020', 'UCN_025A', 'UCN_025B', 'UCN_025C', 'UCN_025D', 'UCN_025E', 'UCN_025F', 'LBFDGWSS', 'LBFDGHPW', 'LBFDVPFT', 'DOSDC', 'SDC_015', 'SDCDGCB', 'SDCDVIMM', 'SDCDVFLA', 'DOPMK', 'PMKPROXY', 'DOINS', 'INS_005', 'INS_010A', 'INS_010B', 'INS_010C', 'INS_010D', 'INS_015', 'INS_020A', 'INS_020B', 'INS_020C', 'INS_020D', 'DOFSC', 'FSCDVAF2', 'FSCDVCF2', 'FSCDVHF2', 'INCG015', 'INCDGHH', 'INCDGRCA', 'INCDGRPR', 'INCDGRRS', 'ADM_040', 'ADM_045', 'ADM_050', 'WTS_M']</code></pre>
+</div>
+</div>
+<p>The data consists of 108,252 rows and 691 columns.</p>
+</section>
+<section id="select-rows-that-have-information-abotu-diabetes" class="level1">
+<h1>Select rows that have information abotu diabetes</h1>
+<p>Codes 9, 7, and 8 are for either refusing to disclose diabetes status, or not knowing or not stated.</p>
+<div id="2547e5b5" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">"CCC_095"</span>]].value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="3">
+<pre><code>CCC_095
+2.0        95749
+1.0         9838
+9.0         2529
+7.0          112
+8.0           24
+Name: count, dtype: int64</code></pre>
+</div>
+</div>
+<div id="03c28bb2" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#df[]</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df[df[<span class="st">"CCC_095"</span>].isin([<span class="fl">1.0</span>, <span class="fl">2.0</span>])]</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df[<span class="st">"CCC_095"</span>].value_counts())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>CCC_095
+2.0    95749
+1.0     9838
+Name: count, dtype: int64</code></pre>
+</div>
+</div>
+</section>
+<section id="select-only-adult-population" class="level1">
+<h1>Select only adult population</h1>
+<p>Code = 1 is for people aged younger than 18.</p>
+<div id="685e3f67" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df[<span class="op">~</span>(df[<span class="st">"DHHGAGE"</span>] <span class="op">==</span> <span class="dv">1</span>)]</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"DHHGAGE"</span>].value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="5">
+<pre><code>DHHGAGE
+5.0    47149
+4.0    20597
+3.0    16340
+2.0    15067
+Name: count, dtype: int64</code></pre>
+</div>
+</div>
+</section>
+<section id="plot-diabetes-prevalence-by-provinceterritory" class="level1">
+<h1>Plot diabetes prevalence by province/territory</h1>
+<ul>
+<li>Look at diabetes prevalence by state for adults over the age of 18.</li>
+</ul>
+<div id="7a601a8e" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>df_subset <span class="op">=</span> df[[<span class="st">"GEOGPRV"</span>,<span class="st">"CCC_095"</span>]]</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>geo_mapping <span class="op">=</span> <span class="bu">dict</span>([(<span class="st">"NEWFOUNDLAND AND LABRADOR"</span>, <span class="dv">10</span>),</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>(<span class="st">"PRINCE EDWARD ISLAND"</span>, <span class="dv">11</span>),</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>(<span class="st">"NOVA SCOTIA"</span>, <span class="dv">12</span>),</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>(<span class="st">"NEW BRUNSWICK"</span>, <span class="dv">13</span>),</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>(<span class="st">"QUEBEC"</span>, <span class="dv">24</span>),</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>(<span class="st">"ONTARIO"</span>, <span class="dv">35</span>),</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>(<span class="st">"MANITOBA"</span> , <span class="dv">46</span>),</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>(<span class="st">"SASKATCHEWAN"</span> ,<span class="dv">47</span>),</span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>(<span class="st">"ALBERTA"</span>, <span class="dv">48</span>),</span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>(<span class="st">"BRITISH COLUMBIA"</span> , <span class="dv">59</span>),</span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>(<span class="st">"YUKON/NORTHWEST/NUNAVUT TERRITORIES"</span>,<span class="dv">60</span>)]</span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a> )</span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>geo_mapping_reverse <span class="op">=</span> {v: k <span class="cf">for</span> k,v <span class="kw">in</span> geo_mapping.items()}</span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a>grouped <span class="op">=</span> df_subset.groupby([<span class="st">"GEOGPRV"</span>])[<span class="st">"CCC_095"</span>]</span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a>grouped_df <span class="op">=</span> grouped.value_counts()<span class="op">/</span>grouped.size()<span class="op">*</span><span class="dv">100</span></span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a>grouped_df <span class="op">=</span> grouped_df.reset_index()</span>
+<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a><span class="co">#print(grouped_df.columns[2])</span></span>
+<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a>grouped_df <span class="op">=</span> grouped_df.rename(columns <span class="op">=</span> {grouped_df.columns[<span class="dv">2</span>]: <span class="st">"percent_respondents"</span>})</span>
+<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a><span class="co">#print(grouped_df)</span></span>
+<span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a>grouped_df[<span class="st">"Name"</span>] <span class="op">=</span> [geo_mapping_reverse[num] <span class="cf">for</span> num <span class="kw">in</span> grouped_df[<span class="st">"GEOGPRV"</span>]]</span>
+<span id="cb10-29"><a href="#cb10-29" aria-hidden="true" tabindex="-1"></a><span class="co">#print(grouped_df)</span></span>
+<span id="cb10-30"><a href="#cb10-30" aria-hidden="true" tabindex="-1"></a>df_plot <span class="op">=</span> grouped_df[grouped_df[<span class="st">"CCC_095"</span>] <span class="op">==</span> <span class="dv">1</span>].sort_values(by <span class="op">=</span><span class="st">"percent_respondents"</span>)</span>
+<span id="cb10-31"><a href="#cb10-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-32"><a href="#cb10-32" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots()</span>
+<span id="cb10-33"><a href="#cb10-33" aria-hidden="true" tabindex="-1"></a>df_plot.plot.barh(y <span class="op">=</span> <span class="st">"percent_respondents"</span>, x <span class="op">=</span> <span class="st">"Name"</span>,ax <span class="op">=</span> ax)</span>
+<span id="cb10-34"><a href="#cb10-34" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"</span><span class="sc">% o</span><span class="st">f respondents with diabetes"</span>)</span>
+<span id="cb10-35"><a href="#cb10-35" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"Province/Territory"</span>)</span>
+<span id="cb10-36"><a href="#cb10-36" aria-hidden="true" tabindex="-1"></a>ax.legend(<span class="st">""</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-7-output-1.png" width="865" height="429" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="plot-diabetes-prevalence-on-a-map" class="level1">
+<h1>Plot diabetes prevalence on a map</h1>
+<div id="c88be228" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> geopandas <span class="im">as</span> gpd</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>gdf <span class="op">=</span> gpd.read_file(<span class="st">"./data/lpr_000b16a_f/lpr_000b16a_f.shp"</span>)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>merged_df <span class="op">=</span> gdf.merge(df_plot, left_on <span class="op">=</span> pd.to_numeric(gdf[<span class="st">"PRIDU"</span>]), right_on <span class="op">=</span> <span class="st">"GEOGPRV"</span>, how <span class="op">=</span> <span class="st">"outer"</span>)</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Modify the values for Northwest Territories an Nunavut to same as Yukon, since all values are merged in the data</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>territory_value <span class="op">=</span> merged_df[merged_df[<span class="st">"PRIDU"</span>]<span class="op">==</span><span class="st">"60"</span>][<span class="st">"percent_respondents"</span>].values[<span class="dv">0</span>]</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>merged_df.loc[merged_df[<span class="st">"PRIDU"</span>].isin([<span class="st">"61"</span>, <span class="st">"62"</span>]),<span class="st">"percent_respondents"</span>] <span class="op">=</span> territory_value</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>merged_df</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">8</span>))</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>merged_df.plot(column<span class="op">=</span><span class="st">'percent_respondents'</span>, legend<span class="op">=</span><span class="va">True</span>, cmap<span class="op">=</span><span class="st">'bwr'</span>, ax <span class="op">=</span> ax)</span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">'Percentage of survey respondents with diabetes'</span>)</span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>ax.set_axis_off()</span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>fig_from_ax <span class="op">=</span> ax.get_figure()</span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>fig_from_ax.savefig(<span class="st">"diabetes_prevalence_canada.png"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-8-output-1.png" width="807" height="631" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+
+
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Made with <a href="https://quarto.org"><img src="https://quarto.org/quarto.png" class="img-fluid" width="70"></a></p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="mailto:slathwal@alum.mit.edu">
+<p><i class="fa-solid fa-envelope" aria-label="envelope"></i> Contact me</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="https://github.com/slathwal/slathwal.github.io">
+<p><i class="fa-brands fa-github" aria-label="github"></i> Source code</p>
+</a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

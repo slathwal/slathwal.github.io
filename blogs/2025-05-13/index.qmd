@@ -1,0 +1,125 @@
+---
+title: "Diabetes prevalence in Community Health Survery Data 2019-2020 in Canada"
+description: "Diabetes prevalence varies significantly across provinces and territories."
+author: "Shefali Lathwal"
+date: "2025-05-13"
+date-modified: last-modified
+categories: [python, diabetes, public-health, "community-health"]
+image: "diabetes_prevalence_canada.png"
+toc: true
+draft: false
+freeze: true
+jupyter: python3
+---
+Statistics Canada releases the results of a Community Health Survey for public use every 2 years. The [latest data](https://www150.statcan.gc.ca/n1/en/catalogue/82M0013X) are available for the years 2019-2020. I downloaded these data in a csv format and analyzed them in python. The map is obtained from Government of Canada [website](https://open.canada.ca/data/en/dataset/a883eb14-0c0e-45c4-b8c4-b54c4a819edb/resource/1b0a85fc-272b-49c7-b165-b2ba380c48fe) and is from te 2016 Census.
+
+The documentation provided by Statistics Canada is quite comprehensive and contains a data dictionary with an explanation of each field in the data.
+- Each row in the data is a survey respondent.
+- Each column is either a field directly answered by people, or grouped or derived from other fields.
+- The data are anonymized and de-identified.
+- the data for the three territories are grouped together.
+
+# Load the data
+```{python}
+import pandas as pd
+import numpy as np
+
+df = pd.read_csv("./data/pumf_cchs.csv")
+df.head()
+```
+
+# Examine the size of the data
+```{python}
+print(df.shape)
+col_list = df.columns.tolist()
+print(col_list)
+``` 
+
+The data consists of 108,252 rows and 691 columns.
+
+# Select rows that have information about diabetes
+Codes 9, 7, and 8 are for either refusing to disclose diabetes status, or not knowing or not stated. 
+
+```{python}
+df[["CCC_095"]].value_counts()
+```
+
+
+```{python}
+#df[]
+df = df[df["CCC_095"].isin([1.0, 2.0])]
+print(df["CCC_095"].value_counts())
+
+```
+
+# Select only adult population
+Code = 1 is for people aged younger than 18.
+```{python}
+df = df[~(df["DHHGAGE"] == 1)]
+df["DHHGAGE"].value_counts()
+```
+
+# Plot diabetes prevalence by province/territory
+- Look at diabetes prevalence by state for adults over the age of 18.
+
+```{python}
+import matplotlib.pyplot as plt
+
+df_subset = df[["GEOGPRV","CCC_095"]]
+
+
+geo_mapping = dict([("NEWFOUNDLAND AND LABRADOR", 10),
+("PRINCE EDWARD ISLAND", 11),
+("NOVA SCOTIA", 12),
+("NEW BRUNSWICK", 13),
+("QUEBEC", 24),
+("ONTARIO", 35),
+("MANITOBA" , 46),
+("SASKATCHEWAN" ,47),
+("ALBERTA", 48),
+("BRITISH COLUMBIA" , 59),
+("YUKON/NORTHWEST/NUNAVUT TERRITORIES",60)]
+ )
+geo_mapping_reverse = {v: k for k,v in geo_mapping.items()}
+
+
+grouped = df_subset.groupby(["GEOGPRV"])["CCC_095"]
+grouped_df = grouped.value_counts()/grouped.size()*100
+
+grouped_df = grouped_df.reset_index()
+#print(grouped_df.columns[2])
+grouped_df = grouped_df.rename(columns = {grouped_df.columns[2]: "percent_respondents"})
+#print(grouped_df)
+grouped_df["Name"] = [geo_mapping_reverse[num] for num in grouped_df["GEOGPRV"]]
+#print(grouped_df)
+df_plot = grouped_df[grouped_df["CCC_095"] == 1].sort_values(by ="percent_respondents")
+
+fig, ax = plt.subplots()
+df_plot.plot.barh(y = "percent_respondents", x = "Name",ax = ax)
+ax.set_xlabel("% of respondents with diabetes")
+ax.set_ylabel("Province/Territory")
+ax.legend("")
+
+```
+
+# Plot diabetes prevalence on a map
+```{python}
+import geopandas as gpd
+gdf = gpd.read_file("./data/lpr_000b16a_f/lpr_000b16a_f.shp")
+merged_df = gdf.merge(df_plot, left_on = pd.to_numeric(gdf["PRIDU"]), right_on = "GEOGPRV", how = "outer")
+
+# Modify the values for Northwest Territories an Nunavut to same as Yukon, since all values are merged in the data
+
+territory_value = merged_df[merged_df["PRIDU"]=="60"]["percent_respondents"].values[0]
+merged_df.loc[merged_df["PRIDU"].isin(["61", "62"]),"percent_respondents"] = territory_value
+
+merged_df
+
+fig, ax = plt.subplots(figsize=(12, 8))
+merged_df.plot(column='percent_respondents', legend=True, cmap='bwr', ax = ax)
+ax.set_title('Percentage of survey respondents with diabetes')
+ax.set_axis_off()
+
+fig_from_ax = ax.get_figure()
+fig_from_ax.savefig("diabetes_prevalence_canada.png")
+```

@@ -7,7 +7,8 @@ date-modified: last-modified
 categories: [python, statistics]
 image: "permutation-in-statistics.png"
 draft: false
-freeze: false
+freeze: true
+jupyter: python3
 ---
 Permutation is a technique in statistics that allows you to perform hypothesis testing using any measurement of interest. The steps are as follows:
 

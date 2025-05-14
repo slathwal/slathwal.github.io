@@ -8,7 +8,8 @@ categories: [python, statistics, p-value, animation]
 image: "animation_drawing.gif"
 toc: true
 draft: false
-freeze: false
+freeze: true
+jupyter: python3
 ---
 # Problem Statement
 
