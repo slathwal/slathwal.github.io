@@ -1,5 +1,5 @@
 ---
-title: "Diabetes prevalence in Community Health Survery Data 2019-2020 in Canada"
+title: "Diabetes prevalence in Community Health Survey Data 2019-2020 in Canada"
 description: "Diabetes prevalence varies significantly across provinces and territories."
 author: "Shefali Lathwal"
 date: "2025-05-13"
@@ -8,7 +8,7 @@ categories: [python, diabetes, public-health, "community-health"]
 image: "diabetes_prevalence_canada.png"
 toc: true
 draft: false
-freeze: false
+freeze: true
 jupyter: python3
 ---
 Statistics Canada releases the results of a Community Health Survey for public use every 2 years. The [latest data](https://www150.statcan.gc.ca/n1/en/catalogue/82M0013X) are available for the years 2019-2020. I downloaded these data in a csv format and analyzed them in python. The map is obtained from Government of Canada [website](https://open.canada.ca/data/en/dataset/a883eb14-0c0e-45c4-b8c4-b54c4a819edb/resource/1b0a85fc-272b-49c7-b165-b2ba380c48fe) and is from te 2016 Census.
