@@ -238,7 +238,7 @@ gtag('config', 'G-EM9YQSDPE3', { 'anonymize_ip': true});
 <p>The documentation provided by Statistics Canada is quite comprehensive and contains a data dictionary with an explanation of each field in the data. - Each row in the data is a survey respondent. - Each column is either a field directly answered by people, or grouped or derived from other fields. - The data are anonymized and de-identified. - the data for the three territories are grouped together.</p>
 <section id="load-the-data" class="level1">
 <h1>Load the data</h1>
-<div id="55558de5" class="cell" data-execution_count="1">
+<div id="6590791a" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -406,7 +406,7 @@ gtag('config', 'G-EM9YQSDPE3', { 'anonymize_ip': true});
 </section>
 <section id="examine-the-size-of-the-data" class="level1">
 <h1>Examine the size of the data</h1>
-<div id="dca4d528" class="cell" data-execution_count="2">
+<div id="f50940ca" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.shape)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>col_list <span class="op">=</span> df.columns.tolist()</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(col_list)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -420,7 +420,7 @@ gtag('config', 'G-EM9YQSDPE3', { 'anonymize_ip': true});
 <section id="select-rows-that-have-information-about-diabetes" class="level1">
 <h1>Select rows that have information about diabetes</h1>
 <p>Codes 9, 7, and 8 are for either refusing to disclose diabetes status, or not knowing or not stated.</p>
-<div id="cd339e9b" class="cell" data-execution_count="3">
+<div id="a8a32649" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">"CCC_095"</span>]].value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>CCC_095
@@ -432,7 +432,7 @@ gtag('config', 'G-EM9YQSDPE3', { 'anonymize_ip': true});
 Name: count, dtype: int64</code></pre>
 </div>
 </div>
-<div id="a55a8238" class="cell" data-execution_count="4">
+<div id="d1ab33ec" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#df[]</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df[df[<span class="st">"CCC_095"</span>].isin([<span class="fl">1.0</span>, <span class="fl">2.0</span>])]</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df[<span class="st">"CCC_095"</span>].value_counts())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -447,7 +447,7 @@ Name: count, dtype: int64</code></pre>
 <section id="select-only-adult-population" class="level1">
 <h1>Select only adult population</h1>
 <p>Code = 1 is for people aged younger than 18.</p>
-<div id="4f536f5e" class="cell" data-execution_count="5">
+<div id="35ce3ee9" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df[<span class="op">~</span>(df[<span class="st">"DHHGAGE"</span>] <span class="op">==</span> <span class="dv">1</span>)]</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"DHHGAGE"</span>].value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
@@ -465,7 +465,7 @@ Name: count, dtype: int64</code></pre>
 <ul>
 <li>Look at diabetes prevalence by state for adults over the age of 18.</li>
 </ul>
-<div id="4f64adc5" class="cell" data-execution_count="6">
+<div id="d0b39a24" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>df_subset <span class="op">=</span> df[[<span class="st">"GEOGPRV"</span>,<span class="st">"CCC_095"</span>]]</span>
@@ -513,7 +513,7 @@ Name: count, dtype: int64</code></pre>
 </section>
 <section id="plot-diabetes-prevalence-on-a-map" class="level1">
 <h1>Plot diabetes prevalence on a map</h1>
-<div id="8933cb77" class="cell" data-execution_count="7">
+<div id="a87a96a2" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> geopandas <span class="im">as</span> gpd</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>gdf <span class="op">=</span> gpd.read_file(<span class="st">"./data/lpr_000b16a_f/lpr_000b16a_f.shp"</span>)</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>merged_df <span class="op">=</span> gdf.merge(df_plot, left_on <span class="op">=</span> pd.to_numeric(gdf[<span class="st">"PRIDU"</span>]), right_on <span class="op">=</span> <span class="st">"GEOGPRV"</span>, how <span class="op">=</span> <span class="st">"outer"</span>)</span>
