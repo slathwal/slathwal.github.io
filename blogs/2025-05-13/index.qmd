@@ -100,6 +100,11 @@ ax.set_xlabel("% of respondents with diabetes")
 ax.set_ylabel("Province/Territory")
 ax.legend("")
 
+
+# Save data for later use
+df_combined_plot = df_plot.copy()
+df_combined_plot = df_combined_plot.rename(columns = {"percent_respondents":"pct_resp_with_diabetes"}, inplace = False).drop(columns = "CCC_095", inplace=False)
+
 ```
 
 # Plot diabetes prevalence on a map
@@ -122,4 +127,92 @@ ax.set_axis_off()
 
 fig_from_ax = ax.get_figure()
 fig_from_ax.savefig("diabetes_prevalence_canada.png")
+```
+
+# Look at the percentage of adult population above 65 years in each province/territory
+For this analysis, remember that I have removed the youth population. So, the calculated percentages will be percentage of all adult survey respondents in each province/territory.
+
+- The column for age is DHHGAGE
+
+- The code for people above 65 years of age is 5
+
+```{python}
+df_subset = df[["GEOGPRV","DHHGAGE","CCC_095"]]
+
+# Calculate the total number of people in each province in each age category
+count_df = df_subset.groupby(["GEOGPRV","DHHGAGE"], as_index=False).size()
+
+# Calculate the total number of people in each province
+total_province_count = df_subset.groupby(["GEOGPRV"]).size()
+
+
+for num in count_df["GEOGPRV"].unique():
+    count_df.loc[count_df["GEOGPRV"] == num, "province_count"] = total_province_count.loc[num]
+
+# Calculate the percentage of people in each age group per province
+count_df["percent_age_group"] = (count_df["size"]/count_df["province_count"])*100
+
+
+count_df["Name"] = [geo_mapping_reverse[num] for num in count_df["GEOGPRV"]]
+df_plot = count_df[count_df["DHHGAGE"] == 5].sort_values(by ="percent_age_group")
+
+
+# Add the calculated percentage of population above 65 years of age to combined dataframe
+for num in df_combined_plot["GEOGPRV"].unique():
+    age_value = df_plot[df_plot["GEOGPRV"] == num]["percent_age_group"].values[0]
+    df_combined_plot.loc[df_combined_plot["GEOGPRV"] == num,"pct_age_group_above_65"] = age_value
+
+fig, ax = plt.subplots()
+df_plot.plot.barh(y = "percent_age_group", x = "Name",ax = ax)
+ax.set_xlabel("% of respondents 65+ years")
+ax.set_ylabel("Province/Territory")
+ax.legend("")
+```
+
+
+# Look at diabetes prevalence by household income
+For this analysis, remember that I have not removed people who have not disclosed their income.
+
+- The column for age is INCDGHH
+
+- The code for people with income below $20,000 is 1.
+
+```{python}
+#INCDGHH - Household income level
+df_subset = df[["GEOGPRV","INCDGHH","CCC_095"]]
+count_df = df_subset.groupby(["GEOGPRV","INCDGHH"], as_index=False).size()
+
+total_province_count = df_subset.groupby(["GEOGPRV"]).size()
+for num in count_df["GEOGPRV"].unique():
+    count_df.loc[count_df["GEOGPRV"] == num, "province_count"] = total_province_count.loc[num]
+count_df["percent_income_group"] = (count_df["size"]/count_df["province_count"])*100
+
+count_df["Name"] = [geo_mapping_reverse[num] for num in count_df["GEOGPRV"]]
+df_plot = count_df[count_df["INCDGHH"] == 1].sort_values(by ="percent_income_group")
+
+# Add data of people with income below $20,000 to the combined dataframe
+for num in df_combined_plot["GEOGPRV"].unique():
+    income_value = df_plot[df_plot["GEOGPRV"] == num]["percent_income_group"].values[0]
+    df_combined_plot.loc[df_combined_plot["GEOGPRV"] == num,"pct_income_group_below_20000"] = income_value
+
+fig, ax = plt.subplots()
+df_plot.plot.barh(y = "percent_income_group", x = "Name",ax = ax)
+ax.set_xlabel("% of respondents with income below $20,000")
+ax.set_ylabel("Province/Territory")
+ax.legend("")
+```
+
+# Analyze combined data with diabetes prevalence, age above 65 and income below $20000
+```{python}
+print(df_combined_plot.columns)
+df_combined_plot.sort_values(by = "pct_resp_with_diabetes")
+fig, ax = plt.subplots(3, 1, figsize = (6, 12))
+df_combined_plot.plot.barh(ax = ax[0], x = "Name", y = "pct_resp_with_diabetes")
+df_combined_plot.plot.barh(ax = ax[1], x = "Name", y = "pct_age_group_above_65")
+df_combined_plot.plot.barh(ax = ax[2], x = "Name", y = "pct_income_group_below_20000")
+```
+
+```{python}
+corr = df_combined_plot[["pct_resp_with_diabetes","pct_age_group_above_65", "pct_income_group_below_20000"]].corr()
+round(corr, ndigits = 3)
 ```

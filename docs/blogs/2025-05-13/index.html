@@ -10,7 +10,7 @@
 <meta name="dcterms.date" content="2025-05-13">
 <meta name="description" content="Diabetes prevalence varies significantly across provinces and territories.">
 
-<title>Diabetes prevalence in Community Health Survey Data 2019-2020 in Canada – Shefali Lathwal</title>
+<title>Diabetes prevalence in Community Health Survey Data 2019-2020 in Canada – Home</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -131,7 +131,7 @@ gtag('config', 'G-EM9YQSDPE3', { 'anonymize_ip': true});
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../../index.html">
-    <span class="navbar-title">Shefali Lathwal</span>
+    <span class="navbar-title">Home</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -141,8 +141,8 @@ gtag('config', 'G-EM9YQSDPE3', { 'anonymize_ip': true});
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html"> 
-<span class="menu-text">Home</span></a>
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../projects.html"> 
@@ -180,6 +180,9 @@ gtag('config', 'G-EM9YQSDPE3', { 'anonymize_ip': true});
   <li><a href="#select-only-adult-population" id="toc-select-only-adult-population" class="nav-link" data-scroll-target="#select-only-adult-population">Select only adult population</a></li>
   <li><a href="#plot-diabetes-prevalence-by-provinceterritory" id="toc-plot-diabetes-prevalence-by-provinceterritory" class="nav-link" data-scroll-target="#plot-diabetes-prevalence-by-provinceterritory">Plot diabetes prevalence by province/territory</a></li>
   <li><a href="#plot-diabetes-prevalence-on-a-map" id="toc-plot-diabetes-prevalence-on-a-map" class="nav-link" data-scroll-target="#plot-diabetes-prevalence-on-a-map">Plot diabetes prevalence on a map</a></li>
+  <li><a href="#look-at-the-percentage-of-adult-population-above-65-years-in-each-provinceterritory" id="toc-look-at-the-percentage-of-adult-population-above-65-years-in-each-provinceterritory" class="nav-link" data-scroll-target="#look-at-the-percentage-of-adult-population-above-65-years-in-each-provinceterritory">Look at the percentage of adult population above 65 years in each province/territory</a></li>
+  <li><a href="#look-at-diabetes-prevalence-by-household-income" id="toc-look-at-diabetes-prevalence-by-household-income" class="nav-link" data-scroll-target="#look-at-diabetes-prevalence-by-household-income">Look at diabetes prevalence by household income</a></li>
+  <li><a href="#analyze-combined-data-with-diabetes-prevalence-age-above-65-and-income-below-20000" id="toc-analyze-combined-data-with-diabetes-prevalence-age-above-65-and-income-below-20000" class="nav-link" data-scroll-target="#analyze-combined-data-with-diabetes-prevalence-age-above-65-and-income-below-20000">Analyze combined data with diabetes prevalence, age above 65 and income below $20000</a></li>
   </ul>
 </nav>
     </div>
@@ -238,13 +241,13 @@ gtag('config', 'G-EM9YQSDPE3', { 'anonymize_ip': true});
 <p>The documentation provided by Statistics Canada is quite comprehensive and contains a data dictionary with an explanation of each field in the data. - Each row in the data is a survey respondent. - Each column is either a field directly answered by people, or grouped or derived from other fields. - The data are anonymized and de-identified. - the data for the three territories are grouped together.</p>
 <section id="load-the-data" class="level1">
 <h1>Load the data</h1>
-<div id="a4c1a492" class="cell" data-execution_count="1">
+<div id="0c18a798" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"./data/pumf_cchs.csv"</span>)</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="1">
+<div class="cell-output cell-output-display" data-execution_count="12">
 <div>
 
 
@@ -406,7 +409,7 @@ gtag('config', 'G-EM9YQSDPE3', { 'anonymize_ip': true});
 </section>
 <section id="examine-the-size-of-the-data" class="level1">
 <h1>Examine the size of the data</h1>
-<div id="bd6f8319" class="cell" data-execution_count="2">
+<div id="d476ce05" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.shape)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>col_list <span class="op">=</span> df.columns.tolist()</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(col_list)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -420,9 +423,9 @@ gtag('config', 'G-EM9YQSDPE3', { 'anonymize_ip': true});
 <section id="select-rows-that-have-information-about-diabetes" class="level1">
 <h1>Select rows that have information about diabetes</h1>
 <p>Codes 9, 7, and 8 are for either refusing to disclose diabetes status, or not knowing or not stated.</p>
-<div id="515f2699" class="cell" data-execution_count="3">
+<div id="6c23307f" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">"CCC_095"</span>]].value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="3">
+<div class="cell-output cell-output-display" data-execution_count="14">
 <pre><code>CCC_095
 2.0        95749
 1.0         9838
@@ -432,7 +435,7 @@ gtag('config', 'G-EM9YQSDPE3', { 'anonymize_ip': true});
 Name: count, dtype: int64</code></pre>
 </div>
 </div>
-<div id="a3a67e32" class="cell" data-execution_count="4">
+<div id="be32fd03" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#df[]</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df[df[<span class="st">"CCC_095"</span>].isin([<span class="fl">1.0</span>, <span class="fl">2.0</span>])]</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df[<span class="st">"CCC_095"</span>].value_counts())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -447,10 +450,10 @@ Name: count, dtype: int64</code></pre>
 <section id="select-only-adult-population" class="level1">
 <h1>Select only adult population</h1>
 <p>Code = 1 is for people aged younger than 18.</p>
-<div id="fcbd597d" class="cell" data-execution_count="5">
+<div id="79d1958a" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df[<span class="op">~</span>(df[<span class="st">"DHHGAGE"</span>] <span class="op">==</span> <span class="dv">1</span>)]</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"DHHGAGE"</span>].value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="5">
+<div class="cell-output cell-output-display" data-execution_count="16">
 <pre><code>DHHGAGE
 5.0    47149
 4.0    20597
@@ -465,7 +468,7 @@ Name: count, dtype: int64</code></pre>
 <ul>
 <li>Look at diabetes prevalence by state for adults over the age of 18.</li>
 </ul>
-<div id="c61e8e61" class="cell" data-execution_count="6">
+<div id="20394cd0" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>df_subset <span class="op">=</span> df[[<span class="st">"GEOGPRV"</span>,<span class="st">"CCC_095"</span>]]</span>
@@ -501,7 +504,12 @@ Name: count, dtype: int64</code></pre>
 <span id="cb10-33"><a href="#cb10-33" aria-hidden="true" tabindex="-1"></a>df_plot.plot.barh(y <span class="op">=</span> <span class="st">"percent_respondents"</span>, x <span class="op">=</span> <span class="st">"Name"</span>,ax <span class="op">=</span> ax)</span>
 <span id="cb10-34"><a href="#cb10-34" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"</span><span class="sc">% o</span><span class="st">f respondents with diabetes"</span>)</span>
 <span id="cb10-35"><a href="#cb10-35" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"Province/Territory"</span>)</span>
-<span id="cb10-36"><a href="#cb10-36" aria-hidden="true" tabindex="-1"></a>ax.legend(<span class="st">""</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb10-36"><a href="#cb10-36" aria-hidden="true" tabindex="-1"></a>ax.legend(<span class="st">""</span>)</span>
+<span id="cb10-37"><a href="#cb10-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-38"><a href="#cb10-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-39"><a href="#cb10-39" aria-hidden="true" tabindex="-1"></a><span class="co"># Save data for later use</span></span>
+<span id="cb10-40"><a href="#cb10-40" aria-hidden="true" tabindex="-1"></a>df_combined_plot <span class="op">=</span> df_plot.copy()</span>
+<span id="cb10-41"><a href="#cb10-41" aria-hidden="true" tabindex="-1"></a>df_combined_plot <span class="op">=</span> df_combined_plot.rename(columns <span class="op">=</span> {<span class="st">"percent_respondents"</span>:<span class="st">"pct_resp_with_diabetes"</span>}, inplace <span class="op">=</span> <span class="va">False</span>).drop(columns <span class="op">=</span> <span class="st">"CCC_095"</span>, inplace<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -513,7 +521,7 @@ Name: count, dtype: int64</code></pre>
 </section>
 <section id="plot-diabetes-prevalence-on-a-map" class="level1">
 <h1>Plot diabetes prevalence on a map</h1>
-<div id="07dcd236" class="cell" data-execution_count="7">
+<div id="cbd0e691" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> geopandas <span class="im">as</span> gpd</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>gdf <span class="op">=</span> gpd.read_file(<span class="st">"./data/lpr_000b16a_f/lpr_000b16a_f.shp"</span>)</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>merged_df <span class="op">=</span> gdf.merge(df_plot, left_on <span class="op">=</span> pd.to_numeric(gdf[<span class="st">"PRIDU"</span>]), right_on <span class="op">=</span> <span class="st">"GEOGPRV"</span>, how <span class="op">=</span> <span class="st">"outer"</span>)</span>
@@ -537,6 +545,156 @@ Name: count, dtype: int64</code></pre>
 <figure class="figure">
 <p><img src="index_files/figure-html/cell-8-output-1.png" width="807" height="631" class="figure-img"></p>
 </figure>
+</div>
+</div>
+</div>
+</section>
+<section id="look-at-the-percentage-of-adult-population-above-65-years-in-each-provinceterritory" class="level1">
+<h1>Look at the percentage of adult population above 65 years in each province/territory</h1>
+<p>For this analysis, remember that I have removed the youth population. So, the calculated percentages will be percentage of all adult survey respondents in each province/territory.</p>
+<ul>
+<li><p>The column for age is DHHGAGE</p></li>
+<li><p>The code for people above 65 years of age is 5</p></li>
+</ul>
+<div id="05021667" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>df_subset <span class="op">=</span> df[[<span class="st">"GEOGPRV"</span>,<span class="st">"DHHGAGE"</span>,<span class="st">"CCC_095"</span>]]</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the total number of people in each province in each age category</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>count_df <span class="op">=</span> df_subset.groupby([<span class="st">"GEOGPRV"</span>,<span class="st">"DHHGAGE"</span>], as_index<span class="op">=</span><span class="va">False</span>).size()</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the total number of people in each province</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>total_province_count <span class="op">=</span> df_subset.groupby([<span class="st">"GEOGPRV"</span>]).size()</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> num <span class="kw">in</span> count_df[<span class="st">"GEOGPRV"</span>].unique():</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>    count_df.loc[count_df[<span class="st">"GEOGPRV"</span>] <span class="op">==</span> num, <span class="st">"province_count"</span>] <span class="op">=</span> total_province_count.loc[num]</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the percentage of people in each age group per province</span></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>count_df[<span class="st">"percent_age_group"</span>] <span class="op">=</span> (count_df[<span class="st">"size"</span>]<span class="op">/</span>count_df[<span class="st">"province_count"</span>])<span class="op">*</span><span class="dv">100</span></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>count_df[<span class="st">"Name"</span>] <span class="op">=</span> [geo_mapping_reverse[num] <span class="cf">for</span> num <span class="kw">in</span> count_df[<span class="st">"GEOGPRV"</span>]]</span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>df_plot <span class="op">=</span> count_df[count_df[<span class="st">"DHHGAGE"</span>] <span class="op">==</span> <span class="dv">5</span>].sort_values(by <span class="op">=</span><span class="st">"percent_age_group"</span>)</span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Add the calculated percentage of population above 65 years of age to combined dataframe</span></span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> num <span class="kw">in</span> df_combined_plot[<span class="st">"GEOGPRV"</span>].unique():</span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a>    age_value <span class="op">=</span> df_plot[df_plot[<span class="st">"GEOGPRV"</span>] <span class="op">==</span> num][<span class="st">"percent_age_group"</span>].values[<span class="dv">0</span>]</span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a>    df_combined_plot.loc[df_combined_plot[<span class="st">"GEOGPRV"</span>] <span class="op">==</span> num,<span class="st">"pct_age_group_above_65"</span>] <span class="op">=</span> age_value</span>
+<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots()</span>
+<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a>df_plot.plot.barh(y <span class="op">=</span> <span class="st">"percent_age_group"</span>, x <span class="op">=</span> <span class="st">"Name"</span>,ax <span class="op">=</span> ax)</span>
+<span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"</span><span class="sc">% o</span><span class="st">f respondents 65+ years"</span>)</span>
+<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"Province/Territory"</span>)</span>
+<span id="cb12-30"><a href="#cb12-30" aria-hidden="true" tabindex="-1"></a>ax.legend(<span class="st">""</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-9-output-1.png" width="865" height="429" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="look-at-diabetes-prevalence-by-household-income" class="level1">
+<h1>Look at diabetes prevalence by household income</h1>
+<p>For this analysis, remember that I have not removed people who have not disclosed their income.</p>
+<ul>
+<li><p>The column for age is INCDGHH</p></li>
+<li><p>The code for people with income below $20,000 is 1.</p></li>
+</ul>
+<div id="7c921803" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">#INCDGHH - Household income level</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>df_subset <span class="op">=</span> df[[<span class="st">"GEOGPRV"</span>,<span class="st">"INCDGHH"</span>,<span class="st">"CCC_095"</span>]]</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>count_df <span class="op">=</span> df_subset.groupby([<span class="st">"GEOGPRV"</span>,<span class="st">"INCDGHH"</span>], as_index<span class="op">=</span><span class="va">False</span>).size()</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>total_province_count <span class="op">=</span> df_subset.groupby([<span class="st">"GEOGPRV"</span>]).size()</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> num <span class="kw">in</span> count_df[<span class="st">"GEOGPRV"</span>].unique():</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>    count_df.loc[count_df[<span class="st">"GEOGPRV"</span>] <span class="op">==</span> num, <span class="st">"province_count"</span>] <span class="op">=</span> total_province_count.loc[num]</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>count_df[<span class="st">"percent_income_group"</span>] <span class="op">=</span> (count_df[<span class="st">"size"</span>]<span class="op">/</span>count_df[<span class="st">"province_count"</span>])<span class="op">*</span><span class="dv">100</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>count_df[<span class="st">"Name"</span>] <span class="op">=</span> [geo_mapping_reverse[num] <span class="cf">for</span> num <span class="kw">in</span> count_df[<span class="st">"GEOGPRV"</span>]]</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>df_plot <span class="op">=</span> count_df[count_df[<span class="st">"INCDGHH"</span>] <span class="op">==</span> <span class="dv">1</span>].sort_values(by <span class="op">=</span><span class="st">"percent_income_group"</span>)</span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Add data of people with income below $20,000 to the combined dataframe</span></span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> num <span class="kw">in</span> df_combined_plot[<span class="st">"GEOGPRV"</span>].unique():</span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>    income_value <span class="op">=</span> df_plot[df_plot[<span class="st">"GEOGPRV"</span>] <span class="op">==</span> num][<span class="st">"percent_income_group"</span>].values[<span class="dv">0</span>]</span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>    df_combined_plot.loc[df_combined_plot[<span class="st">"GEOGPRV"</span>] <span class="op">==</span> num,<span class="st">"pct_income_group_below_20000"</span>] <span class="op">=</span> income_value</span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots()</span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>df_plot.plot.barh(y <span class="op">=</span> <span class="st">"percent_income_group"</span>, x <span class="op">=</span> <span class="st">"Name"</span>,ax <span class="op">=</span> ax)</span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"</span><span class="sc">% o</span><span class="st">f respondents with income below $20,000"</span>)</span>
+<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"Province/Territory"</span>)</span>
+<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a>ax.legend(<span class="st">""</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-10-output-1.png" width="865" height="429" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="analyze-combined-data-with-diabetes-prevalence-age-above-65-and-income-below-20000" class="level1">
+<h1>Analyze combined data with diabetes prevalence, age above 65 and income below $20000</h1>
+<div id="09da58c1" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_combined_plot.columns)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>df_combined_plot.sort_values(by <span class="op">=</span> <span class="st">"pct_resp_with_diabetes"</span>)</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">3</span>, <span class="dv">1</span>, figsize <span class="op">=</span> (<span class="dv">6</span>, <span class="dv">12</span>))</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>df_combined_plot.plot.barh(ax <span class="op">=</span> ax[<span class="dv">0</span>], x <span class="op">=</span> <span class="st">"Name"</span>, y <span class="op">=</span> <span class="st">"pct_resp_with_diabetes"</span>)</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>df_combined_plot.plot.barh(ax <span class="op">=</span> ax[<span class="dv">1</span>], x <span class="op">=</span> <span class="st">"Name"</span>, y <span class="op">=</span> <span class="st">"pct_age_group_above_65"</span>)</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>df_combined_plot.plot.barh(ax <span class="op">=</span> ax[<span class="dv">2</span>], x <span class="op">=</span> <span class="st">"Name"</span>, y <span class="op">=</span> <span class="st">"pct_income_group_below_20000"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Index(['GEOGPRV', 'pct_resp_with_diabetes', 'Name', 'pct_age_group_above_65',
+       'pct_income_group_below_20000'],
+      dtype='object')</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-11-output-2.png" width="791" height="929" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="03b9f743" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>corr <span class="op">=</span> df_combined_plot[[<span class="st">"pct_resp_with_diabetes"</span>,<span class="st">"pct_age_group_above_65"</span>, <span class="st">"pct_income_group_below_20000"</span>]].corr()</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="bu">round</span>(corr, ndigits <span class="op">=</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="22">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">pct_resp_with_diabetes</th>
+<th data-quarto-table-cell-role="th">pct_age_group_above_65</th>
+<th data-quarto-table-cell-role="th">pct_income_group_below_20000</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">pct_resp_with_diabetes</td>
+<td>1.000</td>
+<td>0.934</td>
+<td>-0.244</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">pct_age_group_above_65</td>
+<td>0.934</td>
+<td>1.000</td>
+<td>-0.279</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">pct_income_group_below_20000</td>
+<td>-0.244</td>
+<td>-0.279</td>
+<td>1.000</td>
+</tr>
+</tbody>
+</table>
+
 </div>
 </div>
 </div>
