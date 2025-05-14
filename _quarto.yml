@@ -1,7 +1,7 @@
 project:
   type: website
   output-dir: docs
-  title: "Shefali Lathwal"
+  title: "Home"
 
 website: 
   back-to-top-navigation: true
@@ -19,8 +19,8 @@ website:
   navbar:
     search: true
     left:
-      - text: Home
-        href: index.qmd
+      - text: About
+        href: about.qmd
       - text: Projects
         href: projects.qmd
       - text: Talks

@@ -9,21 +9,21 @@
   {
     "objectID": "projects.html",
     "href": "projects.html",
-    "title": "Shefali Lathwal",
+    "title": "Home",
     "section": "",
     "text": "The PDAC-app is an interactive application that allows users to explore the pancreatic cancer data available from TCGA.\nYou can look at the overall demographic distribution of the patients, Kaplan Meier survival plots broken by clinical characteristics, and an analysis of tumor purity and molecular clusters in the data based on the article Integrated Genomics Characterization of Pancreatic Ductal Adenocarcinoma.\nYou can interact with the data in the shiny app here."
   },
   {
     "objectID": "projects.html#analysis-of-clinical-and-molecular-data-for-pancreatic-cancer-from-the-cancer-genome-atlas-tcga",
     "href": "projects.html#analysis-of-clinical-and-molecular-data-for-pancreatic-cancer-from-the-cancer-genome-atlas-tcga",
-    "title": "Shefali Lathwal",
+    "title": "Home",
     "section": "",
     "text": "The PDAC-app is an interactive application that allows users to explore the pancreatic cancer data available from TCGA.\nYou can look at the overall demographic distribution of the patients, Kaplan Meier survival plots broken by clinical characteristics, and an analysis of tumor purity and molecular clusters in the data based on the article Integrated Genomics Characterization of Pancreatic Ductal Adenocarcinoma.\nYou can interact with the data in the shiny app here."
   },
   {
     "objectID": "projects.html#analysis-of-political-donations-through-electoral-bonds-in-india",
     "href": "projects.html#analysis-of-political-donations-through-electoral-bonds-in-india",
-    "title": "Shefali Lathwal",
+    "title": "Home",
     "section": "Analysis of political donations through electoral bonds in India",
     "text": "Analysis of political donations through electoral bonds in India\n\n\n\nThis web application was created as the final project for Harvard’s course, CS50: Introduction to Computer Science. The following tools were used:\n\nPython for extracting the data from pdf to csv format\nR for data exploration and cleaning\nRShiny for data analysis and visualization.\nBootstrap library for R (bslib) to design a multi-page Shiny app"
   },
@@ -121,35 +121,35 @@
   {
     "objectID": "talks.html",
     "href": "talks.html",
-    "title": "Shefali Lathwal",
+    "title": "Home",
     "section": "",
     "text": "A discussion with Cyclica, Altis Labs, Elucidata, and Atomwise on how to run successful machine learning projects in biotech and pharma R&D."
   },
   {
     "objectID": "talks.html#panel-discussion-implementing-ml-in-biopharma-rd",
     "href": "talks.html#panel-discussion-implementing-ml-in-biopharma-rd",
-    "title": "Shefali Lathwal",
+    "title": "Home",
     "section": "",
     "text": "A discussion with Cyclica, Altis Labs, Elucidata, and Atomwise on how to run successful machine learning projects in biotech and pharma R&D."
   },
   {
     "objectID": "talks.html#framework-for-quality-of-high-dimensional-biological-data",
     "href": "talks.html#framework-for-quality-of-high-dimensional-biological-data",
-    "title": "Shefali Lathwal",
+    "title": "Home",
     "section": "Framework for quality of high-dimensional biological data",
     "text": "Framework for quality of high-dimensional biological data\n\n\n\n\n Presentation at Elucidata’s User Group Meeting on how our team evaluates and measures data quality while making high-dimensional biological data Findable, Accessible, Interoperable, and Reusable (FAIR)."
   },
   {
     "objectID": "talks.html#role-of-data-curation-with-ontologies-in-biopharma-rd",
     "href": "talks.html#role-of-data-curation-with-ontologies-in-biopharma-rd",
-    "title": "Shefali Lathwal",
+    "title": "Home",
     "section": "Role of data-curation with ontologies in biopharma R&D",
     "text": "Role of data-curation with ontologies in biopharma R&D\n\n\n\n\n Talk with Pistoia Alliance, a non-profit alliance working to increase pre-competitive collaboration in life sciences industry. The talk highlights the role of data curation through ontologies to make data FAIR and to accelerate research."
   },
   {
     "objectID": "talks.html#product-release-curated-multi-omics-data-atlas",
     "href": "talks.html#product-release-curated-multi-omics-data-atlas",
-    "title": "Shefali Lathwal",
+    "title": "Home",
     "section": "Product release: Curated multi-omics data atlas",
     "text": "Product release: Curated multi-omics data atlas\n\n\n\n\n Product release for Elucidata’s Liver OmixAtlas, the largest repository of ML-ready liver tissue-derived biological datasets. The goal is to provide a curated data source of scRNA-seq, RNA-seq, proteomics, and metabolomics data to accelerate drug discovery."
   },
@@ -158,7 +158,7 @@
     "href": "index.html",
     "title": "Shefali Lathwal",
     "section": "",
-    "text": "I am a Chemical Engineer turned Bioinformatician and Computational Biologist. I love mathematics, statistics, data analysis, and visualizations. I enjoy building relationships with people, working in cross-functional teams, and translating complex data into actionable insights."
+    "text": "Data science leader with a Ph.D. and 6 years’ experience at an early-stage startup.\nFind out more on my About page.\n\n  \n\n\n\n\nRecent Blog Posts\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\n\n\nDiabetes prevalence in Community Health Survey Data 2019-2020 in Canada\n\n\nMay 13, 2025\n\n\n\n\n\n\n\nChance, p-values, and number of samples\n\n\nApr 17, 2025\n\n\n\n\n\n\n\nPermutation test in statistics\n\n\nMar 27, 2025\n\n\n\n\n\n\n\n\nNo matching items\n\n\n\n\nProjects and Talks\n\nFind out more about my public projects.\nListen to my public talks.\n\n\n\n\n\n\n\n\n Back to top"
   },
   {
     "objectID": "index.html#experience",
@@ -173,5 +173,40 @@
     "title": "Shefali Lathwal",
     "section": "Education",
     "text": "Education\nMassachusetts Institute of Technology\nCambridge, MA, USA\nPh.D. in Chemical Engineering\nM.S. in Chemical Engineering Practice\nIndian Institute of Technology, Delhi\nNew Delhi, India\nM.S. in Process Engineering and Design\nB.Tech. In Chemical Engineering"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Shefali Lathwal",
+    "section": "",
+    "text": "I have translated my background in mathematics, statistics, machine learning, engineering, and scientific experimentation into building data-driven solutions in the tech industry. I am a problem solver and enjoy building relationships with people, working in cross-functional teams, and translating complex data into actionable insights."
+  },
+  {
+    "objectID": "about.html#experience",
+    "href": "about.html#experience",
+    "title": "Shefali Lathwal",
+    "section": "Experience",
+    "text": "Experience\nElucidata Corporation | Director, data-centric AI\nJan 2022 - Oct 2022\nElucidata Corporation | Lead Scientist\nDec 2016 - Dec 2021"
+  },
+  {
+    "objectID": "about.html#education",
+    "href": "about.html#education",
+    "title": "Shefali Lathwal",
+    "section": "Education",
+    "text": "Education\nMassachusetts Institute of Technology\nCambridge, MA, USA\nPh.D. in Chemical Engineering\nM.S. in Chemical Engineering Practice\nIndian Institute of Technology, Delhi\nNew Delhi, India\nM.S. in Process Engineering and Design\nB.Tech. In Chemical Engineering"
+  },
+  {
+    "objectID": "index.html#blog-section",
+    "href": "index.html#blog-section",
+    "title": "Shefali Lathwal",
+    "section": "Blog Section",
+    "text": "Blog Section\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nDate\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\nMay 13, 2025\n\n\nDiabetes prevalence in Community Health Survey Data 2019-2020 in Canada\n\n\nShefali Lathwal\n\n\n\n\nApr 17, 2025\n\n\nChance, p-values, and number of samples\n\n\nShefali Lathwal\n\n\n\n\nMar 27, 2025\n\n\nPermutation test in statistics\n\n\nShefali Lathwal\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html#recent-blog-posts",
+    "href": "index.html#recent-blog-posts",
+    "title": "Shefali Lathwal",
+    "section": "Recent Blog Posts",
+    "text": "Recent Blog Posts\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\n\n\nDiabetes prevalence in Community Health Survey Data 2019-2020 in Canada\n\n\nMay 13, 2025\n\n\n\n\n\n\n\nChance, p-values, and number of samples\n\n\nApr 17, 2025\n\n\n\n\n\n\n\nPermutation test in statistics\n\n\nMar 27, 2025\n\n\n\n\n\n\n\n\nNo matching items"
   }
 ]

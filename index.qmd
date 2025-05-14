@@ -1,37 +1,40 @@
 ---
 title: "Shefali Lathwal"
 toc: false
-about: 
-    template: trestles
+listing:
+  - id: blog-listings
+    contents: blogs
+    sort: "date desc"
+    type: table
+    fields: [title, date , image]
+about:
+    id: about-id
+    template: jolla
     image: images/profile.jpg
-    image-shape: round
-    links:
-        - icon: linkedin
-          text: LinkedIn
-          href: "https://www.linkedin.com/in/shefali-lathwal-90bb4b44/"
-        - icon: github
-          text: Github 
-          href: "https://github.com/slathwal"
-        - icon: envelope
-          text: Contact me
-          href: mailto:slathwal@alum.mit.edu
+    image-shape: round 
 ---
-I am a Chemical Engineer turned Bioinformatician and Computational Biologist. I love mathematics, statistics, data analysis, and visualizations. I enjoy building relationships with people, working in cross-functional teams, and translating complex data into actionable insights.
+:::: {#about-id}
+:::{.text-center} 
+Data science leader with a Ph.D. and 6 years' experience at an early-stage startup. 
 
-## Experience
-**Elucidata Corporation** | Director, data-centric AI  
-Jan 2022 - Oct 2022
+Find out more on my [About page](about.qmd).
+:::
 
-**Elucidata Corporation** | Lead Scientist  
-Dec 2016 - Dec 2021
+::::
 
-## Education
-**Massachusetts Institute of Technology**  
-Cambridge, MA, USA  
-Ph.D. in Chemical Engineering  
-M.S. in Chemical Engineering Practice
 
-**Indian Institute of Technology, Delhi**  
-New Delhi, India  
-M.S. in Process Engineering and Design  
-B.Tech. In Chemical Engineering
+:::::{.grid}
+
+::::{.g-col-12 .g-col-md-6}
+### Recent Blog Posts
+::: {#blog-listings}
+:::
+::::
+
+::::{.g-col-12 .g-col-md-6}
+### Projects and Talks
+- Find out more about my [public projects](projects.qmd).
+- Listen to my [public talks](talks.qmd). 
+::::
+
+:::::
