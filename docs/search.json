@@ -158,7 +158,7 @@
     "href": "index.html",
     "title": "Shefali Lathwal",
     "section": "",
-    "text": "Data science leader with a Ph.D. and 6 years’ experience at an early-stage startup.\nFind out more on my About page.\n\n  \n\n\n\n\nRecent Blog Posts\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\n\n\nDiabetes prevalence in Community Health Survey Data 2019-2020 in Canada\n\n\nMay 13, 2025\n\n\n\n\n\n\n\nChance, p-values, and number of samples\n\n\nApr 17, 2025\n\n\n\n\n\n\n\nPermutation test in statistics\n\n\nMar 27, 2025\n\n\n\n\n\n\n\n\nNo matching items\n\n\n\n\nProjects and Talks\n\nFind out more about my public projects.\nListen to my public talks.\n\n\n\n\n\n\n\n\n Back to top"
+    "text": "Data science leader with a Ph.D. and 6 years’ experience at an early-stage startup.\nFind out more on my about page.\n\n  \n\n\n\n\nRecent Blog Posts\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\n\n\nDiabetes prevalence in Community Health Survey Data 2019-2020 in Canada\n\n\nMay 13, 2025\n\n\n\n\n\n\n\nChance, p-values, and number of samples\n\n\nApr 17, 2025\n\n\n\n\n\n\n\nPermutation test in statistics\n\n\nMar 27, 2025\n\n\n\n\n\n\n\n\nNo matching items\n\n\n\n\n\nPublic Projects\n\nML model to identify factors associated with diabetes in Canadian Population\nRShiny app for analysis of pancreatic cancer data from The Cancer Genome Atlas (TCGA)\nRShiny app for analysis of political donations through electoral bonds in India\n\n\n\nTalks\n\nListen to my public talks.\n\n\n\n\n\n\n\n\n\n Back to top"
   },
   {
     "objectID": "index.html#experience",
@@ -215,5 +215,12 @@
     "title": "Home",
     "section": "",
     "text": "The analysis of Canadian Community Health Survey data from 2019-20 revealed that the prevalence of diabetes is much higher in some Canadian regions than others. This led to the question:\nIs it possible to identify the most important factors associated with presence of diabetes from survey data (as broad as the Community Health Survey data)?\nTo answer the above, I built a predictive machine learning model and identified the top 20 factors that are associated with the presence of diabetes.\nYou can explore the code for the ML model on github. A brief blog post on exploratory analysis of the data is also availabel here. A detailed blog post on the ML model is coming soon."
+  },
+  {
+    "objectID": "index.html#projects",
+    "href": "index.html#projects",
+    "title": "Shefali Lathwal",
+    "section": "Projects:",
+    "text": "Projects:\n\nML model to identify factors associated with diabetes in Canadian Population\nRShiny app for analysis of pancreatic cancer data from The Cancer Genome Atlas (TCGA)\nRShiny app for analysis of political donations through electoral bonds in India"
   }
 ]

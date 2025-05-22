@@ -17,7 +17,7 @@ about:
 :::{.text-center} 
 Data science leader with a Ph.D. and 6 years' experience at an early-stage startup. 
 
-Find out more on my [About page](about.qmd).
+Find out more on my [about page](about.qmd).
 :::
 
 ::::
@@ -32,9 +32,18 @@ Find out more on my [About page](about.qmd).
 ::::
 
 ::::{.g-col-12 .g-col-md-6}
-### Projects and Talks
-- Find out more about my [public projects](projects.qmd).
-- Listen to my [public talks](talks.qmd). 
+
+### Public Projects
+
+1. [ML model to identify factors associated with diabetes in Canadian Population](projects.qmd#identifying-factors-associated-with-diabetes-from-canadian-community-health-survey-data-2019-2020)
+
+2. [RShiny app for analysis of pancreatic cancer data from The Cancer Genome Atlas (TCGA)](projects.qmd#analysis-of-clinical-and-molecular-data-for-pancreatic-cancer-from-the-cancer-genome-atlas-(tcga))
+
+3. [RShiny app for analysis of political donations through electoral bonds in India](projects.qmd#analysis-of-political-donations-through-electoral-bonds-in-india) 
+
+### Talks
+
+- Listen to my [public talks](talks.qmd).
 ::::
 
 :::::
