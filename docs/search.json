@@ -11,14 +11,14 @@
     "href": "projects.html",
     "title": "Home",
     "section": "",
-    "text": "The PDAC-app is an interactive application that allows users to explore the pancreatic cancer data available from TCGA.\nYou can look at the overall demographic distribution of the patients, Kaplan Meier survival plots broken by clinical characteristics, and an analysis of tumor purity and molecular clusters in the data based on the article Integrated Genomics Characterization of Pancreatic Ductal Adenocarcinoma.\nYou can interact with the data in the shiny app here."
+    "text": "The analysis of Canadian Community Health Survey data from 2019-20 revealed that the prevalence of diabetes is much higher in some Canadian regions than others. This led to the question:\nIs it possible to identify the most important factors associated with presence of diabetes from survey data (as broad as the Community Health Survey data)?\nTo answer the above, I built a predictive machine learning model and identified the top 20 factors that are associated with the presence of diabetes.\nYou can explore the code for the ML model on github. A brief blog post on exploratory analysis of the data is also availabel here. A detailed blog post on the ML model is coming soon."
   },
   {
     "objectID": "projects.html#analysis-of-clinical-and-molecular-data-for-pancreatic-cancer-from-the-cancer-genome-atlas-tcga",
     "href": "projects.html#analysis-of-clinical-and-molecular-data-for-pancreatic-cancer-from-the-cancer-genome-atlas-tcga",
     "title": "Home",
-    "section": "",
-    "text": "The PDAC-app is an interactive application that allows users to explore the pancreatic cancer data available from TCGA.\nYou can look at the overall demographic distribution of the patients, Kaplan Meier survival plots broken by clinical characteristics, and an analysis of tumor purity and molecular clusters in the data based on the article Integrated Genomics Characterization of Pancreatic Ductal Adenocarcinoma.\nYou can interact with the data in the shiny app here."
+    "section": "Analysis of clinical and molecular data for pancreatic cancer from The Cancer Genome Atlas (TCGA)",
+    "text": "Analysis of clinical and molecular data for pancreatic cancer from The Cancer Genome Atlas (TCGA)\n\n\n\n\n\n\n\nThe PDAC-app is an interactive application that allows users to explore the pancreatic cancer data available from TCGA.\nYou can look at the overall demographic distribution of the patients, Kaplan Meier survival plots broken by clinical characteristics, and an analysis of tumor purity and molecular clusters in the data based on the article Integrated Genomics Characterization of Pancreatic Ductal Adenocarcinoma.\nYou can interact with the data in the shiny app here."
   },
   {
     "objectID": "projects.html#analysis-of-political-donations-through-electoral-bonds-in-india",
@@ -208,5 +208,12 @@
     "title": "Shefali Lathwal",
     "section": "Recent Blog Posts",
     "text": "Recent Blog Posts\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\n\n\nDiabetes prevalence in Community Health Survey Data 2019-2020 in Canada\n\n\nMay 13, 2025\n\n\n\n\n\n\n\nChance, p-values, and number of samples\n\n\nApr 17, 2025\n\n\n\n\n\n\n\nPermutation test in statistics\n\n\nMar 27, 2025\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "projects.html#identifying-factors-associated-with-diabetes-from-canadian-community-health-survey-data-2019-2020",
+    "href": "projects.html#identifying-factors-associated-with-diabetes-from-canadian-community-health-survey-data-2019-2020",
+    "title": "Home",
+    "section": "",
+    "text": "The analysis of Canadian Community Health Survey data from 2019-20 revealed that the prevalence of diabetes is much higher in some Canadian regions than others. This led to the question:\nIs it possible to identify the most important factors associated with presence of diabetes from survey data (as broad as the Community Health Survey data)?\nTo answer the above, I built a predictive machine learning model and identified the top 20 factors that are associated with the presence of diabetes.\nYou can explore the code for the ML model on github. A brief blog post on exploratory analysis of the data is also availabel here. A detailed blog post on the ML model is coming soon."
   }
 ]
