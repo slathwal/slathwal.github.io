@@ -35,7 +35,7 @@ Find out more on my [about page](about.qmd).
 
 ### Public Projects
 
-1. [ML model to identify factors associated with diabetes in Canadian Population](projects.qmd#identifying-factors-associated-with-diabetes-from-canadian-community-health-survey-data-2019-2020)
+1. [ML model to identify factors associated with diabetes in the Canadian population](projects.qmd#identifying-factors-associated-with-diabetes-from-canadian-community-health-survey-data-2019-2020)
 
 2. [RShiny app for analysis of pancreatic cancer data from The Cancer Genome Atlas (TCGA)](projects.qmd#analysis-of-clinical-and-molecular-data-for-pancreatic-cancer-from-the-cancer-genome-atlas-(tcga))
 
