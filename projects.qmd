@@ -13,9 +13,12 @@ The analysis of Canadian Community Health Survey data from 2019-20 revealed that
 
 **Is it possible to identify the most important factors associated with presence of diabetes from survey data (as broad as the Community Health Survey data)?**
 
-To answer the above, I built a predictive machine learning model and identified the top 20 factors that are associated with the presence of diabetes. 
+To answer the above, I built a predictive machine learning model and identified the top factors that are associated with the presence of diabetes. 
 
-You can explore the code for the ML model on [github](https://github.com/slathwal/diabetes_canada_project). A brief blog post on exploratory analysis of the data is also availabel [here](https://slathwal.github.io/blogs/2025-05-13/). A detailed blog post on the ML model is coming soon.
+
+General survey data was sufficient to recover the top factors associated with diabetes. The top factors, recovered in an unbiased way, were the following: age, medication for high blood cholesterol/lipids, taking medication for high blood pressure, perceived health, frequency of drinking alcohol, BMI classification, sex at birth, and being a visible minority.
+
+You can explore the code for the ML model on [github](https://github.com/slathwal/diabetes_canada_project). A brief blog post on exploratory analysis of the data is also availabel [here](https://slathwal.github.io/blogs/2025-05-13/).
 :::
 
 ::::

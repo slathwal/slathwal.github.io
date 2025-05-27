@@ -26,12 +26,6 @@ Find out more on my [about page](about.qmd).
 :::::{.grid}
 
 ::::{.g-col-12 .g-col-md-6}
-### Recent Blog Posts
-::: {#blog-listings}
-:::
-::::
-
-::::{.g-col-12 .g-col-md-6}
 
 ### Public Projects
 
@@ -45,5 +39,14 @@ Find out more on my [about page](about.qmd).
 
 - Listen to my [public talks](talks.qmd).
 ::::
+
+
+::::{.g-col-12 .g-col-md-6}
+### Recent Blog Posts
+::: {#blog-listings}
+:::
+::::
+
+
 
 :::::
