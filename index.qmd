@@ -13,21 +13,14 @@ about:
     image: images/profile.jpg
     image-shape: round 
 ---
-:::: {#about-id}
-:::{.text-center} 
-Data science leader with a Ph.D. and 6 years' experience at an early-stage startup. 
-
-Find out more on my [about page](about.qmd).
-:::
-
-::::
-
 
 :::::{.grid}
 
 ::::{.g-col-12 .g-col-md-6}
 
 ### Public Projects
+
+1. [Building AI agents with LangGraph, LangChain, and Local LLMs](projects.qmd#building-ai-agents-with-langgraph-langchain-and-local-llms)
 
 1. [ML model to identify factors associated with diabetes in the Canadian population](projects.qmd#identifying-factors-associated-with-diabetes-from-canadian-community-health-survey-data-2019-2020)
 
@@ -50,3 +43,12 @@ Find out more on my [about page](about.qmd).
 
 
 :::::
+
+:::: {#about-id}
+:::{.text-center} 
+Data science leader with a Ph.D. and 6 years' experience at an early-stage startup. 
+
+Find out more on my [about page](about.qmd).
+:::
+
+::::

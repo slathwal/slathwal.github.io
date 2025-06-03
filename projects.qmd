@@ -2,6 +2,23 @@
 toc: true
 ---
 
+## Building AI agents with LangGraph, LangChain, and Local LLMs
+
+:::: {.columns}
+
+::: {.column width="100%"}
+![](images/langgraph_example_graph.png){width=50% fig-align="center"}
+
+I have created [a website](https://slathwal.github.io/local_llms_and_agents/) containing a series of notebooks that show how to build AI agents and use LLMs on your local machine.
+
+All examples on the website use LLMs being run locally on a MacBook Air M1 2020, with 8GB RAM.
+
+Using local models is an efficient way to test MVPs and generate and test new ideas. The models work well for simple use cases such as question and answering and even image caption generation, but perform poorly at tasks such as tool calling and decision making.
+:::
+
+::::
+
+
 ## Identifying factors associated with diabetes from Canadian Community Health Survey data (2019-2020)
 
 :::: {.columns}
